@@ -1,0 +1,16 @@
+<div class="citate citate_offset">
+    <h4 class="citate__title">Текст цитаты</h4>
+    <div class="autor">
+        <span class="autor__img autor__img_offset">
+            <img src="/upload/attached/author.jpg" alt="">
+        </span>
+        <div class="autor__content">
+            <span class="autor__title">
+                Автор цитаты
+            </span>
+            <span class="autor__desc">
+                Должность автора
+            </span>
+        </div>
+    </div>
+</div>

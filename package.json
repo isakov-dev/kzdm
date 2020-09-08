@@ -1,0 +1,68 @@
+{
+  "name": "kzdm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --progress --hide-modules",
+    "prod": "webpack --mode production --progress --hide-modules",
+    "watch": "webpack --watch --mode development --progress --hide-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/kzdm/site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kzdm/site/issues"
+  },
+  "homepage": "https://gitlab.com/kzdm/site#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-image": "^5.1.0",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.2",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony",
+    "vue-loader": "^15.8.3",
+    "vue-template-compiler": "^2.6.11",
+    "vue2-dropzone": "^3.6.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-concat-plugin": "^3.0.0",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.0.16",
+    "resize-base64": "^1.0.12",
+    "sweetalert2": "^9.6.0",
+    "uglify-es": "github:mishoo/UglifyJS2#harmony",
+    "vue": "^2.6.11",
+    "vue-image-upload-resize": "^2.2.1",
+    "vue-inputmask": "^0.2.1",
+    "vue-resize": "^0.4.5",
+    "vue-sweetalert2": "^3.0.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}

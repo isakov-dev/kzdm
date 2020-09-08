@@ -1,0 +1,19 @@
+/* Окно спасибо за заявку */
+.swal2-popup{
+    font-size: 2rem !important;
+    border-radius: 0 !important;
+}
+
+/* nКнопка  */
+.swal2-styled.swal2-confirm{
+    background-color: #ff6e00 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+}
+
+@media (max-width: 425px) {
+    .swal2-popup{
+        font-size: 1.5rem !important;
+        width: 95% !important;
+    }
+}

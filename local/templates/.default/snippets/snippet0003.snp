@@ -1,0 +1,34 @@
+<div class="section section_default section_animated wow animated" style="visibility: visible;">
+    <div class="wrapper wrapper_default">
+        <div class="row">
+            <div class="col col--lg-10 col--lg-offset-1">
+                <div class="row row_large">
+                    <div class="col col--lg-6 col--sm-6">
+                        <div class="box-imagered box-imagered_offset" style="background-image: url('/upload/attached/box-1.jpg')">
+                            <div class="box-imagered__content">
+                                <div class="box-imagered__item">
+                                    <span class="box-imagered__numb">45</span>
+                                    <div class="box-imagered__desc"><p>моделей машин в ассортименте</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col--lg-6 col--sm-6">
+                        <div class="box-imagered box-imagered_offset" style="background-image: url('/upload/attached/prestavitrlstvo.jpg')">
+                            <div class="box-imagered__content">
+                                <div class="box-imagered__item">
+                                    <span class="box-imagered__numb">4</span>
+                                    <div class="box-imagered__desc"><p>официальных представительства</p></div>
+                                </div>
+                                <div class="box-imagered__item">
+                                    <span class="box-imagered__numb">25</span>
+                                    <div class="box-imagered__desc"><p>дилерских<br> центра</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

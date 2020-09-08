@@ -1,0 +1,200 @@
+Options -Indexes
+ErrorDocument 404 /404.php
+
+<IfModule mod_php5.c>
+    php_flag session.use_trans_sid off
+    #php_flag default_charset UTF-8
+    #php_value display_errors 1
+</IfModule>
+
+<IfModule mod_php7.c>
+    php_flag session.use_trans_sid off
+    #php_flag default_charset UTF-8
+    php_value mbstring.func_overload 2
+    php_value mbstring.internal_encoding UTF-8
+    php_value max_input_vars 10000
+</IfModule>
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP
+RewriteRule ^index\.php$ https://kzdm.ru/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} //
+RewriteRule .* /$0 [R=301,L]
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+
+    #Robots for subdomains
+    RewriteRule ^robots.txt$ robots.php [L]
+    #Sitemap for subdomains
+    RewriteRule ^sitemap.xml sitemap.php [L]
+
+    # /Редиректы 2020-07-21
+    RewriteRule ^contacts.html /kontakty/ [R=301,L]
+    RewriteRule ^dealers /dilery-i-servis/ [R=301,L]
+    RewriteRule ^factory.html /o-zavode/ [R=301,L]
+    RewriteRule ^leasing.html /servis/lizing/ [R=301,L]
+    RewriteRule ^news /novosti/ [R=301,L]
+    RewriteRule ^news/18-sentyabrya-v-zlatoustovskom-gorodskom-okruge-prezentovali-sovremennuyu-uborochnuyu-texniku-dlya-nuzhd-gorodskix-kommunalnyix-sluzhb.html /novosti/novosti/18-sentyabrya-v-zlatoustovskom-gorodskom-okruge-prezentovali-sovremennuyu-uborochnuyu-tekhniku-dlya-/ [R=301,L]
+    RewriteRule ^news/8-noyabrya-2018-goda-v-moskve-zavod-kurgandormash-prinyal-uchastie-v-kachestve-spikera-na-seminare-rosavtodora.html /novosti/sobytiya/8-noyabrya-2018-goda-v-moskve-zavod-kurgandormash-prinyal-uchastie-v-kachestve-spikera-na-seminare-r/ [R=301,L]
+    RewriteRule ^news/aktualnyie-voprosyi-razvitiya-i-rosta-kurgandormash-v-intervyu-avdalova-yu.a.-na-vyistavke-bauma-ctt-2019.html /novosti/novosti/aktualnye-voprosy-razvitiya-i-rosta-kurgandormash-v-intervyu-avdalova-yu-a-na-vystavke-bauma-ctt-201/ [R=301,L]
+    RewriteRule ^news/ao-kurgandormash-primet-uchastie-v-prazdnovanii-dnya-goroda-kurgana-25-avgusta.html /novosti/novosti/ao-kurgandormash-prinyal-uchastie-v-prazdnovanii-dnya-goroda-kurgana-25-avgusta/ [R=301,L]
+    RewriteRule ^news/den-predprinimatelya-2019.html /novosti/vystavki/den-predprinimatelya-2019-v-kurgane/ [R=301,L]
+    RewriteRule ^news/dilerskij-czentr-kamaz-mersedes-sovmestno-s-ao-kurgandormash-pristupili-k-vyidache-avtomobilej-dlya-obsluzhivaniya-dorog-orenburga.html /novosti/novosti/dilerskiy-tsentr-kamaz-mersedes-sovmestno-s-ao-kurgandormash-pristupili-k-vydache-avtomobiley-dlya-o/ [R=301,L]
+    RewriteRule ^news/dorozhnyie-mashinyi-md-651-s-kuzovom-iz-nerzhaveyushhej-stali-pristupyat-k-ochistke-dorog-v-orle.html /novosti/novosti/dorozhnye-mashiny-md-651-s-kuzovom-iz-nerzhaveyushchey-stali-pristupyat-k-ochistke-dorog-v-orle/ [R=301,L]
+    RewriteRule ^news/dorozhnyie-mashinyi-proizvodstva-kurgandormash-budut-rabotat-v-moldavii.html /novosti/novosti/dorozhnye-mashiny-proizvodstva-kurgandormash-budut-rabotat-v-moldavii/ [R=301,L]
+    RewriteRule ^news/gubernator-sankt-peterburga-proveril-kak-texnika-kurgandormasha-gotova-k-borbe-so-snegom.html /novosti/smi-o-nas/gubernator-sankt-peterburga-proveril-kak-tekhnika-kurgandormasha-gotova-k-borbe-so-snegom/ [R=301,L]
+    RewriteRule ^news/happy-ny-kzdm.html /novosti/sobytiya/pozdravlenie-s-novym-godom/ [R=301,L]
+    RewriteRule ^news/itogi-goda-2019-v-intervyu-yuriya-avdalova.html /novosti/smi-o-nas/itogi-goda-2019-v-intervyu-yuriya-avdalova/ [R=301,L]
+    RewriteRule ^news/itogi-vyistavki-bauma-ctt-2018-v-intervyu-kommercheskogo-direktora-evgeniya-lovczova.html /novosti/novosti/itogi-vystavki-bauma-ctt-2018-v-intervyu-kommercheskogo-direktora-evgeniya-lovtsova/ [R=301,L]
+    RewriteRule ^news/kazaxstan-ispolzuet-shpo-v-czelyax-predotvrashheniya-ot-prezhdevremennogo-razrusheniya-dorog.html /novosti/novosti/kazakhstan-ispolzuet-shpo-v-tselyakh-predotvrashcheniya-dorog-ot-razrusheniya/ [R=301,L]
+    RewriteRule ^news/kollektiv-zavoda-kurgandormash-pozdravlyaet-vsex-s-velikim-prazdnikom-dnyom-pobedyi.html /novosti/novosti/kollektiv-zavoda-kurgandormash-pozdravlyaet-vsekh-s-velikim-prazdnikom-dnyem-pobedy/ [R=301,L]
+    RewriteRule ^news/kruglyij-stol-dorozhnoe-stroitelstvo-dalnij-vostok-2019.html /novosti/sobytiya/kruglyy-stol-dorozhnoe-stroitelstvo-dalniy-vostok-2019/ [R=301,L]
+    RewriteRule ^news/kurgandormash-budet-vyipuskat-sovershenno-novuyu-texniku-kotoruyu-v-rossii-ne-delaet-nikto.html /novosti/smi-o-nas/kurgandormash-budet-vypuskat-sovershenno-novuyu-tekhniku-kotoruyu-v-rossii-ne-delaet-nikto/ [R=301,L]
+    RewriteRule ^news/kurgandormash-osvaivaet-ryinki-gruzii-i-armenii.html /novosti/sobytiya/kurgandormash-osvaivaet-rynki-gruzii-i-armenii/ [R=301,L]
+    RewriteRule ^news/kurgandormash-peredal-texniku-v-sankt-peterburg.html /novosti/sobytiya/kurgandormash-peredal-tekhniku-v-sankt-peterburg/ [R=301,L]
+    RewriteRule ^news/kurgandormash-po-itogam-2018-goda-zavod-milliardnik.html /novosti/smi-o-nas/kurgandormash-po-itogam-2018-goda-zavod-milliardnik/ [R=301,L]
+    RewriteRule ^news/kurgandormash-pokazal-podrastayushhemu-pokoleniyu-svoyo-proizvodstvo.html /novosti/novosti/kurgandormash-pokazal-podrastayushchemu-pokoleniyu-svoye-proizvodstvo/ [R=301,L]
+    RewriteRule ^news/kurgandormash-posetili-partneryi-iz-belarusi.html /novosti/sobytiya/kurgandormash-posetili-partnery-iz-belarusi/ [R=301,L]
+    RewriteRule ^news/kurgandormash-postavil-novuyu-texniku-dlya-uborki-ulicz-kurgana.html /novosti/novosti/kurgandormash-postavil-novuyu-tekhniku-dlya-uborki-ulits-kurgana/ [R=301,L]
+    RewriteRule ^news/kurgandormash-postavit-svoyu-texniku-v-tatarstan.html /novosti/novosti/kurgandormash-postavit-svoyu-tekhniku-v-tatarstan/ [R=301,L]
+    RewriteRule ^news/kurgandormash-predstavil-svoyu-texniku-na-mezhdunarodnom-avtoprobege.html /novosti/sobytiya/kurgandormash-predstavil-svoyu-tekhniku-na-mezhdunarodnom-avtoprobege/ [R=301,L]
+    RewriteRule ^news/kurgandormash-predstavil-svoyu-texniku-polnomochnomu-predstavitelyu-prezidenta-rossii-v-urfo-nikolayu-czukanovu-i-glavam-sosednix-regionov.html /novosti/smi-o-nas/kurgandormash-predstavil-svoyu-tekhniku-polnomochnomu-predstavitelyu-prezidenta-rossii-v-urfo-nikola/ [R=301,L]
+    RewriteRule ^news/kurgandormash-predstavil-ukm-2500-na-parade-kommunalnoj-texniki-v-mordovii.html /novosti/novosti/kurgandormash-predstavil-ukm-2500-na-parade-kommunalnoy-tekhniki-v-mordovii/ [R=301,L]
+    RewriteRule ^news/kurgandormash-primet-uchastie-v-4-oj-mezhdunarodnoj-vyistavke-importozameshhenie.html /novosti/vystavki/kurgandormash-predstavit-termita-na-4-oy-mezhdunarodnoy-vystavke-importozameshchenie/ [R=301,L]
+    RewriteRule ^news/kurgandormash-primet-uchastie-v-vyistavke-bauma-ctt-russia.html /novosti/vystavki/kurgandormash-primet-uchastie-v-vystavke-bauma-ctt-russia/ [R=301,L]
+    RewriteRule ^news/kurgandormash-prinyal-uchastie-v-delovoj-missii-rossijskix-kompanij-v-azerbajdzhan.html /novosti/sobytiya/kurgandormash-prinyal-uchastie-v-delovoy-missii-rossiyskikh-kompaniy-v-azerbaydzhan/ [R=301,L]
+    RewriteRule ^news/kurgandormash-prinyal-uchastie-v-mezhdunarodnoj-vyistavke-shelkovyij-put.html /novosti/vystavki/kurgandormash-prinyal-uchastie-v-mezhdunarodnoy-vystavke-shelkovyy-put/ [R=301,L]
+    RewriteRule ^news/kurgandormash-prinyal-uchastie-v-mezhdunarodnom-forume.html /novosti/sobytiya/kurgandormash-prinyal-uchastie-v-mezhdunarodnom-forume/ [R=301,L]
+    RewriteRule ^news/kurgandormash-prinyal-uchastie-v-vyistavke-kyrgyzcomex-2019.html /novosti/vystavki/kurgandormash-prinyal-uchastie-v-vystavke-kyrgyzcomex-2019/ [R=301,L]
+    RewriteRule ^news/kurgandormash-uchastvuet-v-vyistavke-doroga-2018-v-kazani.html /novosti/vystavki/kurgandormash-uchastvuet-v-vystavke-doroga-2018-v-kazani/ [R=301,L]
+    RewriteRule ^news/kurganskaya-oblast-vpervyie-predstavlena-na-vyistavke-dorozhnoj-texniki-mirovogo-urovnya-bauma-2019-v-myunxene.html /novosti/vystavki/kurganskaya-oblast-vpervye-predstavlena-na-vystavke-dorozhnoy-tekhniki-mirovogo-urovnya-bauma-2019-v/ [R=301,L]
+    RewriteRule ^news/na-uliczax-ufyi-nachali-rabotat-kurganskie-pyilesosyi-kotoryie-sobirayut-opavshuyu-listvu.html /novosti/novosti/na-ulitsakh-ufy-nachali-rabotat-kurganskie-pylesosy-kotorye-sobirayut-opavshuyu-listvu/ [R=301,L]
+    RewriteRule ^news/na-zavode-kurgandormash-podveli-itogi-konkursa-detskogo-risunka-moya-mama.html /novosti/novosti/na-zavode-kurgandormash-podveli-itogi-konkursa-detskogo-risunka-moya-mama/ [R=301,L]
+    RewriteRule ^news/na-zavode-kurgandormash-proveli-master-klass-dlya-studentov-kgu.html /novosti/sobytiya/na-zavode-kurgandormash-proveli-master-klass-dlya-studentov-kgu/ [R=301,L]
+    RewriteRule ^news/novaya-vakuumnaya-podmetalno-uborochnaya-mashina-ko-318d-peredana-vladivostoku.html /novosti/novosti/novaya-vakuumnaya-podmetalno-uborochnaya-mashina-ko-318d-peredana-vladivostoku/ [R=301,L]
+    RewriteRule ^news/novyie-razrabotki-sovmestno-s-czentrom-kompyuternogo-inzhiniringa-yuurgu.html /novosti/novosti/novye-razrabotki-sovmestno-s-tsentrom-kompyuternogo-inzhiniringa-yuurgu/ [R=301,L]
+    RewriteRule ^news/pgm.html /novosti/novosti/sravnenie-krupnogabaritnykh-raspredeliteley-pgm-schmidt-stratos-giletta-epoke/ [R=301,L]
+    RewriteRule ^news/pozdravlyaem.html /novosti/novosti/pozdravlenie-s-dnem-rabotnikov-bytovogo-obsluzhivaniya-naseleniya-i-zhilishchno-kommunalnogo-khozyay/ [R=301,L]
+    RewriteRule ^news/pozdravlyaem-s-dnem-mashinostroitelya-2018.html /novosti/novosti/pozdravlyaem-s-dnem-mashinostroitelya-2018/ [R=301,L]
+    RewriteRule ^news/pozdravlyaem-s-novyim-2019-godom.html /novosti/novosti/pozdravlyaem-s-novym-2019-godom-/ [R=301,L]
+    RewriteRule ^news/predstaviteli-zavoda-posetili-partnerov-na-vyistavke-ifat-v-myunxene.html /novosti/vystavki/predstaviteli-zavoda-posetili-partnerov-na-vystavke-ifat-v-myunkhene/ [R=301,L]
+    RewriteRule ^news/prezentacziya-texniki-v-sankt-piterburge.html /novosti/sobytiya/prezentatsiya-tekhniki-v-sankt-peterburge/ [R=301,L]
+    RewriteRule ^news/priglashaem-na-vyistavku-doroga-2019-v-ekaterinburge.html /novosti/vystavki/priglashaem-na-vystavku-doroga-2019-v-ekaterinburge/ [R=301,L]
+    RewriteRule ^news/priglashaem-vas-na-vyistavku-bauma-ctt-2019.html /novosti/vystavki/priglashaem-vas-na-vystavku-bauma-ctt-2019/ [R=301,L]
+    RewriteRule ^news/priglashaem-vas-na-vyistavku-kazavtodor-2018-v-astane-28-29-noyabrya.html /novosti/vystavki/priglashaem-vas-na-vystavku-kazavtodor-2018-v-astane-28-29-noyabrya/ [R=301,L]
+    RewriteRule ^news/razrabotka-novoj-texniki-sovmestno-s-yuurgu.html /novosti/novosti/razrabotka-novoy-spetstekhniki-sovmestno-s-yuurgu/ [R=301,L]
+    RewriteRule ^news/rukovoditeli-krupnyix-promyishlennyix-predpriyatij-goroda-prishli-v-gosti-k-studentam-texnicheskix-speczialnostej-kurganskogo-gosuniversiteta.html /novosti/sobytiya/rukovoditeli-krupnykh-promyshlennykh-predpriyatiy-goroda-prishli-v-gosti-k-studentam-tekhnicheskikh-/ [R=301,L]
+    RewriteRule ^news/sankt-peterburg-zakupaet-texniku-kurgandormash-na-polmilliarda-rublej.html /novosti/novosti/sankt-peterburg-zakupaet-tekhniku-kurgandormash-na-polmilliarda-rubley/ [R=301,L]
+    RewriteRule ^news/s-dnem-vesnyi-i-truda.html /novosti/novosti/s-dnem-vesny-i-truda/ [R=301,L]
+    RewriteRule ^news/s-dnem-zashhitnika-otechestva-s-23-fevralya.html /novosti/novosti/s-dnem-zashchitnika-otechestva-s-23-fevralya/ [R=301,L]
+    RewriteRule ^news/s-mezhdunarodnyim-zhenskim-dnem-s-8-marta.html /novosti/novosti/s-mezhdunarodnym-zhenskim-dnem-s-8-marta/ [R=301,L]
+    RewriteRule ^news/s-novyim-2020-godom.html /novosti/novosti/s-novym-2020-godom/ [R=301,L]
+    RewriteRule ^news/sotrudniki-zavoda-kurgandormash-pozdravili-veteranov-velikoj-otechestvennoj-vojnyi.html /novosti/novosti/sotrudniki-zavoda-kurgandormash-pozdravili-veteranov-velikoy-otechestvennoy-voyny/ [R=301,L]
+    RewriteRule ^news/s-prazdnikom-s-dnem-rossii-2019.html /novosti/novosti/s-prazdnikom-s-dnem-rossii-2019/ [R=301,L]
+    RewriteRule ^news/sravnenie-pgm.html /novosti/novosti/sravnenie-oborudovaniya-po-raspredeleniyu-pgm/ [R=301,L]
+    RewriteRule ^news/studentyi-tyumenskogo-industrialnogo-universiteta-posetili-kurgandormash.html /novosti/novosti/studenty-tyumenskogo-industrialnogo-universiteta-posetili-kurgandormash/ [R=301,L]
+    RewriteRule ^news/texnika-kurgandormash-rabotaet-v-belorussii.html /novosti/novosti/tekhnika-kurgandormash-rabotaet-v-belorussii/ [R=301,L]
+    RewriteRule ^news/texniku-kurgandormasha-oczenil-ministr-promyishlennosti-rossii.html /novosti/vystavki/tekhniku-kurgandormasha-otsenil-ministr-promyshlennosti-rossii/ [R=301,L]
+    RewriteRule ^news/texniku-predpriyatiya-kurgandormash-pokazhut-na-vyistavke-v-mongolii.html /novosti/vystavki/tekhniku-predpriyatiya-kurgandormash-pokazhut-na-vystavke-v-mongolii/ [R=301,L]
+    RewriteRule ^news/v-koncze-yanvarya-v-krasnoyarske-zavod-kurgandormash-prinyal-uchastie-v-kachestve-spikera-na-seminare-rosavtodora.html /novosti/sobytiya/v-kontse-yanvarya-v-krasnoyarske-zavod-kurgandormash-prinyal-uchastie-v-kachestve-spikera-na-seminar/ [R=301,L]
+    RewriteRule ^news/v-kryimu-proshli-ispyitaniya-ko-318f.html /novosti/novosti/v-krymu-proshli-ispytaniya-ko-318f/ [R=301,L]
+    RewriteRule ^news/v-mordovii-proshel-parad-kommunalnoj-texniki.html /novosti/sobytiya/v-mordovii-proshel-parad-kommunalnoy-tekhniki/ [R=301,L]
+    RewriteRule ^news/vnimanie-opasajtes-nedobrosovestnyix-postavshhikov-i-kontrafaktnoj-produkczii.html /novosti/novosti/vnimanie-opasaytes-nedobrosovestnykh-postavshchikov-i-kontrafaktnoy-produktsii/ [R=301,L]
+    RewriteRule ^news/v-novocherkassk-pribyila-partiya-novoj-kommunalnoj-texniki.html /novosti/novosti/v-novocherkassk-pribyla-partiya-novoy-kommunalnoy-tekhniki/ [R=301,L]
+    RewriteRule ^news/xxii-mezhdunarodnaya-speczializirovannaya-vyistavka.html /novosti/vystavki/xxii-mezhdunarodnaya-spetsializirovannaya-vystavka-surgut-neft-i-gaz-2017/ [R=301,L]
+    RewriteRule ^news/zavershilas-ezhegodnaya-mezhdunarodnaya-vyistavka-kazavtodor-kaztraffic-2018.html /novosti/vystavki/zavershilas-ezhegodnaya-mezhdunarodnaya-vystavka-kazavtodor-kaztraffic-2018/ [R=301,L]
+    RewriteRule ^news/zavod-kurgandormash-pervyim-v-zaurale-voshel-v-naczproekt-po-povyisheniyu-proizvoditelnosti-truda.html /novosti/smi-o-nas/zavod-kurgandormash-pervym-v-zaurale-voshel-v-natsproekt-po-povysheniyu-proizvoditelnosti-truda/ [R=301,L]
+    RewriteRule ^products/assenizaczionnyie-mashinyi/mk-43118.html /catalog/kombinirovannye-dorozhnye-mashiny/md-43118/ [R=301,L]
+    RewriteRule ^products/assenizaczionnyie-mashinyi/mk-43253.html /catalog/kombinirovannye-dorozhnye-mashiny/md-43253/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi$ /catalog/avtogudronatory/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-138b.html /catalog/avtogudronatory/ds-138/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-138m.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds142b.html /catalog/avtogudronatory/ds-142/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-142m.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-39g.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-39k.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-43118.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds43253.html /catalog/avtogudronatory/ds-43253/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-4380.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-5340.html /catalog/avtogudronatory/ds-5340/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-53605.html /catalog/avtogudronatory/ds-53605/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/ds-c41r1.html /catalog/avtogudronatory/ds-c41r1/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/is-6.html /catalog/avtogudronatory/is/ [R=301,L]
+    RewriteRule ^products/avtogudronatoryi/kornet-8000.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
+    RewriteRule ^products/bitumoshhebneraspredeliteli$ /catalog/chipsilery/ds-180/ [R=301,L]
+    RewriteRule ^products/bitumoshhebneraspredeliteli/butumoschebneraspred.html /catalog/chipsilery/ds-180/ [R=301,L]
+    RewriteRule ^products/bitumovozyi-polupriczepyi$ /catalog/bitumovozy-polupritsepy/ [R=301,L]
+    RewriteRule ^products/bitumovozyi-polupriczepyi/acb-25.html /catalog/bitumovozy-polupritsepy/atsb-25/ [R=301,L]
+    RewriteRule ^products/bitumovozyi-polupriczepyi/ds-164.html /catalog/bitumovozy-polupritsepy/ds-164/ [R=301,L]
+    RewriteRule ^products/gazomotornaya-tehnica$ /catalog/tekhnika-na-gazomotornom-toplive/ [R=301,L]
+    RewriteRule ^products/gazomotornaya-tehnica/ko-318.html /catalog/tekhnika-na-gazomotornom-toplive/ko-318f/ [R=301,L]
+    RewriteRule ^products/gazomotornaya-tehnica/ko-318f.html /catalog/tekhnika-na-gazomotornom-toplive/ko-318f/ [R=301,L]
+    RewriteRule ^products/gazomotornaya-tehnica/md-532g.html /catalog/tekhnika-na-gazomotornom-toplive/md-532g/ [R=301,L]
+    RewriteRule ^products/gazomotornaya-tehnica/md-53605g.html /catalog/tekhnika-na-gazomotornom-toplive/md-53605g/ [R=301,L]
+    RewriteRule ^products/gazomotornaya-tehnica/md-651.html /catalog/tekhnika-na-gazomotornom-toplive/md-651g/ [R=301,L]
+    RewriteRule ^products/kdm/md-43118.html /catalog/kombinirovannye-dorozhnye-mashiny/md-43118/ [R=301,L]
+    RewriteRule ^products/kdm/md-43253.html /catalog/kombinirovannye-dorozhnye-mashiny/md-43253/ [R=301,L]
+    RewriteRule ^products/kdm/md-532.html /catalog/kombinirovannye-dorozhnye-mashiny/md-532/ [R=301,L]
+    RewriteRule ^products/kdm/md-5340.html /catalog/kombinirovannye-dorozhnye-mashiny/md-5340/ [R=301,L]
+    RewriteRule ^products/kdm/md-53605.html /catalog/kombinirovannye-dorozhnye-mashiny/md-53605/ [R=301,L]
+    RewriteRule ^products/kdm/md-651.html /catalog/kombinirovannye-dorozhnye-mashiny/md-651/ [R=301,L]
+    RewriteRule ^products/kdm/md-65111.html /catalog/kombinirovannye-dorozhnye-mashiny/md-65111/ [R=301,L]
+    RewriteRule ^products/kdm/md-651a.html /catalog/kombinirovannye-dorozhnye-mashiny/md-651a/ [R=301,L]
+    RewriteRule ^products/kdm/md-651b.html /catalog/kombinirovannye-dorozhnye-mashiny/md-651/ [R=301,L]
+    RewriteRule ^products/kdm/md-651m.html /catalog/kombinirovannye-dorozhnye-mashiny/md-651a/ [R=301,L]
+    RewriteRule ^products/kdm/md-651-winter.html /catalog/kombinirovannye-dorozhnye-mashiny/md-651/ [R=301,L]
+    RewriteRule ^products/kdm/md-c41r1.html /catalog/kombinirovannye-dorozhnye-mashiny/md-s41r1/ [R=301,L]
+    RewriteRule ^products/kdm$ /catalog/kombinirovannye-dorozhnye-mashiny/ [R=301,L]
+    RewriteRule ^products/pogruzchiki/termit.html /catalog/mini-pogruzchiki/termit-1000/ [R=301,L]
+    RewriteRule ^products/pogruzchiki$ /catalog/mini-pogruzchiki/ [R=301,L]
+    RewriteRule ^products/ready-products.html /catalog/gotovaya-produktsiya/ [R=301,L]
+    RewriteRule ^products/snegopogruzchik/irbis350.html /catalog/snegopogruzchiki/irbis-350/ [R=301,L]
+    RewriteRule ^products/snegopogruzchik$ /catalog/snegopogruzchiki/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika/ko-318.html /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ko-318d/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika/ko-318f.html /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ko-318f-faun/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika/ko318n.html /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ko-318n/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika/ko-318t.html /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ko-318t/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika/ko-5340.html /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ko-5340/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika/ucm-2500.html /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ukm-2500/ [R=301,L]
+    RewriteRule ^products/vakuumnaya-podmetalno-uborochnaya-texnika$ /catalog/vakuumnye-podmetalno-uborochnye-mashiny/ [R=301,L]
+    RewriteRule ^service/guarantee.html /servis/garantiynoe-obsluzhivanie/ [R=301,L]
+    RewriteRule ^service/parts /zapchasti/ [R=301,L]
+    RewriteRule ^service /servis/ [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+    RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+    RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+</IfModule>
+
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType image/jpeg "access plus 3 day"
+    ExpiresByType image/gif "access plus 3 day"
+    ExpiresByType image/png "access plus 3 day"
+    ExpiresByType text/css "access plus 3 day"
+    ExpiresByType application/javascript "access plus 3 day"
+</IfModule>
+
+Redirect 301 /catalog/gotovaya-produktsiya/ko-318f-faun/ https://kzdm.ru/catalog/vakuumnye-podmetalno-uborochnye-mashiny/ko-318f-faun/
+
+Redirect 301 /catalog/gotovaya-produktsiya/termit-1000/ https://kzdm.ru/catalog/mini-pogruzchiki/termit-1000/
+
+Redirect 301 /catalog/gotovaya-produktsiya/irbis-350/ https://kzdm.ru/catalog/snegopogruzchiki/irbis-350/
+
+Redirect 301 /products/ https://kzdm.ru/catalog/
+
+
+

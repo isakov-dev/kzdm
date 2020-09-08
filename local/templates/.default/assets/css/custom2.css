@@ -1,0 +1,35 @@
+.header-nav__item {
+    margin-left: auto;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+@media (max-height: 1560px) {
+    .header-nav__item {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+}
+
+@media (max-width: 1270px) {
+    .header-nav__item {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+    }
+}
+
+.countires__btn {
+    cursor: auto;
+}
+
+.top-nav__content {
+    overflow: none;
+}
+
+/*.single > .section_default{
+    margin-top: auto;
+}*/
+
+.politic:hover a {
+    text-decoration: underline;
+}
