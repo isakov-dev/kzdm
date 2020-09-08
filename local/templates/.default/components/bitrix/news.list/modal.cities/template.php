@@ -4,7 +4,7 @@ $this->setFrameMode(true);
 <?php if (!empty($arResult['ITEMS'])): ?>
     <div style="display: none;" id="city-popup" class="city-popup popup popup_small">
         <div class="popup_content">
-            <h3 class="popup__title"><?= Bitrix\Main\Localization\Loc::getMessage('CHOOSE_CITY'); ?>:</h3>
+            <div class="popup__title"><?= Bitrix\Main\Localization\Loc::getMessage('CHOOSE_CITY'); ?>:</div>
             <div class="city-select">
                 <div class="row ">
                     <?php foreach ($arResult['ITEMS'] as $key => $value): ?>

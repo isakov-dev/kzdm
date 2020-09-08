@@ -1,6 +1,6 @@
 <div style="display: none;" id="leasing">
     <div class="popup">
-        <h2 class="h2 popup__title title title_big-offset"><?= Bitrix\Main\Localization\Loc::getMessage('TITLE_1'); ?></h2>
+        <div class="h2 popup__title title title_big-offset"><?= Bitrix\Main\Localization\Loc::getMessage('TITLE_1'); ?></div>
         <div class="popup__desc title title_large ">
             <p><?= Bitrix\Main\Localization\Loc::getMessage('DESCRIPTION'); ?></p>
         </div>

@@ -3,9 +3,9 @@
         <div class="feedback">
             <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/feedback-bg.jpg" alt="" class="feedback__img">
             <div class="feedback__content">
-                <h3 class="h3 feedback__title title">
+                <h2 class="h3 feedback__title title">
                     <?= Bitrix\Main\Localization\Loc::getMessage('FORM_TITLE'); ?>
-                </h3>
+                </h2>
                 <form id="blue-form" action="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/ajax/consult.php" class="feedback-form feedback-form_offset" method="post">
                     <?= bitrix_sessid_post(); ?>
                     <?php if (!empty($arParams['FIELDS'])): ?>
