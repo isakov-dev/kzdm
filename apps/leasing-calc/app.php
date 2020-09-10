@@ -2,7 +2,7 @@
 \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/nouislider.min.css');
 \Bitrix\Main\Page\Asset::getInstance()->addCss('/apps/leasing-calc/style.css');
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/nouislider.min.js');
-\Bitrix\Main\Page\Asset::getInstance()->addJs("https://cdn.jsdelivr.net/npm/vue/dist/vue.js");
+\Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue-nouislider.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs('/apps/leasing-calc/script.js');
 ?>
