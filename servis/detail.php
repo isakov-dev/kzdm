@@ -14,7 +14,7 @@
         "BROWSER_TITLE" => "-",
         "CACHE_GROUPS" => "Y",
         "CACHE_TIME" => "36000000",
-        "CACHE_TYPE" => "A",
+        "CACHE_TYPE" => "N",
         "CHECK_DATES" => "Y",
         "DETAIL_URL" => "",
         "DISPLAY_BOTTOM_PAGER" => "N",
