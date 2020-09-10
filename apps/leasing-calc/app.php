@@ -7,7 +7,7 @@
 \Bitrix\Main\Page\Asset::getInstance()->addJs('/apps/leasing-calc/script.js');
 ?>
 
-<h2>Предварительный расчет условий лизинга</h2>
+<h2 class="leasing-title">Предварительный расчет условий лизинга</h2>
 
 <div id="leasing-app">
     <div class="container">
@@ -105,7 +105,8 @@
                             платежа рассчитывается при формировании коммерческого
                             предложения менеджером.
                         </div>
-                        <a href="#" class="leasing-result__submit btn btn_box btn_orange">
+                        <a data-src="#leasing" href="javascript:;" v-on:click="submit()"
+                           class="leasing-result__submit btn btn_box btn_orange">
                             Оставить заявку
                         </a>
                     </div>

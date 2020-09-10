@@ -6,6 +6,7 @@
         </div>
         <div class="popup__contacts">
             <a href="tel:88003509580" class="phone phone_big popup__phone">8 800 350 95 80</a>
+            <?php/*
             <div class="soc popup__soc">
                 <a href="#" class="soc__ico soc__ico_fb">
                     <svg class="fb-ico iconed__ico">
@@ -23,6 +24,7 @@
                     </svg>
                 </a>
             </div>
+            */?>
         </div>
         <form id="leasing-form" action="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/ajax/leasing.php" class="form popup__form" method="post" enctype="application/x-www-form-urlencoded">
             <?= bitrix_sessid_post(); ?>

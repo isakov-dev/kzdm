@@ -42,7 +42,29 @@ $(document).ready(function () {
                 if (n1 > 1 && n1 < 5) return text_forms[1];
                 if (n1 == 1) return text_forms[0];
                 return text_forms[2];
-            }
+            },
+            submit() {
+                $.fancybox.open({
+                    src  : '#leasing',
+                    // type : 'popup',
+                    opts : {
+                        baseClass: "phone-popup",
+                        touch: false,
+                        animationEffect: false,
+                        beforeShow: function (instance, current) {
+                            $('.header').addClass('deep');
+                            //parent.jQuery.fancybox.getInstance().close();
+
+                        },
+                        beforeClose: function (instance, current) {
+                            $('.header').removeClass('deep');
+                            //parent.jQuery.fancybox.getInstance().close();
+
+                        }
+                    }
+                });
+
+            },
         },
         computed: {
             initialFee() {

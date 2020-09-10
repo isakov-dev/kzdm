@@ -51,6 +51,11 @@
     display: none;
 }
 
+.leasing-title {
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
 .range:not(:last-child) {
     margin-bottom: 30px;
 }

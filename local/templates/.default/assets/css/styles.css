@@ -701,7 +701,7 @@ p {
     background: #03162c;
 }
 
-.fancybox-content#callback {
+.fancybox-content#callback, .fancybox-content#leasing {
     z-index: 999999;
 }
 
@@ -12346,11 +12346,11 @@ html._history-open .mp-history__fixed-year {
     transition: all .4s ease;
 }
 
-.fancybox-slide--complete #callback {
+.fancybox-slide--complete #callback, .fancybox-slide--complete #leasing {
     transform: translateX(0);
 }
 
-#callback {
+#callback, #leasing {
     transition: all .3s ease 1s;
     transform: translateX(100%);
 }
@@ -13849,7 +13849,7 @@ textarea {
     justify-content: space-between;
 }
 
-#callback {
+#callback, #leasing {
     position: fixed;
     top: 0;
     right: 0;
@@ -16512,7 +16512,7 @@ textarea {
         margin-bottom: 1.6rem;
     }
 
-    #callback {
+    #callback, #leasing {
         width: 100%;
         padding-right: 1.6rem;
         padding-left: 1.6rem;
