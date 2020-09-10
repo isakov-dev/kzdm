@@ -3,6 +3,7 @@ $(document).ready(function () {
     let leasing = new Vue({
         el: '#leasing-app',
         data: {
+            rate: 0.1159,
             cost_config: {
                 step: 1,
                 connect: 'lower',
@@ -46,20 +47,15 @@ $(document).ready(function () {
             submit() {
                 $.fancybox.open({
                     src  : '#leasing',
-                    // type : 'popup',
                     opts : {
                         baseClass: "phone-popup",
                         touch: false,
                         animationEffect: false,
                         beforeShow: function (instance, current) {
                             $('.header').addClass('deep');
-                            //parent.jQuery.fancybox.getInstance().close();
-
                         },
                         beforeClose: function (instance, current) {
                             $('.header').removeClass('deep');
-                            //parent.jQuery.fancybox.getInstance().close();
-
                         }
                     }
                 });
@@ -67,14 +63,32 @@ $(document).ready(function () {
             },
         },
         computed: {
-            initialFee() {
+            advance: function() { //аванс
                 let initialFeePercent =  parseInt(this.percent_value[0]);
                 if (initialFeePercent !== 0) {
-                    return Math.ceil(parseFloat(this.cost_value[0]) / 100 * initialFeePercent);
+                    return Math.ceil(parseInt(this.cost_value[0]) / 100 * initialFeePercent);
                 } else {
                     return 0;
                 }
-            }
+            },
+            summary: function() { //сумма, которая берется в лизинг
+                return parseInt(this.cost_value[0]) - this.advance;
+            },
+            leasing: function() { //сумма договора лизинга
+                return parseInt(this.term_value[0]) * this.payment + this.advance;
+            },
+            payment: function() { //ежемесячный платеж
+                let a = this.rate / 12 *
+                    (this.summary * Math.pow(1 + this.rate / 12, parseInt(this.term_value[0])));
+                let b = Math.pow(1 + this.rate / 12, parseInt(this.term_value[0])) - 1;
+                return a / b;
+            },
+            VAT: function() {
+                return this.leasing / 120 * 20;
+            },
+            tax_profit: function() {
+                return (this.leasing - this.VAT) * 0.2;
+            },
         },
     });
 

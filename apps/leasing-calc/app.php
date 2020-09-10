@@ -36,7 +36,7 @@
                         </div>
                         <div class="range__value">
                             <span class="range__rub">{{ formatPrice(percent_value[0]) }}% /</span>
-                            {{ formatPrice(initialFee) }}&nbsp;<span class="range__rub">₽</span>
+                            {{ formatPrice(advance) }}&nbsp;<span class="range__rub">₽</span>
                         </div>
                     </div>
                     <v-nus :config="percent_config" :value="percent_value" @update="percent_value = $event"
@@ -77,10 +77,10 @@
                     </div>
                     <div class="leasing-result__line leasing-result__line_small-margin">
                         <div class="leasing-result__monthly-desc">
-                            Сумма договора лизинга:
+                            Ежемесячный платеж от:
                         </div>
                         <div class="leasing-result__monthly-sum">
-                            596 196&nbsp;₽
+                            {{ formatPrice(payment) }}&nbsp;₽
                         </div>
                     </div>
                     <div class="leasing-result__line">
@@ -88,7 +88,7 @@
                             Сумма договора лизинга:
                         </div>
                         <div class="leasing-result__contract-sum">
-                            596 196&nbsp;₽
+                            {{ formatPrice(leasing) }}&nbsp;₽
                         </div>
                     </div>
                     <div class="leasing-result__line">
@@ -96,7 +96,7 @@
                             Суммарная выгода до:
                         </div>
                         <div class="leasing-result__profit-sum">
-                            596 196&nbsp;₽
+                            {{ formatPrice(tax_profit) }}&nbsp;₽
                         </div>
                     </div>
                     <div class="leasing-result__submit-line">
