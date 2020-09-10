@@ -10,12 +10,69 @@
 <h2>Предварительный расчет условий лизинга</h2>
 
 <div id="leasing-app">
-    <v-nus :config="cost_config" :value="cost_value" @update="cost_value = $event" ></v-nus>
-    <p style="margin-top:2rem">{{ cost_value }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col col--md-6">
+                <div class="range">
+                    <div class="range__info">
+                        <div class="range__title">
+                            Стоимость техники
+                        </div>
+                        <div class="range__value">
+                            {{ formatPrice(cost_value[0]) }}&nbsp;<span class="range__rub">₽</span>
+                        </div>
+                    </div>
+                    <v-nus :config="cost_config" :value="cost_value" @update="cost_value = $event"
+                           class="range__input"></v-nus>
+                    <div class="range__boundaries">
+                        <span>{{ formatPrice(cost_config.range['min']) }}&nbsp;₽</span>
+                        <span>{{ formatPrice(cost_config.range['max']) }}&nbsp;₽</span>
+                    </div>
+                </div>
+                <div class="range">
+                    <div class="range__info">
+                        <div class="range__title">
+                            Первоначальный взнос
+                        </div>
+                        <div class="range__value">
+                            <span class="range__rub">{{ formatPrice(percent_value[0]) }}% /</span>
+                            {{ formatPrice(initialFee) }}&nbsp;<span class="range__rub">₽</span>
+                        </div>
+                    </div>
+                    <v-nus :config="percent_config" :value="percent_value" @update="percent_value = $event"
+                           class="range__input"></v-nus>
+                    <div class="range__boundaries">
+                        <span>{{ formatPrice(percent_config.range['min']) }}&nbsp;%</span>
+                        <span>{{ formatPrice(percent_config.range['max']) }}&nbsp;%</span>
+                    </div>
+                </div>
+                <div class="range">
+                    <div class="range__info">
+                        <div class="range__title">
+                            Срок
+                        </div>
+                        <div class="range__value">
+                            {{ formatPrice(term_value[0]) }}&nbsp;
+                            {{ declOfNum(Number(term_value[0]), ['месяц', 'месяца', 'месяцев']) }}
+                        </div>
+                    </div>
+                    <v-nus :config="term_config" :value="term_value" @update="term_value = $event"
+                           class="range__input"></v-nus>
+                    <div class="range__boundaries">
+                        <span>
+                            {{ formatPrice(term_config.range['min']) }}&nbsp;
+                            {{ declOfNum(Number(term_config.range['min']), ['месяц', 'месяца', 'месяцев']) }}
+                        </span>
+                        <span>
+                            {{ formatPrice(term_config.range['max']) }}&nbsp;
+                            {{ declOfNum(Number(term_config.range['max']), ['месяц', 'месяца', 'месяцев']) }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col--md-6">
 
-    <v-nus :config="percent_config" :value="percent_value" @update="percent_value = $event" ></v-nus>
-    <p style="margin-top:2rem">{{ percent_value }}</p>
-
-    <v-nus :config="term_config" :value="term_value" @update="term_value = $event" ></v-nus>
-    <p style="margin-top:2rem">{{ term_value }}</p>
+            </div>
+        </div>
+    </div>
 </div>
