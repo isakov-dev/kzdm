@@ -99,3 +99,91 @@
     opacity: 0.8;
     font-weight: 300;
 }
+
+.leasing-result {
+    background: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px 40px;
+}
+
+.leasing-result__title {
+    font-weight: 600 !important;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(63, 68, 73, .2);
+    margin-bottom: 20px;
+}
+
+.leasing-result__line {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leasing-result__line_small-margin {
+    margin-bottom: 20px;
+}
+
+.leasing-result__monthly-desc {
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 23px;
+    color: #3F4449;
+    opacity: 0.8;
+}
+
+.leasing-result__monthly-sum {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 41px;
+    color: #3F4449;
+}
+
+.leasing-result__contract-desc {
+    font-size: 18px;
+    line-height: 23px;
+    color: #3F4449;
+    opacity: 0.56;
+}
+
+.leasing-result__contract-sum {
+    font-weight: 450;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: right;
+    color: #3F4449;
+    opacity: 0.7;
+}
+
+.leasing-result__profit-desc {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: #0F3599;
+    opacity: 0.8;
+}
+
+.leasing-result__profit-sum {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 41px;
+    color: #0F3599;
+}
+
+.leasing-result__submit-line {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.leasing-result__policy {
+    font-size: 12px;
+    line-height: 15px;
+    color: #3F4449;
+    opacity: 0.6;
+    margin-right: 20px;
+}
+
+.leasing-result__submit {
+    flex-shrink: 0;
+}

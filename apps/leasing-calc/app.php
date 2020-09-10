@@ -71,7 +71,45 @@
                 </div>
             </div>
             <div class="col col--md-6">
-
+                <div class="leasing-result">
+                    <div class="leasing-result__title h3">
+                        Результаты расчета:
+                    </div>
+                    <div class="leasing-result__line leasing-result__line_small-margin">
+                        <div class="leasing-result__monthly-desc">
+                            Сумма договора лизинга:
+                        </div>
+                        <div class="leasing-result__monthly-sum">
+                            596 196&nbsp;₽
+                        </div>
+                    </div>
+                    <div class="leasing-result__line">
+                        <div class="leasing-result__contract-desc">
+                            Сумма договора лизинга:
+                        </div>
+                        <div class="leasing-result__contract-sum">
+                            596 196&nbsp;₽
+                        </div>
+                    </div>
+                    <div class="leasing-result__line">
+                        <div class="leasing-result__profit-desc">
+                            Суммарная выгода до:
+                        </div>
+                        <div class="leasing-result__profit-sum">
+                            596 196&nbsp;₽
+                        </div>
+                    </div>
+                    <div class="leasing-result__submit-line">
+                        <div class="leasing-result__policy">
+                            Расчет является примерным, точная сумма ежемесячного
+                            платежа рассчитывается при формировании коммерческого
+                            предложения менеджером.
+                        </div>
+                        <a href="#" class="leasing-result__submit btn btn_box btn_orange">
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
