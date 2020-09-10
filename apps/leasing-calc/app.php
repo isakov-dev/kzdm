@@ -9,10 +9,10 @@
 
 <h2 class="leasing-title">Предварительный расчет условий лизинга</h2>
 
-<div id="leasing-app">
+<div id="leasing-app" v-cloak>
     <div class="container">
         <div class="row">
-            <div class="col col--md-6">
+            <div class="col col--lg-6 col--md-5">
                 <div class="range">
                     <div class="range__info">
                         <div class="range__title">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col col--md-6">
+            <div class="col col--lg-6 col--md-7">
                 <div class="leasing-result">
                     <div class="leasing-result__title h3">
                         Результаты расчета:
