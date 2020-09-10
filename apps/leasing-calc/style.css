@@ -173,8 +173,46 @@
     font-weight: 600;
     font-size: 22px;
     line-height: 28px;
-    color: #0F3599;
-    opacity: 0.8;
+    color: rgba(15, 53, 153, .8);
+    display: flex;
+    align-items: center;
+}
+
+.leasing-result__profit {
+    margin-left: 10px;
+    position: relative;
+    display: flex;
+}
+
+.leasing-result__profit-icon {
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.leasing-result__profit-popup {
+    display: none;
+    position: absolute;
+    background: #0F3599;
+    top: -5px;
+    left: 30px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    padding: 8px 10px 10px;
+    width: 192px;
+    font-weight: normal;
+    transform: translate(-100%, -100%);
+}
+
+.leasing-result__profit-popup::before {
+    content: url("/local/templates/.default/assets/images/popup-bottom-arrow.svg");
+    position: absolute;
+    right: 14px;
+    bottom: -11px;
+}
+
+.leasing-result__profit:hover .leasing-result__profit-popup {
+    display: flex;
 }
 
 .leasing-result__profit-sum {
@@ -230,6 +268,24 @@
     .leasing-result__profit-desc {
         font-size: 13px;
         line-height: 17px;
+    }
+
+    .leasing-result__profit {
+        margin-left: 5px;
+    }
+
+    .leasing-result__profit-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .leasing-result__profit-popup {
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+
+    .leasing-result__profit-popup::before {
+        right: calc(50% - 7px);
     }
 
     .leasing-result__line {

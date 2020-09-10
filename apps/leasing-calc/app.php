@@ -94,6 +94,16 @@
                     <div class="leasing-result__line">
                         <div class="leasing-result__profit-desc">
                             Суммарная выгода до:
+                            <div class="leasing-result__profit">
+                                <img src="<?=SITE_DEFAULT_TEMPLATE_PATH . '/assets/images/info-icon.svg'?>"
+                                     alt="" class="leasing-result__profit-icon">
+                                <span class="leasing-result__profit-popup">
+                                    {{ formatPrice(VAT) }} - зачет 20% НДС для компаний на основной
+                                    системе налогообложения.
+                                    {{ formatPrice(tax_profit) }} - Экономия по налогу на прибыль для компаний
+                                    на основной системе налогообложения
+                                </span>
+                            </div>
                         </div>
                         <div class="leasing-result__profit-sum">
                             {{ formatPrice(tax_profit + VAT) }}&nbsp;₽

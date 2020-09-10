@@ -21,7 +21,7 @@ $(document).ready(function () {
                     'max': 49
                 }
             },
-            percent_value: [19],
+            percent_value: [10],
             term_config: {
                 step: 1,
                 connect: 'lower',
@@ -30,7 +30,7 @@ $(document).ready(function () {
                     'max': 60
                 }
             },
-            term_value: [22]
+            term_value: [12]
         },
         methods: {
             formatPrice(price) {
