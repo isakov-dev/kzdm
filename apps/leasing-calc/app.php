@@ -96,7 +96,7 @@
                             Суммарная выгода до:
                         </div>
                         <div class="leasing-result__profit-sum">
-                            {{ formatPrice(tax_profit) }}&nbsp;₽
+                            {{ formatPrice(tax_profit + VAT) }}&nbsp;₽
                         </div>
                     </div>
                     <div class="leasing-result__submit-line">

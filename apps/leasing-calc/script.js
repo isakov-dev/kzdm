@@ -75,19 +75,19 @@ $(document).ready(function () {
                 return parseInt(this.cost_value[0]) - this.advance;
             },
             leasing: function() { //сумма договора лизинга
-                return parseInt(this.term_value[0]) * this.payment + this.advance;
+                return Math.ceil(parseInt(this.term_value[0]) * this.payment + this.advance);
             },
             payment: function() { //ежемесячный платеж
                 let a = this.rate / 12 *
                     (this.summary * Math.pow(1 + this.rate / 12, parseInt(this.term_value[0])));
                 let b = Math.pow(1 + this.rate / 12, parseInt(this.term_value[0])) - 1;
-                return a / b;
+                return Math.ceil(a / b);
             },
-            VAT: function() {
-                return this.leasing / 120 * 20;
+            VAT: function() { //сумма НДС
+                return Math.ceil(this.leasing / 120 * 20);
             },
-            tax_profit: function() {
-                return (this.leasing - this.VAT) * 0.2;
+            tax_profit: function() { //суммарная выгода
+                return Math.ceil((this.leasing - this.VAT) * 0.2);
             },
         },
     });
