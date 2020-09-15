@@ -15,6 +15,16 @@
 $this->setFrameMode(true);
 ?>
 
+<div class="wrapper wrapper_default">
+    <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "chain", array(
+        "START_FROM" => "0",
+        "PATH" => "",
+        "SITE_ID" => SITE_ID
+    ),
+        false
+    );?>
+</div>
+
 <div class="single single_offset">
     <div class="card">
         <?php
@@ -267,7 +277,7 @@ $this->setFrameMode(true);
                 "HIDE_LINK_WHEN_NO_DETAIL" => "N",
                 'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
                 'IBLOCK_ID' => $arParams['IBLOCK_ID'],
-                "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                 "INCLUDE_SUBSECTIONS" => "Y",
                 "MESSAGE_404" => "",
                 "NEWS_COUNT" => "2",

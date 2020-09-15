@@ -72,7 +72,7 @@ $APPLICATION->SetPageProperty('description', 'Производство и про
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_TITLE" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
-		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_ELEMENT_CHAIN" => "Y",
 		"USE_FILTER" => "N",
 		"FILTER_VIEW_MODE" => "VERTICAL",
 		"FILTER_HIDE_ON_MOBILE" => "N",
