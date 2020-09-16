@@ -14,6 +14,10 @@ $(document).ready(function () {
 
                     ym(45274878,'reachGoal','lizing');
 
+                    $.fancybox.close({
+                        src: '#leasing',
+                    });
+
                     Swal.fire({
                         title: lang === 'ru' ? 'Ваша заявка принята' : 'Your application is accepted',
                         text: lang === 'ru' ? 'Спасибо за обращение. Наши специалисты свяжутся с вами в ближайшее время' : 'Thank you for contacting. Our experts will contact you shortly',

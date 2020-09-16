@@ -12,10 +12,6 @@ $APPLICATION->IncludeComponent('sunmedia:forms', 'leasing', [
             'TYPE' => 'TEL',
             'REQUIRED' => false,
         ],
-        'ITEM' => [
-            'TYPE' => 'HIDDEN',
-            'REQUIRED' => false,
-        ],
         'MESSAGE' => [
             'TYPE' => 'TEXTAREA',
             'REQUIRED' => false,
