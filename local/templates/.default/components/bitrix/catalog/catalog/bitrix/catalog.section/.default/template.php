@@ -1,10 +1,17 @@
 <?php
 $this->setFrameMode(true);
+
+$rsExtProps = CIBlockSection::GetList(array("SORT"=>"ASC"), array("IBLOCK_ID" =>
+    $arResult['ORIGINAL_PARAMETERS']['IBLOCK_ID'], "ID" => $arResult['ORIGINAL_PARAMETERS']['SECTION_ID']),
+    false, array("UF_SUBTITLE"));
+while ($arExtProps = $rsExtProps->GetNext()) {
+      $arResult["UF_SUBTITLE"] = $arExtProps["UF_SUBTITLE"];
+}
 ?>
-<?php if (!empty($arResult['DESCRIPTION'])): ?>
+<?php if (!empty($arResult["UF_SUBTITLE"])): ?>
     <?php $this->SetViewTarget('page_description'); ?>
     <div class="single__desc">
-        <p><?= $arResult['DESCRIPTION']; ?></p>
+        <p><?= $arResult["UF_SUBTITLE"]; ?></p>
     </div>
     <?php $this->EndViewTarget(); ?>
 <?php endif; ?>
@@ -51,6 +58,11 @@ $this->setFrameMode(true);
                     </div>
                     <?= $arResult['NAV_STRING']; ?>
                 </div>
+                <?if ($arResult['DESCRIPTION']) {?>
+                    <div class="section__description">
+                        <?=$arResult['DESCRIPTION']?>
+                    </div>
+                <?}?>
             </div>
         </div>
     </div>

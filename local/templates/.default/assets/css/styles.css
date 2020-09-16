@@ -8533,6 +8533,34 @@ img.mfp-img {
     margin-bottom: 2.2rem;
 }
 
+.section__description {
+    position: relative;
+    padding-top: 20px;
+    border-top: 1px solid #d3dbe2;
+    font-size: 1.6rem;
+}
+
+.section__description::before {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 9.6rem;
+    height: 2px;
+    margin: auto;
+    content: '';
+    background: #0f3599;
+}
+
+.section__description h2 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .play-circle_r-offset {
     margin-right: 2.4rem;
 }
@@ -14615,8 +14643,7 @@ textarea {
         font-size: 1.6rem;
     }
 
-    h3,
-    .h3 {
+    h3, .h3, .section__description h2 {
         font-size: 2.4rem;
     }
 
@@ -16166,8 +16193,7 @@ textarea {
         flex-wrap: wrap;
     }
 
-    h3,
-    .h3 {
+    h3, .h3, .section__description h2 {
         font-size: 2.2rem;
         font-weight: 600;
     }
