@@ -3,6 +3,14 @@ $(document).ready(function () {
     let leasing = new Vue({
         el: '#leasing-app',
         data: {
+            money_format: {
+                decimal: ',',
+                thousands: ' ',
+                prefix: '',
+                suffix: '',
+                precision: 0,
+                masked: false
+            },
             rate: 0.1159,
             cost_config: {
                 step: 1,
@@ -13,6 +21,7 @@ $(document).ready(function () {
                 }
             },
             cost_value: [270000],
+            cost_manual_value: 270000,
             percent_config: {
                 step: 1,
                 connect: 'lower',
@@ -23,14 +32,14 @@ $(document).ready(function () {
             },
             percent_value: [10],
             term_config: {
-                step: 1,
+                step: 6,
                 connect: 'lower',
                 range: {
-                    'min': 12,
+                    'min': 6,
                     'max': 60
                 }
             },
-            term_value: [12]
+            term_value: [6]
         },
         methods: {
             formatPrice(price) {
@@ -89,6 +98,11 @@ $(document).ready(function () {
             tax_profit: function() { //суммарная выгода
                 return Math.ceil((this.leasing - this.VAT) * 0.2);
             },
+        },
+        watch: {
+            'cost_value': function(val) {
+                this.cost_manual_value = parseInt(val[0]);
+            }
         },
     });
 

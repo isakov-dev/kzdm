@@ -4,8 +4,11 @@
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/nouislider.min.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue-nouislider.js');
+//\Bitrix\Main\Page\Asset::getInstance()->addJs('https://cdnjs.cloudflare.com/ajax/libs/vue-the-mask/0.11.1/vue-the-mask.min.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs('/apps/leasing-calc/script.js');
 ?>
+
+<script src="https://rawgit.com/vuejs-tips/v-money/master/dist/v-money.js"></script>
 
 <h2 class="leasing-title">Предварительный расчет условий лизинга</h2>
 
@@ -19,6 +22,9 @@
                             Стоимость техники
                         </div>
                         <div class="range__value">
+                            <span>
+                                <money v-model.lazy="cost_manual_value" v-bind="money_format"></money>
+                            </span>
                             {{ formatPrice(cost_value[0]) }}&nbsp;<span class="range__rub">₽</span>
                         </div>
                     </div>
