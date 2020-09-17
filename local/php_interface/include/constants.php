@@ -2,7 +2,17 @@
 
 define('ENV', 'prod');
 define('SITE_DEFAULT_TEMPLATE_PATH', getLocalPath('templates/.default', BX_PERSONAL_ROOT));
-define('DOMAIN', (ENV === 'prod') ? 'kzdm.ru' : 'new.kzdm.ru');
+define('DOMAIN', 'kzdm.ru');
 
 $explodedDomain = explode('.', $_SERVER['SERVER_NAME']);
-define('YANDEX_METRIKA_ID', (end($explodedDomain) == 'kz' ? '47759659' : '45274878'));
+switch (end($explodedDomain)) {
+    case 'kz':
+        define('YANDEX_METRIKA_ID', '47759659');
+        break;
+    case 'ru':
+        define('YANDEX_METRIKA_ID', '45274878');
+        break;
+    case 'net':
+        define('YANDEX_METRIKA_ID', false);
+        break;
+}
