@@ -5,7 +5,7 @@ $(document).ready(function () {
         data: {
             rate: 0.1159,
             cost_config: {
-                step: 1,
+                step: 10000,
                 connect: 'lower',
                 range: {
                     'min': 270000,
@@ -23,14 +23,14 @@ $(document).ready(function () {
             },
             percent_value: [10],
             term_config: {
-                step: 1,
+                step: 6,
                 connect: 'lower',
                 range: {
-                    'min': 12,
+                    'min': 6,
                     'max': 60
                 }
             },
-            term_value: [12]
+            term_value: [6]
         },
         methods: {
             formatPrice(price) {
