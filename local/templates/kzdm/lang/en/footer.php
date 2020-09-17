@@ -1,6 +1,7 @@
 <?php
 $MESS['COPYRIGHT'] = 'JSC "Kurgandormash"';
 $MESS['POWERED'] = 'Powered by';
+$MESS["WEBSITE_PROMOTION"] = "Promotion by";
 $MESS["SITE_SEARCH"] = "Search";
 $MESS["CALLBACK_M"] = "Callback";
 $MESS["SEARCH_PLACEHOLDER"] = "You may be looking for";
