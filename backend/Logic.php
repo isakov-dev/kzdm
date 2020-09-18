@@ -31,29 +31,15 @@ class Logic {
             $arFields = $ob->GetFields();
 
             $feedLine = array(
-                "ID" => $arFields['ID'],
-                "ID2" => "",
-                "Item title" => $arFields['NAME'],
-                "Final URL" => self::PROTOCOL . self::DOMAIN . $arFields['DETAIL_PAGE_URL'],
-                "Image URL" => ($arFields['DETAIL_PICTURE'] ?
+                "id" => $arFields['ID'],
+                "title" => $arFields['NAME'],
+                "link" => self::PROTOCOL . self::DOMAIN . $arFields['DETAIL_PAGE_URL'],
+                "image_link" => ($arFields['DETAIL_PICTURE'] ?
                     self::PROTOCOL . self::DOMAIN . CFile::GetPath($arFields['DETAIL_PICTURE']) : ""),
-                "Item subtitle" => "",
-                "Item description" => "",
-                "Item Category" => ($sections[$arFields['IBLOCK_SECTION_ID']] ?
+                "product_type" => ($sections[$arFields['IBLOCK_SECTION_ID']] ?
                     $sections[$arFields['IBLOCK_SECTION_ID']] : ""),
-                "Price" => "",
-                "Sale Price" => "",
-                "Formatted price" => "",
-                "Contextual keywords" => "",
-                "Item address" => "",
-                "Tracking template" => "",
-                "Custom parameter" => "",
-                "Destination URL" => "",
-                "Final mobile URL" => "",
-                "Similar IDs" => "",
-                "Android app link" => "",
-                "iOS app link" => "",
-                "iOS app store ID" => "",
+                "availability" => "preorder",
+                "price" => "1 RUB",
             );
 
             if (!$fieldsLine) {
