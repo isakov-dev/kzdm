@@ -26,7 +26,23 @@ $this->setFrameMode(true);
                                 <p><?= $value['PREVIEW_TEXT']; ?></p>
                             </div>
                         <?php endif; ?>
-                        <a href="<?= SITE_DIR; ?>catalog/" class="btn btn_box btn_orange"><?= Bitrix\Main\Localization\Loc::getMessage('CATALOG_BUTTON'); ?></a>
+                        <div class="index-video__buttons">
+                            <div class="index-video__buttons-line">
+                                <a href="<?= SITE_DIR; ?>catalog/" class="btn btn_box btn_orange index-video__button">
+                                    <?= Bitrix\Main\Localization\Loc::getMessage('CATALOG_BUTTON'); ?>
+                                </a>
+                                <a href="/catalog/gotovaya-produktsiya/" class="btn btn_box btn_blue index-video__button">
+                                    <?= Bitrix\Main\Localization\Loc::getMessage('TECHNICS_IN_STOCK'); ?>
+                                </a>
+                            </div>
+                            <?if (SITE_ID != 'en') {?>
+                                <div class="index-video__buttons-line">
+                                    <a href="/servis/lizing/" class="btn btn_wide btn_box btn_bordered index-video__button">
+                                        <?= Bitrix\Main\Localization\Loc::getMessage('LEASING_CALC'); ?>
+                                    </a>
+                                </div>
+                            <?}?>
+                        </div>
                     </div>
                     <div class="col col--lg-4 col--lg-offset-1">
                         <? $APPLICATION->IncludeComponent(
@@ -87,12 +103,6 @@ $this->setFrameMode(true);
                             ),
                             $this->getComponent()
                         ); ?>
-
-                        <a href="/catalog/gotovaya-produktsiya/"
-                           class="btn btn_box btn_blue index-video__in-stock">
-                            Техника в наличии
-                        </a>
-
                     </div>
                 </div>
             </div>

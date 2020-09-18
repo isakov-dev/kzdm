@@ -10,3 +10,4 @@ $MESS["COMPARISON"] = "Technology Comparison";
 $MESS["CONSULT_REQUEST_SUB"] = "Send a request for consultation";
 $MESS["CONFIGURATOR"] = "Configurator";
 $MESS["CONFIGURATOR_SUB"] = "Assemble an individual<br> combination machine";
+$MESS["LEASING_CALC"] = "Leasing calculator";

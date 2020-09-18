@@ -3,6 +3,7 @@
 define('ENV', 'prod');
 define('SITE_DEFAULT_TEMPLATE_PATH', getLocalPath('templates/.default', BX_PERSONAL_ROOT));
 define('DOMAIN', 'kzdm.ru');
+define('EN_DOMAIN', 'kzdm.net');
 
 $explodedDomain = explode('.', $_SERVER['SERVER_NAME']);
 switch (end($explodedDomain)) {
