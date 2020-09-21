@@ -2,44 +2,38 @@ $(document).ready(function () {
 
     let leasing = new Vue({
         el: '#leasing-app',
+        components: {
+            VueSlider: window['vue-slider-component']
+        },
         data: {
-            money_format: {
+            rate: 0.1159,
+            cost_format: {
                 decimal: ',',
                 thousands: ' ',
                 prefix: '',
                 suffix: '',
                 precision: 0,
+                max: 50000000,
+                min: 270000,
                 masked: false
             },
-            rate: 0.1159,
-            cost_config: {
-                step: 10000,
-                connect: 'lower',
-                range: {
-                    'min': 270000,
-                    'max': 50000000
-                }
+            cost_value: 270000,
+            percent_format: {
+                decimal: ',',
+                thousands: ' ',
+                prefix: '',
+                suffix: '',
+                precision: 0,
+                max: 49,
+                min: 10,
+                masked: false
             },
-            cost_value: [270000],
-            cost_manual_value: 270000,
-            percent_config: {
-                step: 1,
-                connect: 'lower',
-                range: {
-                    'min': 10,
-                    'max': 49
-                }
+            percent_value: 10,
+            term_format: {
+                max: 60,
+                min: 6,
             },
-            percent_value: [10],
-            term_config: {
-                step: 6,
-                connect: 'lower',
-                range: {
-                    'min': 6,
-                    'max': 60
-                }
-            },
-            term_value: [6]
+            term_value: 6,
         },
         methods: {
             formatPrice(price) {
@@ -73,23 +67,23 @@ $(document).ready(function () {
         },
         computed: {
             advance: function() { //аванс
-                let initialFeePercent =  parseInt(this.percent_value[0]);
+                let initialFeePercent =  parseInt(this.percent_value);
                 if (initialFeePercent !== 0) {
-                    return Math.ceil(parseInt(this.cost_value[0]) / 100 * initialFeePercent);
+                    return Math.ceil(parseInt(this.cost_value) / 100 * initialFeePercent);
                 } else {
                     return 0;
                 }
             },
             summary: function() { //сумма, которая берется в лизинг
-                return parseInt(this.cost_value[0]) - this.advance;
+                return parseInt(this.cost_value) - this.advance;
             },
             leasing: function() { //сумма договора лизинга
-                return Math.ceil(parseInt(this.term_value[0]) * this.payment + this.advance);
+                return Math.ceil(parseInt(this.term_value) * this.payment + this.advance);
             },
             payment: function() { //ежемесячный платеж
                 let a = this.rate / 12 *
-                    (this.summary * Math.pow(1 + this.rate / 12, parseInt(this.term_value[0])));
-                let b = Math.pow(1 + this.rate / 12, parseInt(this.term_value[0])) - 1;
+                    (this.summary * Math.pow(1 + this.rate / 12, parseInt(this.term_value)));
+                let b = Math.pow(1 + this.rate / 12, parseInt(this.term_value)) - 1;
                 return Math.ceil(a / b);
             },
             VAT: function() { //сумма НДС
@@ -100,8 +94,17 @@ $(document).ready(function () {
             },
         },
         watch: {
-            'cost_value': function(val) {
-                this.cost_manual_value = parseInt(val[0]);
+            cost_value: function(val) {
+                if (val > this.cost_format.max)
+                    this.cost_value = this.cost_format.max;
+                else if (val < this.cost_format.min)
+                    this.cost_value = this.cost_format.min;
+            },
+            percent_value: function(val) {
+                if (val > this.percent_format.max)
+                    this.percent_value = this.percent_format.max;
+                else if (val < this.percent_format.min)
+                    this.percent_value = this.percent_format.min;
             }
         },
     });
