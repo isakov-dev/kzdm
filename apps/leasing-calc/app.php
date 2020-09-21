@@ -1,9 +1,10 @@
 <?php
-\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/nouislider.min.css');
+\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/vue-slider-component.css');
 \Bitrix\Main\Page\Asset::getInstance()->addCss('/apps/leasing-calc/style.css');
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/nouislider.min.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue.js');
-\Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue-nouislider.js');
+\Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/vue-slider-component.umd.min.js');
+\Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/v-money.min.js');
 \Bitrix\Main\Page\Asset::getInstance()->addJs('/apps/leasing-calc/script.js');
 ?>
 
@@ -19,14 +20,15 @@
                             Стоимость техники
                         </div>
                         <div class="range__value">
-                            {{ formatPrice(cost_value[0]) }}&nbsp;<span class="range__rub">₽</span>
+                            <money v-model="cost_value" v-bind="cost_format" class="range__cost-input"></money>
+                            &nbsp;<span class="range__rub">₽</span>
                         </div>
                     </div>
-                    <v-nus :config="cost_config" :value="cost_value" @update="cost_value = $event"
-                           class="range__input"></v-nus>
+                    <vue-slider v-model="cost_value" :min="cost_format.min" :max="cost_format.max"
+                                tooltip="none" height="2px"></vue-slider>
                     <div class="range__boundaries">
-                        <span>{{ formatPrice(cost_config.range['min']) }}&nbsp;₽</span>
-                        <span>{{ formatPrice(cost_config.range['max']) }}&nbsp;₽</span>
+                        <span>{{ formatPrice(cost_format.min) }}&nbsp;₽</span>
+                        <span>{{ formatPrice(cost_format.max) }}&nbsp;₽</span>
                     </div>
                 </div>
                 <div class="range">
@@ -35,15 +37,17 @@
                             Первоначальный взнос
                         </div>
                         <div class="range__value">
-                            <span class="range__rub">{{ formatPrice(percent_value[0]) }}% /</span>
+                            <span class="range__rub">
+                                <money v-model="percent_value" v-bind="percent_format" class="range__percent-input"></money>% /
+                            </span>
                             {{ formatPrice(advance) }}&nbsp;<span class="range__rub">₽</span>
                         </div>
                     </div>
-                    <v-nus :config="percent_config" :value="percent_value" @update="percent_value = $event"
-                           class="range__input"></v-nus>
+                    <vue-slider v-model="percent_value" :min="percent_format.min" :max="percent_format.max"
+                                tooltip="none" height="2px"></vue-slider>
                     <div class="range__boundaries">
-                        <span>{{ formatPrice(percent_config.range['min']) }}&nbsp;%</span>
-                        <span>{{ formatPrice(percent_config.range['max']) }}&nbsp;%</span>
+                        <span>{{ formatPrice(percent_format.min) }}&nbsp;%</span>
+                        <span>{{ formatPrice(percent_format.max) }}&nbsp;%</span>
                     </div>
                 </div>
                 <div class="range">
@@ -52,20 +56,20 @@
                             Срок
                         </div>
                         <div class="range__value">
-                            {{ formatPrice(term_value[0]) }}&nbsp;
-                            {{ declOfNum(Number(term_value[0]), ['месяц', 'месяца', 'месяцев']) }}
+                            {{ formatPrice(term_value) }}&nbsp;
+                            {{ declOfNum(Number(term_value), ['месяц', 'месяца', 'месяцев']) }}
                         </div>
                     </div>
-                    <v-nus :config="term_config" :value="term_value" @update="term_value = $event"
-                           class="range__input"></v-nus>
+                    <vue-slider v-model="term_value" :min="term_format.min" :max="term_format.max"
+                                tooltip="none" height="2px"></vue-slider>
                     <div class="range__boundaries">
                         <span>
-                            {{ formatPrice(term_config.range['min']) }}&nbsp;
-                            {{ declOfNum(Number(term_config.range['min']), ['месяц', 'месяца', 'месяцев']) }}
+                            {{ formatPrice(term_format.min) }}&nbsp;
+                            {{ declOfNum(Number(term_format.min), ['месяц', 'месяца', 'месяцев']) }}
                         </span>
                         <span>
-                            {{ formatPrice(term_config.range['max']) }}&nbsp;
-                            {{ declOfNum(Number(term_config.range['max']), ['месяц', 'месяца', 'месяцев']) }}
+                            {{ formatPrice(term_format.max) }}&nbsp;
+                            {{ declOfNum(Number(term_format.max), ['месяц', 'месяца', 'месяцев']) }}
                         </span>
                     </div>
                 </div>
