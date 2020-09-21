@@ -637,7 +637,7 @@ p {
 
 .window-mail {
     position: relative;
-    top: -5px;
+    /*top: -5px;*/
 }
 
 .window-control {
@@ -719,6 +719,7 @@ p {
 
 .window-bottom__item {
     margin-right: 3.2rem;
+    display: flex;
 }
 
 .window-bottom {
@@ -14452,7 +14453,7 @@ textarea {
     .window-bottom__left {
         width: 100%;
         margin-bottom: .8rem;
-        justify-content: space-between;
+        /*justify-content: space-between;*/
     }
 
     .window__soc .soc__ico {

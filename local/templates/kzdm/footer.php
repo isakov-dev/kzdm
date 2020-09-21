@@ -310,9 +310,11 @@
                             <div class="window-bottom__item">
                                 <a href="mailto:omis@kzdm.ru" class="h4 title title_blue title_medium window-mail">omis@kzdm.ru</a>
                             </div>
-                            <?php $APPLICATION->IncludeComponent('sunmedia:active.city', '', [
-                                'IBLOCK_ID' => 16
-                            ]); ?>
+                            <?if (SITE_ID != 'en') {?>
+                                <?php $APPLICATION->IncludeComponent('sunmedia:active.city', '', [
+                                    'IBLOCK_ID' => 16
+                                ]); ?>
+                            <?}?>
                             <div class="window-bottom__item">
                                 <a href="<?= SITE_ID == 'en' ? '//'.DOMAIN : '//'.EN_DOMAIN; ?>" class="language iconed iconed_center">
                                     <?php if (SITE_ID != 'en'): ?>

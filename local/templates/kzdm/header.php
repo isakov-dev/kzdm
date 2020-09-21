@@ -223,11 +223,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="mobile-contacts__item">
                         <a href="mailto:omis@kzdm.ru" class="mobile__mail">omis@kzdm.ru</a>
                     </div>
-                    <div class="mobile-contacts__item">
-                        <?php $APPLICATION->IncludeComponent('sunmedia:active.city', 'mobile', [
-                            'IBLOCK_ID' => 16
-                        ]); ?>
-                    </div>
+                    <?if (SITE_ID != 'en') {?>
+                        <div class="mobile-contacts__item">
+                            <?php $APPLICATION->IncludeComponent('sunmedia:active.city', 'mobile', [
+                                'IBLOCK_ID' => 16
+                            ]); ?>
+                        </div>
+                    <?}?>
                 </div>
                 <div class="mobile-contacts mobile-contacts_b-offset">
                     <?php/*
