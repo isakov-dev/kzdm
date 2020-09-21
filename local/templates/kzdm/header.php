@@ -106,6 +106,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         );?>
                     </div>
                     <div class="header__right">
+                        <div class="header__region">
+                            <a class="header__region-link" href="<?= SITE_ID == 'en' ? '//'.DOMAIN : '//'.EN_DOMAIN; ?>">
+                                <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/region-icon.svg" alt="">
+                            </a>
+                        </div>
                         <?php $APPLICATION->IncludeComponent('sunmedia:geolocation.city', '', [
                             'IBLOCK_ID' => 16
                         ]); ?>
@@ -218,11 +223,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="mobile-contacts__item">
                         <a href="mailto:omis@kzdm.ru" class="mobile__mail">omis@kzdm.ru</a>
                     </div>
-                    <div class="mobile-contacts__item">
-                        <?php $APPLICATION->IncludeComponent('sunmedia:active.city', 'mobile', [
-                            'IBLOCK_ID' => 16
-                        ]); ?>
-                    </div>
+                    <?if (SITE_ID != 'en') {?>
+                        <div class="mobile-contacts__item">
+                            <?php $APPLICATION->IncludeComponent('sunmedia:active.city', 'mobile', [
+                                'IBLOCK_ID' => 16
+                            ]); ?>
+                        </div>
+                    <?}?>
                 </div>
                 <div class="mobile-contacts mobile-contacts_b-offset">
                     <?php/*
@@ -232,6 +239,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <a class="language__content title title_medium" href="<?= SITE_ID == 'en' ? '/' : '/en/'; ?>"><?= SITE_ID == 'en' ? 'Russian' : 'English'; ?></a>
                         </div>
                     </div>*/?>
+                    <div class="mobile-contacts__item">
+                        <a href="<?= SITE_ID == 'en' ? '//'.DOMAIN : '//'.EN_DOMAIN; ?>" class="language iconed iconed_center">
+                            <?php if (SITE_ID != 'en'): ?>
+                                <img class="language__ico iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/en.png" alt="">
+                            <?php else: ?>
+                                <img class="language__ico iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/russian.png" alt="">
+                            <?php endif; ?>
+                            <span class="language__content title"><?= SITE_ID == 'en' ? 'Russian' : 'English'; ?></span>
+                        </a>
+                    </div>
+                    <?if (SITE_ID != 'en') {?>
+                        <div class="mobile-contacts__item">
+                            <a href="/servis/lizing/" class="iconed iconed_center">
+                                <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
+                                <span class="title"><?=GetMessage("LEASING_CALC")?></span>
+                            </a>
+                        </div>
+                    <?}?>
                 </div>
 
                 <?php/*

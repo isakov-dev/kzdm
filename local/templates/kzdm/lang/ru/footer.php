@@ -10,3 +10,4 @@ $MESS["COMPARISON"] = "Сравнение техники";
 $MESS["CONSULT_REQUEST_SUB"] = "Отправте заявку на консультацию";
 $MESS["CONFIGURATOR"] = "Конфигуратор";
 $MESS["CONFIGURATOR_SUB"] = "Собрать индивидуальную<br> комбинированную машину";
+$MESS["LEASING_CALC"] = "Калькулятор лизинга";

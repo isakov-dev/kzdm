@@ -45,19 +45,22 @@ function pluralForm(int $number, array $after): string
 
 \CModule::IncludeModule('iblock');
 
-// делаем редирект на установленный поддомен
+// делаем редирект на установленный поддомен только для ru домена
 // город вытягиваем из базы по id из печенек
-if (isset($_COOKIE['BITRIX_SM_CITY_ID']) && !empty($_COOKIE['BITRIX_SM_CITY_ID'])) {
+if (isset($_COOKIE['BITRIX_SM_CITY_ID']) && !empty($_COOKIE['BITRIX_SM_CITY_ID']) && DOMAIN_ZONE == 'ru') {
     $res = \CIBlockElement::GetList([], ['ACTIVE' => 'Y', 'ID' => $_COOKIE['BITRIX_SM_CITY_ID'], 'IBLOCK_ID' => 16],
         false, false, ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PROPERTY_DEFAULT']);
     if ($ob = $res->GetNext()) {
         if ($ob['PROPERTY_DEFAULT_VALUE'] != 'Y') { // если это не основной домен, то и редиректить нам не надо
-            $domain = sprintf('//%s.%s%s', $ob['CODE'], DOMAIN, SITE_DIR);
-            $compareDomain = sprintf('%s.%s', $ob['CODE'], DOMAIN);
-            if ($_SERVER['SERVER_NAME'] != $compareDomain) {
-                header("Location: {$domain}");
+
+            $correctDomain = sprintf('%s.%s', $ob['CODE'], DOMAIN);
+            $redirectUrl = sprintf(PROTOCOL.'%s.%s%s', $ob['CODE'], DOMAIN, $_SERVER['REQUEST_URI']);
+
+            if ($_SERVER['SERVER_NAME'] != $correctDomain) {
+                header("Location: {$redirectUrl}");
                 exit();
             }
+
         }
     }
 }

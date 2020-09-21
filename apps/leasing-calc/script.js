@@ -13,7 +13,7 @@ $(document).ready(function () {
             },
             rate: 0.1159,
             cost_config: {
-                step: 1,
+                step: 10000,
                 connect: 'lower',
                 range: {
                     'min': 270000,
