@@ -94,7 +94,7 @@ $this->setFrameMode(true);
                 </div>
             </div>
             <div class="preview-char">
-                <h1 class="preview-char__title"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></h1>
+                <h1 class="h2 preview-char__title"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></h1>
                 <?php if (!empty($arResult['PROPERTIES']['MAIN_PROPS']['VALUE'])): ?>
                     <div class="preview-char__items">
                         <?php foreach ($arResult['PROPERTIES']['MAIN_PROPS']['VALUE'] as $key => $value): ?>
