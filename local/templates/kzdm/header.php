@@ -60,18 +60,23 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
         <!-- PHP constants -->
         <script>
             const YANDEX_METRIKA_ID = <?=YANDEX_METRIKA_ID?>;
+            const GOOGLE_ANALYTICS_ID = <?=(GOOGLE_ANALYTICS_ID ? "'" . GOOGLE_ANALYTICS_ID . "'" : false)?>;
         </script>
         <!-- PHP constants -->
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116744247-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        <?if (GOOGLE_ANALYTICS_ID) {?>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=<?=GOOGLE_ANALYTICS_ID?>"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            gtag('config', 'UA-116744247-1');
-        </script>
+                gtag('config', '<?=GOOGLE_ANALYTICS_ID?>');
+            </script>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <?}?>
+
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -86,10 +91,12 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
 
     </head>
     <body class="<?php $APPLICATION->ShowProperty('error-404'); ?><?= $APPLICATION->GetCurPage(false) == SITE_DIR ? ' homepage' : false; ?>">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBV39PJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBV39PJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         <?php $APPLICATION->ShowPanel(); ?>
         <header class="header<?= ($APPLICATION->GetCurPage(false) == SITE_DIR) ? ' header-index' : ' active'; ?>">
             <div class="wrapper wrapper_default">
