@@ -38,7 +38,7 @@ class Logic {
                     self::PROTOCOL . self::DOMAIN . CFile::GetPath($arFields['DETAIL_PICTURE']) : ""),
                 "product_type" => ($sections[$arFields['IBLOCK_SECTION_ID']] ?
                     $sections[$arFields['IBLOCK_SECTION_ID']] : ""),
-                "availability" => "preorder",
+                "availability" => "in_stock",
                 "price" => "1 RUB",
             );
 
