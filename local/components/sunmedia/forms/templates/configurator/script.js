@@ -12,6 +12,12 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 if (data.success) {
+
+                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    if (YANDEX_METRIKA_ID) {
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
+                    }
+
                     $('.error-msg').html('').remove('active');
                     Swal.fire({
                         title: lang === 'ru' ? 'Ваша заявка принята' : 'Your application is accepted',
@@ -22,6 +28,7 @@ $(document).ready(function () {
                             configForm[0].reset();
                         }
                     });
+
                 } else {
                     
                     if (data.errors.form) {

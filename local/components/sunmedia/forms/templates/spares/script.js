@@ -16,7 +16,12 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.success) {
 
-                    ym(45274878,'reachGoal','zarchast');
+                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    gtag('event', 'zapchast', {'event_category': 'sendform'});
+                    if (YANDEX_METRIKA_ID) {
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'zarchast');
+                    }
 
                     Swal.fire({
                         title: lang === 'ru' ? 'Ваша заявка принята' : 'Your application is accepted',
@@ -27,6 +32,7 @@ $(document).ready(function () {
                             spareForm[0].reset();
                         }
                     });
+
                 } else {
                     if (data.errors.form) {
                         Swal.fire({

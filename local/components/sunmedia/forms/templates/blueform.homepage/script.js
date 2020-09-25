@@ -12,7 +12,12 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.success) {
 
-                    ym(45274878,'reachGoal','little_form');
+                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    gtag('event', 'little_form', {'event_category': 'sendform'});
+                    if (YANDEX_METRIKA_ID) {
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'little_form');
+                    }
 
                     Swal.fire({
                         title: lang === 'ru' ? 'Ваша заявка принята' : 'Your application is accepted',

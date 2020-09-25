@@ -17,11 +17,11 @@ $domainZone = end($explodedDomain);
 define('DOMAIN_ZONE', $domainZone);
 switch ($domainZone) {
     case 'kz':
-        define('YANDEX_METRIKA_ID', '47759659');
+        define('YANDEX_METRIKA_ID', 47759659);
         define('GOOGLE_VERIFICATION', false);
         break;
     case 'ru':
-        define('YANDEX_METRIKA_ID', '45274878');
+        define('YANDEX_METRIKA_ID', 45274878);
         define('GOOGLE_VERIFICATION', 'HyyYjGi4oP0oTX2RE177JjxaPfr3iPQ05qUZ1FA2eSM');
         break;
     case 'net':

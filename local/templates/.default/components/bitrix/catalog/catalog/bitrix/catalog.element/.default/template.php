@@ -1,6 +1,56 @@
 <?php
+/**
+ * @var $arResult
+ */
 $this->setFrameMode(true);
 ?>
+
+<!-- goals constants init -->
+<?
+switch ($arResult['SECTION']['CODE']) {
+
+    case "mini-pogruzchiki":
+        $yandexInterestGoal = "ret.minipog";
+        $googleInterestGoal = "minipog";
+        break;
+
+    case "vakuumnye-podmetalno-uborochnye-mashiny":
+        $yandexInterestGoal = "ret.vpum";
+        $googleInterestGoal = "vpum";
+        break;
+
+    case "kombinirovannye-dorozhnye-mashiny":
+        $yandexInterestGoal = "ret.kdm";
+        $googleInterestGoal = "kdm";
+        break;
+
+    case "avtogudronatory":
+        $yandexInterestGoal = "ret.avtogud";
+        $googleInterestGoal = "avtogud";
+        break;
+
+    case "chipsilery":
+        $yandexInterestGoal = "ret.chipsil";
+        $googleInterestGoal = "chipsil";
+        break;
+
+    case "snegopogruzchiki":
+        $yandexInterestGoal = "ret.sneg";
+        $googleInterestGoal = "sneg";
+        break;
+
+    default:
+        $yandexInterestGoal = false;
+        $googleInterestGoal = false;
+
+}
+?>
+<script>
+    const YANDEX_INTEREST_GOAL = '<?=$yandexInterestGoal?>';
+    const GOOGLE_INTEREST_GOAL = '<?=$googleInterestGoal?>';
+</script>
+<!-- goals constants init -->
+
 <div class="preview card-preview">
     <div class="wrapper wrapper_default">
         <div class="preview__top">
@@ -30,7 +80,7 @@ $this->setFrameMode(true);
                     <div class="card-gen">
                         <div class="card-gen__img">
                             <div class="stickers card-gen__stickers">
-                                <a href="<?= SITE_DIR; ?>o-zavode/test-drive/" class="sticker sticker_offset">
+                                <a href="<?= SITE_DIR; ?>o-zavode/test-drive/" class="sticker sticker_offset interest-goal">
                                     <span class="sticker__content">
                                         <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage('TEST_DRIVE'); ?></span>
                                     </span>
@@ -40,7 +90,7 @@ $this->setFrameMode(true);
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="<?= SITE_DIR; ?>prodazha-v-regionakh/" class="sticker sticker_offset">
+                                <a href="<?= SITE_DIR; ?>prodazha-v-regionakh/" class="sticker sticker_offset interest-goal">
                                     <span class="sticker__content">
                                         <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage('SALE_IN_REGIONS'); ?></span>
                                     </span>
@@ -50,7 +100,7 @@ $this->setFrameMode(true);
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="<?= SITE_DIR; ?>servis/lizing/" class="sticker sticker_offset">
+                                <a href="<?= SITE_DIR; ?>servis/lizing/" class="sticker sticker_offset rouble-goal">
                                     <span class="sticker__content">
                                         <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage('BY_LEASING'); ?></span>
                                     </span>
@@ -212,7 +262,7 @@ $this->setFrameMode(true);
                         <div class="row row_micro feature__nav">
                             <?php if (!empty($arResult['PDF'])): ?>
                                 <div class="col col--lg-6">
-                                    <a href="<?= $arResult['PDF']['SRC']; ?>" class="doc-pdf iconed iconed_center" download="<?= $arResult['PDF']['ORIGINAL_NAME']; ?>">
+                                    <a href="<?= $arResult['PDF']['SRC']; ?>" class="doc-pdf iconed iconed_center interest-goal" download="<?= $arResult['PDF']['ORIGINAL_NAME']; ?>">
                                         <img class="iconed__ico doc-pdf__ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/pdf.svg" alt="">
                                         <span class="doc-pdf__content">
                                             <span class="doc-pdf__title title title_demi title_small-offset"><?= Bitrix\Main\Localization\Loc::getMessage('DOWNLOAD_PDF'); ?></span>
@@ -257,7 +307,9 @@ $this->setFrameMode(true);
                                 <div class="tab-widget__nav feature-tab__nav">
                                     <?php foreach ($arResult['PROPS'] as $key => $value): ?>
                                         <?php if (!empty($value['ELEMENTS'])): ?>
-                                            <button type="button" class="feature-tab__link tab-widget__link<?= ($key === 0) ? ' active' : false; ?>"><?= $value['NAME']; ?></button>
+                                            <button type="button" class="feature-tab__link tab-widget__link<?= ($key === 0) ? ' active' : false; ?> interest-goal">
+                                                <?= $value['NAME']; ?>
+                                            </button>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 </div>

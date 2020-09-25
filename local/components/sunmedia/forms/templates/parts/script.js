@@ -11,6 +11,12 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (data) {
                 if (data.success) {
+
+                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    if (YANDEX_METRIKA_ID) {
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
+                    }
+
                     Swal.fire({
                         title: lang === 'ru' ? 'Ваша заявка принята' : 'Your application is accepted',
                         text: lang === 'ru' ? 'Спасибо за обращение. Наши специалисты свяжутся с вами в ближайшее время' : 'Thank you for contacting. Our experts will contact you shortly',
@@ -20,6 +26,7 @@ $(document).ready(function () {
                             partsForm[0].reset();
                         }
                     });
+
                 } else {
                     if (data.errors.form) {
                         Swal.fire({

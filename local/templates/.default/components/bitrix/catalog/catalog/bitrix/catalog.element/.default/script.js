@@ -30,6 +30,25 @@ $(document).ready(function () {
         let item = $(this).data('item');
         $('#leasing-form').find('input[name="ITEM"]').val(item);
     });
+
+    $('.rouble-goal').on('click', function () {
+        gtag('event', 'lizing_knop', {'event_category': 'knopka'});
+        if (YANDEX_METRIKA_ID) {
+            ym(YANDEX_METRIKA_ID, 'reachGoal', 'knopka_lizing');
+        }
+    });
+
+    $('.interest-goal').on('click', function () {
+        if (GOOGLE_INTEREST_GOAL) {
+            gtag('event', 'lizing_knop', {'event_category': 'knopka'});
+        }
+        if (YANDEX_METRIKA_ID && YANDEX_INTEREST_GOAL) {
+            ym(YANDEX_METRIKA_ID, 'reachGoal', YANDEX_INTEREST_GOAL);
+        }
+    })
+
+
+
 });
 
 function createButton(text, cb) {

@@ -57,6 +57,12 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
             const cookieDomain = '<?= sprintf('.%s', DOMAIN); ?>';
         </script>
 
+        <!-- PHP constants -->
+        <script>
+            const YANDEX_METRIKA_ID = <?=YANDEX_METRIKA_ID?>;
+        </script>
+        <!-- PHP constants -->
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116744247-1"></script>
         <script>

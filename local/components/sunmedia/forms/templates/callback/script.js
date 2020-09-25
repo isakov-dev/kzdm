@@ -1,3 +1,13 @@
+$(document).on('beforeShow.fb', function( e, instance, slide ) {
+    if (slide.src === "#callback") {
+        gtag('event', 'zakaz_zvonka', {'event_category': 'openform'});
+        if (YANDEX_METRIKA_ID) {
+            ym(YANDEX_METRIKA_ID, 'reachGoal', 'ot_zakaz_zvonka');
+        }
+    }
+});
+
+
 $(document).ready(function () {
     let lang = document.documentElement.lang;
     const callbackForm = $('#callback-form');
@@ -12,7 +22,12 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.success) {
 
-                    ym(45274878,'reachGoal','zakaz_zvonka');
+                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    gtag('event', 'zakaz_zvonka', {'event_category': 'sendform'});
+                    if (YANDEX_METRIKA_ID) {
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'zakaz_zvonka');
+                    }
 
                     Swal.fire({
                         title: lang === 'ru' ? 'Ваша заявка принята' : 'Your application is accepted',
