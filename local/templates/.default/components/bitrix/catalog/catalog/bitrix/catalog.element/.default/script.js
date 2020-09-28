@@ -40,7 +40,7 @@ $(document).ready(function () {
 
     $('.interest-goal').on('click', function () {
         if (GOOGLE_INTEREST_GOAL) {
-            gtag('event', 'lizing_knop', {'event_category': 'knopka'});
+            gtag('event', GOOGLE_INTEREST_GOAL, {'event_category': 'knopka'});
         }
         if (YANDEX_METRIKA_ID && YANDEX_INTEREST_GOAL) {
             ym(YANDEX_METRIKA_ID, 'reachGoal', YANDEX_INTEREST_GOAL);
