@@ -56,7 +56,9 @@ if (!empty($arResult['DISPLAY_PROPERTIES']['GALLERY'])) {
                 <div class=\"wrapper wrapper_default\">
                     <div class=\"row\">
                         <div class=\"col col--lg-10 col--lg-offset-1\">
-                            <h2 class=\"h2 title title_block title_centered title_average-offset title_middle-offset\">Наши работы</h2>
+                            <h2 class=\"h2 title title_block title_centered title_average-offset title_middle-offset\">
+                                " . GetMessage("OUR_WORKS") . "
+                            </h2>
                         </div>
                     </div>
                 </div>
