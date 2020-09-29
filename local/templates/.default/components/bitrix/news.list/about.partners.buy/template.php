@@ -13,7 +13,7 @@ $this->setFrameMode(true);
                                     <div class="row">
                                         <div class="col col--xl-8 col--xl-offset-2">
                                             <h2 class="h2 title title_centered partners-nav__title title_big-offset">
-                                                Вы можете приобрести продукцию наших партнеров у нас
+                                                <?=GetMessage("YOU_CAN_PURCHASE")?>
                                             </h2>
                                             <div class="partners-nav__items">
                                                 <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
