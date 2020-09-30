@@ -4,7 +4,7 @@ $this->setFrameMode(true);
 <?php if (!empty($arResult['ITEMS'])): ?>
     <div class="section section_default section_animated wow">
         <div class="sale-dilers">
-            <h2 class="h2 sales-widget__title">Дилеры</h2>
+            <h2 class="h2 sales-widget__title"><?=GetMessage("DEALERS")?></h2>
             <div class="sale-dilers__items">
                 <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
 
@@ -50,7 +50,7 @@ $this->setFrameMode(true);
 
         </div>
         <div class="sale-dilers">
-            <h2 class="h2 sales-widget__title">Сервис</h2>
+            <h2 class="h2 sales-widget__title"><?=GetMessage("SERVICE")?></h2>
             <div class="sale-dilers__items">
                 <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
 
