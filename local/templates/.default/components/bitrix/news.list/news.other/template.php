@@ -4,7 +4,7 @@ $this->setFrameMode(true);
 <?php if (!empty($arResult['ITEMS'])): ?>
     <div class="row">
         <div class="col col--lg-6 col--lg-offset-3">
-            <h2 class="h2 title title_big-offset">Другие новости</h2>
+            <h2 class="h2 title title_big-offset"><?=GetMessage("ANOTHER_NEWS")?></h2>
         </div>
     </div>
     <div class="row">
