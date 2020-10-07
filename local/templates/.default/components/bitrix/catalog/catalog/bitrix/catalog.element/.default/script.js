@@ -32,14 +32,16 @@ $(document).ready(function () {
     });
 
     $('.rouble-goal').on('click', function () {
-        gtag('event', 'lizing_knop', {'event_category': 'knopka'});
+        if (GOOGLE_ANALYTICS_ID) {
+            gtag('event', 'lizing_knop', {'event_category': 'knopka'});
+        }
         if (YANDEX_METRIKA_ID) {
             ym(YANDEX_METRIKA_ID, 'reachGoal', 'knopka_lizing');
         }
     });
 
     $('.interest-goal').on('click', function () {
-        if (GOOGLE_INTEREST_GOAL) {
+        if (GOOGLE_INTEREST_GOAL && GOOGLE_ANALYTICS_ID) {
             gtag('event', GOOGLE_INTEREST_GOAL, {'event_category': 'knopka'});
         }
         if (YANDEX_METRIKA_ID && YANDEX_INTEREST_GOAL) {

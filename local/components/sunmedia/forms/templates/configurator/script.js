@@ -13,7 +13,10 @@ $(document).ready(function () {
                 console.log(data);
                 if (data.success) {
 
-                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    if (GOOGLE_ANALYTICS_ID) {
+                        gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                    }
+
                     if (YANDEX_METRIKA_ID) {
                         ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
                     }

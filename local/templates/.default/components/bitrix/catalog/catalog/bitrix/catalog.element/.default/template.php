@@ -193,11 +193,18 @@ switch ($arResult['SECTION']['CODE']) {
                         <?php endif; ?>
                     </div>
                     <div class="sub-menu__controls">
-                        <a href="javascript:;" data-src="#leasing" class="btn btn_box btn_transparent phone-popup-trigger leasing-trigger" data-item="<?= $arResult['NAME']; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?></a>
+                        <?if (SITE_ID != 'en') {?>
+                            <a href="javascript:;" data-src="#leasing" data-item="<?= $arResult['NAME']; ?>"
+                               class="btn btn_box btn_transparent phone-popup-trigger leasing-trigger">
+                                <?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?>
+                            </a>
+                        <?}?>
                         <?php /*if ($arResult['IBLOCK_SECTION_ID'] == 1): ?>
                             <a href="<?= SITE_DIR; ?>configurator/" class="btn btn_box btn_blue"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></a>
                         <?php endif;*/ ?>
-                        <a href="javascript:;" data-src="#callback" class="btn btn_box btn_orange phone-popup-trigger"><?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST'); ?></a>
+                        <a href="javascript:;" data-src="#callback" class="btn btn_box btn_orange phone-popup-trigger">
+                            <?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST'); ?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -273,13 +280,15 @@ switch ($arResult['SECTION']['CODE']) {
                             <?php endif; ?>
                             <?php if (!empty($arResult['PROPERTIES']['SEASON']['VALUE'])): ?>
                                 <div class="col col--lg-3">
-                                    <?php if (in_array('Для зимы', $arResult['PROPERTIES']['SEASON']['VALUE'])): ?>
+                                    <?php if (in_array('Для зимы', $arResult['PROPERTIES']['SEASON']['VALUE'])
+                                        || in_array('For winter', $arResult['PROPERTIES']['SEASON']['VALUE'])): ?>
                                         <span class="season-item season-item_offset iconed iconed_center">
                                             <img class="iconed__ico season-item__ico iconed__ico_r-default" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/cloude-blue.svg" alt="">
                                             <span class="season-item__title title title_black"><?= Bitrix\Main\Localization\Loc::getMessage('FOR_WINTER'); ?></span>
                                         </span>
                                     <?php endif; ?>
-                                    <?php if (in_array('Для лета', $arResult['PROPERTIES']['SEASON']['VALUE'])): ?>
+                                    <?php if (in_array('Для лета', $arResult['PROPERTIES']['SEASON']['VALUE'])
+                                        || in_array('For summer', $arResult['PROPERTIES']['SEASON']['VALUE'])): ?>
                                         <span class="season-item iconed iconed_center">
                                             <img class="iconed__ico season-item__ico iconed__ico_r-default" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/sun-ico.svg" alt="">
                                             <span class="season-item__title title title_black"><?= Bitrix\Main\Localization\Loc::getMessage('FOR_SUMMER'); ?></span>

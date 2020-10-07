@@ -59,8 +59,8 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
 
         <!-- PHP constants -->
         <script>
-            const YANDEX_METRIKA_ID = <?=YANDEX_METRIKA_ID?>;
-            const GOOGLE_ANALYTICS_ID = <?=(GOOGLE_ANALYTICS_ID ? "'" . GOOGLE_ANALYTICS_ID . "'" : false)?>;
+            const YANDEX_METRIKA_ID = <?=(YANDEX_METRIKA_ID ? YANDEX_METRIKA_ID : 'false')?>;
+            const GOOGLE_ANALYTICS_ID = <?=(GOOGLE_ANALYTICS_ID ? "'" . GOOGLE_ANALYTICS_ID . "'" : 'false')?>;
         </script>
         <!-- PHP constants -->
 

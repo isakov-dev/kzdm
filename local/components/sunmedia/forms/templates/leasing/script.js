@@ -1,6 +1,8 @@
 $(document).on('beforeShow.fb', function( e, instance, slide ) {
     if (slide.src === "#leasing") {
-        gtag('event', 'lizing', {'event_category': 'openform'});
+        if (GOOGLE_ANALYTICS_ID) {
+            gtag('event', 'lizing', {'event_category': 'openform'});
+        }
         if (YANDEX_METRIKA_ID) {
             ym(YANDEX_METRIKA_ID, 'reachGoal', 'ot_lizing');
         }
@@ -21,8 +23,11 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.success) {
 
-                    gtag('event', 'vse_formy', {'event_category': 'sendform'});
-                    gtag('event', 'lizing', {'event_category': 'sendform'});
+                    if (GOOGLE_ANALYTICS_ID) {
+                        gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                        gtag('event', 'lizing', {'event_category': 'sendform'});
+                    }
+
                     if (YANDEX_METRIKA_ID) {
                         ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
                         ym(YANDEX_METRIKA_ID, 'reachGoal', 'lizing');
