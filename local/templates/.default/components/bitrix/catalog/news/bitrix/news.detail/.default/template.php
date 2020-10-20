@@ -30,7 +30,7 @@ $this->setFrameMode(true);
                 <?php if (!empty($arResult['DETAIL_TEXT'])): ?>
                     <div class="row">
                         <div class="col col--lg-6 col--lg-offset-3">
-                            <div class="section section_default">
+                            <div class="section section_default section_article">
                                 <?= $arResult['DETAIL_TEXT']; ?>
                                 <?php if (!empty($arResult['DISPLAY_PROPERTIES']['AUTHOR'])): ?>
                                     <div class="presents">
