@@ -157,9 +157,11 @@
                         <span class="south-copy__title">
                             <?= Bitrix\Main\Localization\Loc::getMessage('POWERED'); ?>&nbsp;<a href="//sun-media.ru" class="south-copy__link title title_bold " target="_blank">sunmedia.</a>
                         </span>
+                        <?$isIndex = $APPLICATION->GetCurPage(false) == "/";?>
                         <span class="south-copy__title">
                             <?=GetMessage('WEBSITE_PROMOTION')?>&nbsp;&nbsp;
-                            <a href="//digitalaround.ru" class="south-copy__link title title_bold " target="_blank">
+                            <a href="//digitalaround.ru" class="south-copy__link title title_bold"
+                               <?if (!$isIndex) {?>rel="nofollow"<?}?> target="_blank">
                                 <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/da-logo.png" alt="Digital Around">
                             </a>
                         </span>
@@ -465,6 +467,92 @@
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
             })(window,document,'https://cdn-ru.bitrix24.ru/b4420285/crm/tag/call.tracker.js');
         </script>
+
+        <!-- calltouch -->
+        <script type="text/javascript">
+        (function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)};s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/init.js?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","qh90goix");
+        </script>
+        <script>
+        jQuery(document).on('click', 'form button', function() {
+            var m = jQuery(this).closest('form');
+            var fio = m.find('input[name*="NAME"]').val();
+            var phone = m.find('input[name*="PHONE"]').val();
+            var mail = m.find('input[name*="EMAIL"]').val();
+            var comment = m.find('textarea[name*="MESSAGE"]').val();
+            var ct_site_id = '39814';
+            var sub = 'Заявка c ' + location.hostname;
+            var ct_check = !!phone || !!mail;
+            var ct_check_form = m.attr('id');
+            if (ct_check_form == "callback-form"){ sub = 'Заказать звонок'; ct_check = !!phone && !!comment; }
+            if (ct_check_form == "blue-form"){ sub = 'Заказать звонок'; ct_check = !!phone; }
+            if (ct_check_form == 'feedback-form'){ sub = 'Обратная связь'; ct_check = !!fio && !!mail && !!comment; }
+            if (ct_check_form == 'leasing-form'){ sub = 'Заявка на лизинг'; ct_check = !!phone && !!comment; }
+            if (ct_check_form == 'test-drive-form'){ sub = 'Заявка на тест-драйв'; ct_check = !!phone && !!fio && !!mail && !!comment; }
+            var ct_data = {
+                fio: fio,
+                phoneNumber: phone,
+                subject: sub,
+                comment: comment,
+                email: mail,
+                requestUrl: location.href,
+                sessionId: window.call_value
+            };
+            console.log(ct_data,ct_check);
+            if (ct_check){
+                jQuery.ajax({
+                    url: 'https://api-node15.calltouch.ru/calls-service/RestAPI/requests/'+ct_site_id+'/register/',
+                    dataType: 'json', type: 'POST', data: ct_data, async: false
+                });
+            }
+        });
+        </script>
+        <script type="text/javascript">
+        var _ctreq = function(data) {
+            var sid = 39814, nid = 15;
+            var request = window.ActiveXObject?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();
+            var post_data = Object.keys(data).reduce(function(a,k){if(!!data[k]){a.push(k+'='+encodeURIComponent(data[k]));}return a},[]).join('&');
+            var url = 'https://api-node'+nid+'.calltouch.ru/calls-service/RestAPI/'+sid+'/requests/orders/register/';
+            request.open("POST", url, true); request.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); request.send(post_data);
+        };
+        window.addEventListener('message', function(e) {
+            var data = {}; try { data = JSON.parse(e.data); } catch (err){ } if(!data.action) return;
+            if (data.action == 'event' && data.eventName == 'send'){
+                var fio = !!data.value[0].LEAD_NAME ? data.value[0].LEAD_NAME : !!data.value[0].CONTACT_NAME ? data.value[0].CONTACT_NAME : '',
+                phone = !!data.value[0].LEAD_PHONE ? data.value[0].LEAD_PHONE : !!data.value[0].CONTACT_PHONE ? data.value[0].CONTACT_PHONE : '',
+                email = !!data.value[0].LEAD_EMAIL ? data.value[0].LEAD_EMAIL : !!data.value[0].CONTACT_EMAIL ? data.value[0].CONTACT_EMAIL : '',
+                comment = !!data.value[0].DEAL_COMMENTS ? data.value[0].DEAL_COMMENTS : !!data.value[0].LEAD_COMMENTS ? data.value[0].LEAD_COMMENTS : '',
+                sub = 'Заявка с формы Bitrix24 ' + location.hostname,
+                ct_data = {fio: fio, phoneNumber: phone, email: email, comment: comment, subject: sub, requestUrl: location.href, sessionId: window.call_value};
+                if (!!phone || !!email) _ctreq(ct_data);
+            }
+        });
+        </script>
+        <script>
+        window.addEventListener('onBitrixLiveChat', function(event){
+            var widget = event.detail.widget;
+            widget.subscribe({
+                type: BX.LiveChatWidget.SubscriptionType.every, callback: function(ev){
+                    if (ev.type == BX.LiveChatWidget.SubscriptionType.userMessage){
+                        if (!window.ct_snd_flag && !!window.ct){ ct('goal','b24chat'); window.ct_snd_flag = 1; }
+                    }
+                    if (ev.type == BX.LiveChatWidget.SubscriptionType.userForm){
+                        var sid = 39814, nid = 15;
+                        var fio = ''; var phone = ''; var email = '';
+                        if (!!ev.data && !!ev.data.fields && !!ev.data.fields.name){ fio = ev.data.fields.name; }
+                        if (!!ev.data && !!ev.data.fields && !!ev.data.fields.phone){ phone = ev.data.fields.phone; }
+                        if (!!ev.data && !!ev.data.fields && !!ev.data.fields.email){ email = ev.data.fields.email; }
+                        var ct_data = {}; ct_data.phoneNumber = phone; ct_data.fio = fio; ct_data.email = email; ct_data.requestUrl = location.href; ct_data.sessionId = window.call_value;
+                        ct_data.subject = 'Чат Bitrix24 посетитель оставил контакты';
+                        var request = window.ActiveXObject?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();
+                        var post_data = Object.keys(ct_data).reduce(function(a,k){if(!!ct_data[k]){a.push(k+'='+encodeURIComponent(ct_data[k]));}return a},[]).join('&');
+                        var url = 'https://api-node'+nid+'.calltouch.ru/calls-service/RestAPI/'+sid+'/requests/orders/register/';
+                        request.open("POST", url, true); request.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); request.send(post_data);
+                    }
+                }
+            });
+        });
+        </script>
+        <!-- calltouch -->
 
     </body>
 </html>

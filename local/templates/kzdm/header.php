@@ -89,6 +89,10 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
             <meta name="google-site-verification" content="<?=GOOGLE_VERIFICATION?>" />
         <?}?>
 
+        <?if (CMSMAGAZINE) {?>
+            <meta name="cmsmagazine" content="<?=CMSMAGAZINE?>" />
+        <?}?>
+
     </head>
     <body class="<?php $APPLICATION->ShowProperty('error-404'); ?><?= $APPLICATION->GetCurPage(false) == SITE_DIR ? ' homepage' : false; ?>">
 

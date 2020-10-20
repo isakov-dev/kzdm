@@ -20,15 +20,18 @@ switch ($domainZone) {
         define('YANDEX_METRIKA_ID', 47759659);
         define('GOOGLE_ANALYTICS_ID', false);
         define('GOOGLE_VERIFICATION', false);
+        define('CMSMAGAZINE', false);
         break;
     case 'ru':
         define('YANDEX_METRIKA_ID', 45274878);
         define('GOOGLE_ANALYTICS_ID', 'UA-116744247-1');
         define('GOOGLE_VERIFICATION', 'HyyYjGi4oP0oTX2RE177JjxaPfr3iPQ05qUZ1FA2eSM');
+        define('CMSMAGAZINE', '4be1bfa70b3d4b0b650c5469488496b4');
         break;
     case 'net':
         define('YANDEX_METRIKA_ID', false);
         define('GOOGLE_ANALYTICS_ID', false);
         define('GOOGLE_VERIFICATION', false);
+        define('CMSMAGAZINE', false);
         break;
 }
