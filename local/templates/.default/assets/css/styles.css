@@ -13246,6 +13246,8 @@ textarea {
     font-size: 0;
     display: block;
     overflow: hidden;
+    height: 0;
+    padding-bottom: 55%;
 }
 
 .news-tile__pic {
