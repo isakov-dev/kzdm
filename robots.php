@@ -1,14 +1,11 @@
 <?php
 header('Content-type: text/plain');
 $subdomain = str_replace('kzdm.ru', '', $_SERVER['HTTP_HOST']);
-if ($subdomain !== '') {
-echo '
+
+if ($subdomain !== '' && $_SERVER['HTTP_HOST'] != 'kzdm.kz') {?>
 User-agent: *
 Disallow: /
-';
-}
-else if ($host == '')
-{echo '
+<?} else {?>
 User-Agent: *
 Disallow: */index.php
 Disallow: /bitrix/
@@ -47,6 +44,7 @@ Allow: /bitrix/cache/
 Allow: /bitrix/js/
 Allow: /bitrix/templates/
 Allow: /bitrix/panel/
+
 User-Agent: Googlebot
 Disallow: */index.php
 Disallow: /bitrix/
@@ -85,6 +83,7 @@ Allow: /bitrix/cache/
 Allow: /bitrix/js/
 Allow: /bitrix/templates/
 Allow: /bitrix/panel/
+
 User-Agent: Yandex
 Disallow: */index.php
 Disallow: /bitrix/
@@ -123,6 +122,6 @@ Allow: /bitrix/cache/
 Allow: /bitrix/js/
 Allow: /bitrix/templates/
 Allow: /bitrix/panel/
-Sitemap: https://kzdm.ru/sitemap.xml';
-}
-?>
+
+Sitemap: https://<?=$_SERVER['HTTP_HOST']?>/sitemap.xml
+<?}?>
