@@ -93,6 +93,14 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
             <meta name="cmsmagazine" content="<?=CMSMAGAZINE?>" />
         <?}?>
 
+        <?if (CLARITY) {?>
+            <script type="text/javascript">
+                (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "<?=CLARITY?>");
+            </script>
+        <?}?>
+
     </head>
     <body class="<?php $APPLICATION->ShowProperty('error-404'); ?><?= $APPLICATION->GetCurPage(false) == SITE_DIR ? ' homepage' : false; ?>">
 
