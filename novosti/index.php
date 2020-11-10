@@ -174,4 +174,11 @@ $APPLICATION->SetPageProperty('description', 'Новости и события �
     ),
     false
 );?>
+
+<?//установка canonical для страниц пагинации
+if (strpos($_SERVER['REQUEST_URI'], 'PAGEN_') !== false) {
+    $uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+    $APPLICATION->SetPageProperty('canonical', 'https://' . $_SERVER['HTTP_HOST'] . $uri_parts[0]);
+}?>
+
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
