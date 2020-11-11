@@ -15,11 +15,22 @@
 $this->setFrameMode(true);
 ?>
 <div class="single">
+    <div class="gray-bg">
+        <div class="wrapper wrapper_default">
+            <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "chain", array(
+                "START_FROM" => "0",
+                "PATH" => "",
+                "SITE_ID" => SITE_ID
+            ),
+                false
+            );?>
+        </div>
+    </div>
     <?php
     $componentElementParams = array(
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "ADD_ELEMENT_CHAIN" => "N",
-        "ADD_SECTIONS_CHAIN" => "N",
+        "ADD_ELEMENT_CHAIN" => "Y",
+        "ADD_SECTIONS_CHAIN" => "Y",
         "AJAX_MODE" => "N",
         "AJAX_OPTION_ADDITIONAL" => "",
         "AJAX_OPTION_HISTORY" => "N",

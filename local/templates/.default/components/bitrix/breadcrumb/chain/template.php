@@ -28,8 +28,10 @@ for($index = 0; $index < $itemSize; $index++)
     $title = htmlspecialcharsex($arResult[$index]["TITLE"]);
     $arrow = ($index > 0? '<i class="fa fa-angle-right"></i>' : '');
 
-    if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
-    {
+    if (!isset($arResult[$index]["LINK"]) || empty($arResult[$index]["LINK"]))
+        $arResult[$index]["LINK"] = $APPLICATION->GetCurPage(false);
+
+    /*if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1) {*/
         $strReturn .= '
 			<div class="breadcrumb__item" id="bx_breadcrumb_'.$index.'" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				'.$arrow.'
@@ -38,15 +40,13 @@ for($index = 0; $index < $itemSize; $index++)
 				</a>
 				<meta itemprop="position" content="'.($index + 1).'" />
 			</div>';
-    }
-    else
-    {
+    /*} else {
         $strReturn .= '
 			<div class="breadcrumb__item">
 				'.$arrow.'
 				<span>'.$title.'</span>
 			</div>';
-    }
+    }*/
 }
 
 $strReturn .= '<div style="clear:both"></div></div>';

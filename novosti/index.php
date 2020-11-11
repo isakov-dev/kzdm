@@ -50,7 +50,7 @@ $APPLICATION->SetPageProperty('description', 'Новости и события �
         "DETAIL_STRICT_SECTION_CHECK" => "Y",
         "SET_LAST_MODIFIED" => "Y",
         "SET_TITLE" => "Y",
-        "ADD_SECTIONS_CHAIN" => "Y",
+        "ADD_SECTIONS_CHAIN" => "N",
         "ADD_ELEMENT_CHAIN" => "N",
         "USE_FILTER" => "N",
         "FILTER_VIEW_MODE" => "VERTICAL",
