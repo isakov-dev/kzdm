@@ -15,19 +15,17 @@ $this->setFrameMode(true);
                 <div class="single-new">
                     <div class="row">
                         <div class="col col--xl-6 col--xl-offset-3">
-                            <span class="title single-new__date title_block title_large title_black  title_average-offset"><?= FormatDate('d F Y', MakeTimeStamp($arResult['ACTIVE_FROM'])); ?></span>
-                        </div>
-                    </div>
-                    <?php if (!empty($arResult['DETAIL_PICTURE'])): ?>
-                        <div class="row">
-                            <div class="col col--lg-10 col--lg-offset-1">
+                            <span class="title single-new__date title_block title_large title_black title_average-offset">
+                                <?= FormatDate('d F Y', MakeTimeStamp($arResult['ACTIVE_FROM'])); ?>
+                            </span>
+                            <?php if (!empty($arResult['DETAIL_PICTURE'])): ?>
                                 <div class="alone-img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                                     <img src="<?= resizeImage($arResult['DETAIL_PICTURE'], 1176, 640); ?>" alt="<?= $arResult['NAME']; ?>">
                                     <meta itemprop="url" content="<?=resizeImage($arResult['DETAIL_PICTURE'], 1176, 640);?>">
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
-                    <?php endif; ?>
+                    </div>
 
                     <?php if (!empty($arResult['DETAIL_TEXT'])): ?>
                         <div class="row">
