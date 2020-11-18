@@ -48,7 +48,8 @@ $this->setFrameMode(true);
             </div>
         </div>
 
-        <?if ($arResult['CODE'] == 'lizing') {?>
+        <?if (($arResult['CODE'] == 'lizing' || $arResult['CODE'] == 'leasing')
+            && file_exists($_SERVER['DOCUMENT_ROOT'] . '/apps/leasing-calc/app.php')) {?>
             <div class="wrapper wrapper_default">
                 <div class="row">
                     <div class="col col--xl-10 col--xl-offset-1">

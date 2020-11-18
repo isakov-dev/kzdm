@@ -327,14 +327,12 @@
                                     <span class="language__content title"><?= SITE_ID == 'en' ? 'Russian' : 'English'; ?></span>
                                 </a>
                             </div>
-                            <?if (SITE_ID != 'en') {?>
-                                <div class="window-bottom__item">
-                                    <a href="/servis/lizing/" class="iconed iconed_center">
-                                        <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
-                                        <span class="title"><?=GetMessage("LEASING_CALC")?></span>
-                                    </a>
-                                </div>
-                            <?}?>
+                            <div class="window-bottom__item">
+                                <a href="/servis/lizing/" class="iconed iconed_center">
+                                    <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
+                                    <span class="title"><?=GetMessage("LEASING_CALC")?></span>
+                                </a>
+                            </div>
                         </div>
                         <div class="soc window__soc">
                             <a href="https://www.youtube.com/channel/UCm2VBq7IEbBI-vE3QvoIdqA" class="soc__ico soc__ico_you" target="_blank">

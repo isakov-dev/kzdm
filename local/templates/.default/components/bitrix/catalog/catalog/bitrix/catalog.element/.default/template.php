@@ -193,12 +193,10 @@ switch ($arResult['SECTION']['CODE']) {
                         <?php endif; ?>
                     </div>
                     <div class="sub-menu__controls">
-                        <?if (SITE_ID != 'en') {?>
-                            <a href="javascript:;" data-src="#leasing" data-item="<?= $arResult['NAME']; ?>"
-                               class="btn btn_box btn_transparent phone-popup-trigger leasing-trigger">
-                                <?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?>
-                            </a>
-                        <?}?>
+                        <a href="javascript:;" data-src="#leasing" data-item="<?= $arResult['NAME']; ?>"
+                           class="btn btn_box btn_transparent phone-popup-trigger leasing-trigger">
+                            <?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?>
+                        </a>
                         <?php /*if ($arResult['IBLOCK_SECTION_ID'] == 1): ?>
                             <a href="<?= SITE_DIR; ?>configurator/" class="btn btn_box btn_blue"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></a>
                         <?php endif;*/ ?>

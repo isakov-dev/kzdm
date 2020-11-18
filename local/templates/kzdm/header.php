@@ -279,14 +279,12 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                             <span class="language__content title"><?= SITE_ID == 'en' ? 'Russian' : 'English'; ?></span>
                         </a>
                     </div>
-                    <?if (SITE_ID != 'en') {?>
-                        <div class="mobile-contacts__item">
-                            <a href="/servis/lizing/" class="iconed iconed_center">
-                                <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
-                                <span class="title"><?=GetMessage("LEASING_CALC")?></span>
-                            </a>
-                        </div>
-                    <?}?>
+                    <div class="mobile-contacts__item">
+                        <a href="/servis/lizing/" class="iconed iconed_center">
+                            <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
+                            <span class="title"><?=GetMessage("LEASING_CALC")?></span>
+                        </a>
+                    </div>
                 </div>
 
                 <?php/*
