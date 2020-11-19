@@ -130,11 +130,13 @@
                                 <?php $APPLICATION->IncludeComponent('sunmedia:footer.contacts', '', [
                                     'IBLOCK_ID' => 16
                                 ]); ?>
-                                <div class="contacts__nav contacts__nav_offset">
-                                    <?php $APPLICATION->IncludeComponent('sunmedia:active.city', 'footer', [
-                                        'IBLOCK_ID' => 16
-                                    ]); ?>
-                                </div>
+                                <?if (DOMAIN_ZONE == 'ru') {?>
+                                    <div class="contacts__nav contacts__nav_offset">
+                                        <?php $APPLICATION->IncludeComponent('sunmedia:active.city', 'footer', [
+                                            'IBLOCK_ID' => 16
+                                        ]); ?>
+                                    </div>
+                                <?}?>
                                 <?php/*
                                 <a class="language iconed iconed_center" href="<?= SITE_ID == 'en' ? '/' : '/en/'; ?>">
                                     <?php if (SITE_ID != 'en'): ?>
@@ -312,7 +314,7 @@
                             <div class="window-bottom__item">
                                 <a href="mailto:omis@kzdm.ru" class="h4 title title_blue title_medium window-mail">omis@kzdm.ru</a>
                             </div>
-                            <?if (SITE_ID != 'en') {?>
+                            <?if (DOMAIN_ZONE == 'ru') {?>
                                 <?php $APPLICATION->IncludeComponent('sunmedia:active.city', '', [
                                     'IBLOCK_ID' => 16
                                 ]); ?>

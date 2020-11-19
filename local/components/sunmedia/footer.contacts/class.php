@@ -12,6 +12,7 @@ class FooterContactsComponent extends \CBitrixComponent
         'IBLOCK_ID',
         'PROPERTY_FOOTER_CONTACTS',
         'PROPERTY_FOOTER_CONTACTS_EN',
+        'PROPERTY_FOOTER_CONTACTS_KZ',
         'NAME'
     ];
 
@@ -39,6 +40,7 @@ class FooterContactsComponent extends \CBitrixComponent
             $this->arResult = [
                 'TEXT' => $val['~PROPERTY_FOOTER_CONTACTS_VALUE']['TEXT'],
                 'TEXT_EN' => $val['~PROPERTY_FOOTER_CONTACTS_EN_VALUE']['TEXT'],
+                'TEXT_KZ' => $val['~PROPERTY_FOOTER_CONTACTS_KZ_VALUE']['TEXT'],
             ];
         }
 
