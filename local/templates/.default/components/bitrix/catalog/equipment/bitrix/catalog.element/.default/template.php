@@ -5,8 +5,9 @@ $this->setFrameMode(true);
     <div class="wrapper wrapper_default">
         <div class="preview__top">
             <div class="preview__row preview__row_flex">
-                <?php if (!empty($arResult['PREV'])): ?>
-                    <div class="preview__nav preview__nav_left">
+
+                <div class="preview__nav preview__nav_left">
+                    <?php if (!empty($arResult['PREV'])): ?>
                         <a href="<?= $arResult['PREV']['DETAIL_PAGE_URL']; ?>" class="preview-link preview-link_prev">
                             <span class="preview__img">
                                 <?php if (!empty($arResult['PREV']['DETAIL_PICTURE'])): ?>
@@ -23,8 +24,8 @@ $this->setFrameMode(true);
                                 <span class="preview-link__text title title_m title_upper title_grey title_demi"><?= $arResult['PREV']['NAME']; ?></span>
                             </span>
                         </a>
-                    </div>
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
 
                 <div class="card-preview__item">
                     <div class="card-gen">
@@ -62,8 +63,8 @@ $this->setFrameMode(true);
                     </div>
                 </div>
 
-                <?php if (!empty($arResult['NEXT'])): ?>
-                    <div class="preview__nav preview__nav_right">
+                <div class="preview__nav preview__nav_right">
+                    <?php if (!empty($arResult['NEXT'])): ?>
                         <a href="<?= $arResult['NEXT']['DETAIL_PAGE_URL']; ?>" class="preview-link preview-link_next">
                             <span class="preview__img">
                                 <?php if (!empty($arResult['NEXT']['DETAIL_PICTURE'])): ?>
@@ -80,8 +81,8 @@ $this->setFrameMode(true);
                                 </svg>
                             </span>
                         </a>
-                    </div>
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
             <div class="preview-char">
                 <h1 class="preview-char__title"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></h1>
