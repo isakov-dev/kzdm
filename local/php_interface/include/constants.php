@@ -18,7 +18,7 @@ define('DOMAIN_ZONE', $domainZone);
 switch ($domainZone) {
     case 'kz':
         define('YANDEX_METRIKA_ID', 47759659);
-        define('GOOGLE_ANALYTICS_ID', false);
+        define('GOOGLE_ANALYTICS_ID', 'UA-184483004-1');
         define('GOOGLE_VERIFICATION', false);
         define('CMSMAGAZINE', false);
         define('CLARITY', false);

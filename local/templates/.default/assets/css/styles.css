@@ -9312,6 +9312,16 @@ img.mfp-img {
     margin-bottom: 12rem;
 }
 
+.section_article p {
+    text-align: justify;
+}
+
+.section_article img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .stick-menu {
     transition: all .2s ease;
 }
