@@ -22,6 +22,7 @@ switch ($domainZone) {
         define('GOOGLE_VERIFICATION', false);
         define('CMSMAGAZINE', false);
         define('CLARITY', false);
+        define('PHONE', '8 800 080 44 15');
         break;
     case 'ru':
         define('YANDEX_METRIKA_ID', 45274878);
@@ -29,6 +30,7 @@ switch ($domainZone) {
         define('GOOGLE_VERIFICATION', 'HyyYjGi4oP0oTX2RE177JjxaPfr3iPQ05qUZ1FA2eSM');
         define('CMSMAGAZINE', '4be1bfa70b3d4b0b650c5469488496b4');
         define('CLARITY', '3vgkkdbmhb');
+        define('PHONE', '8 800 350 95 80');
         break;
     case 'net':
         define('YANDEX_METRIKA_ID', false);
@@ -36,5 +38,6 @@ switch ($domainZone) {
         define('GOOGLE_VERIFICATION', false);
         define('CMSMAGAZINE', false);
         define('CLARITY', false);
+        define('PHONE', '8 800 350 95 80');
         break;
 }

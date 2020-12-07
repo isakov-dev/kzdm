@@ -27,8 +27,8 @@
                     "FIELD_CODE" => array("", ""),
                     "FILTER_NAME" => "",
                     "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                    "IBLOCK_ID" => SITE_ID == 'en' ? '35' : '7' ,
-                    "IBLOCK_TYPE" => SITE_ID == 'en' ? "content_en" : 'content',
+                    "IBLOCK_ID" => SITE_ID == 'en' ? '35' : (DOMAIN_ZONE == 'kz' ? '59' : '7'),
+                    "IBLOCK_TYPE" => SITE_ID == 'en' ? "content_en" : (DOMAIN_ZONE == 'kz' ? 'content_kz' : 'content'),
                     "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     "INCLUDE_SUBSECTIONS" => "Y",
                     "MESSAGE_404" => "",
@@ -65,7 +65,7 @@
                     <a href="<?= SITE_DIR; ?>" class="logo logo__footer">
                         <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-en.svg' : 'logo-main.svg'; ?>" alt="">
                     </a>
-                    <a href="tel:88003509580" class="phone footer__phone">8 800 350 95 80</a>
+                    <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone footer__phone"><?=PHONE?></a>
                     <a href="mailto:omis@kzdm.ru" class="footer__mail title title_blue">omis@kzdm.ru</a>
                     <div class="soc footer__soc">
                         <a href="https://www.youtube.com/channel/UCm2VBq7IEbBI-vE3QvoIdqA" class="soc__ico soc__ico_you" target="_blank">

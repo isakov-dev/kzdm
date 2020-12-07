@@ -156,7 +156,7 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                                 <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#smart-circle"></use>
                             </svg>
                             <div class="phone__content">
-                                <a href="tel:88003509580" class="phone__numb">8 800 350 95 80</a>
+                                <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone__numb"><?=PHONE?></a>
                                 <a data-src="#callback" href="javascript:;" class="phone-popup-trigger"><?= Bitrix\Main\Localization\Loc::getMessage('CALLBACK'); ?></a>
                             </div>
                             <button class="header-btn header-btn_offset window-trigger-imagered" data-src="#window">
@@ -183,7 +183,7 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                         <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#smart-circle"></use>
                     </svg>
                     <div class="phone__content">
-                        <a href="tel:88003509580" class="phone__numb">8 800 350 95 80</a>
+                        <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone__numb"><?=PHONE?></a>
                         <a data-src="#callback" href="javascript:;" class="phone-popup-trigger"><?= Bitrix\Main\Localization\Loc::getMessage('CALLBACK'); ?></a>
                     </div>
                 </div>
@@ -242,7 +242,7 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                             <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#smart-circle"></use>
                         </svg>
                         <div class="phone__content">
-                            <a href="tel:88003509580" class="phone__numb">8 800 350 95 80</a>
+                            <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone__numb"><?=PHONE?></a>
                             <a data-src="#callback" href="javascript:;" class="phone__callback phone__callback_blue phone-popup-trigger ">
                                 <?= Bitrix\Main\Localization\Loc::getMessage('CALLBACK'); ?>
                             </a>
