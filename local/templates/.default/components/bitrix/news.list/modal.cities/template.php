@@ -9,7 +9,7 @@ $this->setFrameMode(true);
                 <div class="row ">
                     <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
                         <div class="col col--lg-2 col--xs-6">
-                            <a href="<?= $value['DOMAIN']; ?>" class="city-select__link" data-id="<?= $value['ID']; ?>"><?= (SITE_ID == 'en') ? $value['DISPLAY_PROPERTIES']['TITLE_EN']['VALUE'] : $value['NAME']; ?></a>
+                            <a href="javascript:void(0)<?//= $value['DOMAIN']; ?>" class="city-select__link" data-id="<?= $value['ID']; ?>"><?= (SITE_ID == 'en') ? $value['DISPLAY_PROPERTIES']['TITLE_EN']['VALUE'] : $value['NAME']; ?></a>
                         </div>
                     <?php endforeach; ?>
                 </div>

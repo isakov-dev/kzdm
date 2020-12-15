@@ -34,7 +34,7 @@ $context = $app->getContext();
               </div>
               <div class="header-active-city__selector-buttons">
                   <a id="confirm-city" class="header-active-city__selector-btn success"
-                     href="<?= $arResult['DOMAIN']; ?>" data-id="<?= $arResult['ID']; ?>">
+                     href="javascript:void(0)<?//= $arResult['DOMAIN']; ?>" data-id="<?= $arResult['ID']; ?>">
                       <?= Bitrix\Main\Localization\Loc::getMessage('CITY_SELECTOR_BUTTON_SUCCESS'); ?>
                   </a>
                   <button class="header-active-city__selector-btn wrong inline-popup-trigger city-btn" type="button"

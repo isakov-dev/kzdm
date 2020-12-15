@@ -22,7 +22,7 @@ $context = $app->getContext();
             <div class="header-active-city__selector">
                 <div class="header-active-city__selector-title"><?= Bitrix\Main\Localization\Loc::getMessage('CITY_SELECTOR_TITLE'); ?></div>
                 <div class="header-active-city__selector-buttons">
-                    <a id="confirm-city-mobile" class="header-active-city__selector-btn success" href="<?= $arResult['DOMAIN']; ?>" data-id="<?= $arResult['ID']; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('CITY_SELECTOR_BUTTON_SUCCESS'); ?></a>
+                    <a id="confirm-city-mobile" class="header-active-city__selector-btn success" href="javascript:void(0)<?//= $arResult['DOMAIN']; ?>" data-id="<?= $arResult['ID']; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('CITY_SELECTOR_BUTTON_SUCCESS'); ?></a>
                     <button class="header-active-city__selector-btn wrong inline-popup-trigger city-btn" type="button" data-src="#city-popup"><?= Bitrix\Main\Localization\Loc::getMessage('CITY_SELECTOR_BUTTON_WRONG'); ?></button>
                 </div>
             </div>

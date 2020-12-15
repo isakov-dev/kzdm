@@ -47,7 +47,7 @@ function pluralForm(int $number, array $after): string
 
 // делаем редирект на установленный поддомен только для ru домена
 // город вытягиваем из базы по id из печенек
-if (isset($_COOKIE['BITRIX_SM_CITY_ID']) && !empty($_COOKIE['BITRIX_SM_CITY_ID']) && DOMAIN_ZONE == 'ru') {
+/*if (isset($_COOKIE['BITRIX_SM_CITY_ID']) && !empty($_COOKIE['BITRIX_SM_CITY_ID']) && DOMAIN_ZONE == 'ru') {
     $res = \CIBlockElement::GetList([], ['ACTIVE' => 'Y', 'ID' => $_COOKIE['BITRIX_SM_CITY_ID'], 'IBLOCK_ID' => 16],
         false, false, ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PROPERTY_DEFAULT']);
     if ($ob = $res->GetNext()) {
@@ -63,7 +63,7 @@ if (isset($_COOKIE['BITRIX_SM_CITY_ID']) && !empty($_COOKIE['BITRIX_SM_CITY_ID']
 
         }
     }
-}
+}*/
 
 if (!function_exists('custom_mail') && COption::GetOptionString("webprostor.smtp", "USE_MODULE") == "Y") {
     /**
