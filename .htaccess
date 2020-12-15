@@ -28,6 +28,9 @@ RewriteRule .* /$0 [R=301,L]
     Options +FollowSymLinks
     RewriteEngine On
 
+    RewriteCond %{HTTP_HOST} ^(.+).kzdm.ru$
+    RewriteRule (.*) https://kzdm.ru/$1 [L,R=301,QSA]
+
     #Robots for subdomains
     RewriteRule ^robots.txt$ robots.php [L]
     #Sitemap for subdomains
@@ -113,8 +116,8 @@ RewriteRule .* /$0 [R=301,L]
     RewriteRule ^products/assenizaczionnyie-mashinyi/mk-43253.html /catalog/kombinirovannye-dorozhnye-mashiny/md-43253/ [R=301,L]
     RewriteRule ^products/avtogudronatoryi/ /catalog/avtogudronatory/ [R=301,L]
     RewriteRule ^products/avtogudronatoryi/ds-138b.html /catalog/avtogudronatory/ds-138/ [R=301,L]
+	RewriteRule ^products/avtogudronatoryi/ds142b.html /catalog/avtogudronatory/ds-142/ [R=301,L]
     RewriteRule ^products/avtogudronatoryi/ds-138m.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
-    RewriteRule ^products/avtogudronatoryi/ds142b.html /catalog/avtogudronatory/ds-142/ [R=301,L]
     RewriteRule ^products/avtogudronatoryi/ds-142m.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
     RewriteRule ^products/avtogudronatoryi/ds-39g.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
     RewriteRule ^products/avtogudronatoryi/ds-39k.html /catalog/avtogudronatory/kornet-8000/ [R=301,L]
@@ -196,6 +199,7 @@ Redirect 301 /catalog/gotovaya-produktsiya/termit-1000/ https://kzdm.ru/catalog/
 Redirect 301 /catalog/gotovaya-produktsiya/irbis-350/ https://kzdm.ru/catalog/snegopogruzchiki/irbis-350/
 
 Redirect 301 /products/ https://kzdm.ru/catalog/
+
 
 
 
