@@ -77,7 +77,7 @@ $this->setFrameMode(true);
         "USE_SHARE" => "N",
         "USE_MAIN_ELEMENT_SECTION" => "Y",
     );
-    
+
     $elementId = $APPLICATION->IncludeComponent(
         'bitrix:news.detail',
         '',

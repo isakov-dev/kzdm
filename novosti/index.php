@@ -140,6 +140,7 @@ $APPLICATION->SetPageProperty('description', 'Новости и события �
         "LINK_PROPERTY_SID" => "",
         "LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
         "USE_STORE" => "N",
+        "USE_RSS" => "Y",
         "USE_ENHANCED_ECOMMERCE" => "N",
         "PAGER_TEMPLATE" => ".default",
         "DISPLAY_TOP_PAGER" => "N",
@@ -164,6 +165,8 @@ $APPLICATION->SetPageProperty('description', 'Новости и события �
             "element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
             "compare" => "compare.php?action=#ACTION_CODE#",
             "smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/",
+            "rss" => "rss/",
+            "rss_section" => "#SECTION_ID#/rss/",
         ),
         "VARIABLE_ALIASES" => array(
             "compare" => array(
