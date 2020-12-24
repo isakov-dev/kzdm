@@ -7,21 +7,27 @@
         <div class="popup__contacts">
             <a href="tel:88003509580" class="phone phone_big popup__phone">8 800 350 95 80</a>
             <div class="soc popup__soc">
-                <a href="#" class="soc__ico soc__ico_fb">
-                    <svg class="fb-ico iconed__ico">
-                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
-                    </svg>
-                </a>
-                <a href="#" class="soc__ico soc__ico_telegramm">
-                    <svg class="telegramm-ico iconed__ico">
-                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#telegramm-ico"></use>
-                    </svg>
-                </a>
-                <a href="#" class="soc__ico soc__ico_watsup">
-                    <svg class="watsup-ico iconed__ico">
-                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#watsup-ico"></use>
-                    </svg>
-                </a>
+                <?if (FACEBOOK) {?>
+                    <a href="<?=FACEBOOK?>" target="_blank" class="soc__ico soc__ico_fb">
+                        <svg class="fb-ico iconed__ico">
+                            <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
+                        </svg>
+                    </a>
+                <?}?>
+                <?if (TELEGRAM) {?>
+                    <a href="<?=TELEGRAM?>" target="_blank" class="soc__ico soc__ico_telegramm">
+                        <svg class="telegramm-ico iconed__ico">
+                            <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#telegramm-ico"></use>
+                        </svg>
+                    </a>
+                <?}?>
+                <?if (WHATSAPP) {?>
+                    <a href="<?=WHATSAPP?>" target="_blank" class="soc__ico soc__ico_watsup">
+                        <svg class="watsup-ico iconed__ico">
+                            <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#watsup-ico"></use>
+                        </svg>
+                    </a>
+                <?}?>
             </div>
         </div>
         <form id="callback-form" action="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/ajax/callback.php" class="form popup__form" method="post" enctype="application/x-www-form-urlencoded">

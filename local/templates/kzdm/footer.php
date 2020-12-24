@@ -68,26 +68,48 @@
                     <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone footer__phone"><?=PHONE?></a>
                     <a href="mailto:omis@kzdm.ru" class="footer__mail title title_blue">omis@kzdm.ru</a>
                     <div class="soc footer__soc">
-                        <a href="https://www.youtube.com/channel/UCm2VBq7IEbBI-vE3QvoIdqA" class="soc__ico soc__ico_you" target="_blank">
-                            <svg class="youtube-ico iconed__ico">
-                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#youtube-ico"></use>
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/kzdm_45/" class="soc__ico soc__ico_inst" target="_blank">
-                            <svg class="instagramm-ico iconed__ico">
-                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#instagramm-ico"></use>
-                            </svg>
-                        </a>
-                        <a href="https://vk.com/kurgandormash" class="soc__ico soc__ico_vk" target="_blank">
-                            <svg class="vk-ico iconed__ico">
-                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vk-ico"></use>
-                            </svg>
-                        </a>
-                        <a href="https://www.facebook.com/kurgandormash/" class="soc__ico soc__ico_fb" target="_blank">
-                            <svg class="fb-ico iconed__ico">
-                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
-                            </svg>
-                        </a>
+                        <?if (YOUTUBE) {?>
+                            <a href="<?=YOUTUBE?>" class="soc__ico soc__ico_you" target="_blank">
+                                <svg class="youtube-ico iconed__ico">
+                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#youtube-ico"></use>
+                                </svg>
+                            </a>
+                        <?}?>
+                        <?if (INSTAGRAM) {?>
+                            <a href="<?=INSTAGRAM?>" class="soc__ico soc__ico_inst" target="_blank">
+                                <svg class="instagramm-ico iconed__ico">
+                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#instagramm-ico"></use>
+                                </svg>
+                            </a>
+                        <?}?>
+                        <?if (VK) {?>
+                            <a href="<?=VK?>" class="soc__ico soc__ico_vk" target="_blank">
+                                <svg class="vk-ico iconed__ico">
+                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vk-ico"></use>
+                                </svg>
+                            </a>
+                        <?}?>
+                        <?if (FACEBOOK) {?>
+                            <a href="<?=FACEBOOK?>" class="soc__ico soc__ico_fb" target="_blank">
+                                <svg class="fb-ico iconed__ico">
+                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
+                                </svg>
+                            </a>
+                        <?}?>
+                        <?if (TELEGRAM) {?>
+                            <a href="<?=TELEGRAM?>" target="_blank" class="soc__ico soc__ico_telegramm">
+                                <svg class="telegramm-ico iconed__ico">
+                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#telegramm-ico"></use>
+                                </svg>
+                            </a>
+                        <?}?>
+                        <?if (WHATSAPP) {?>
+                            <a href="<?=WHATSAPP?>" target="_blank" class="soc__ico soc__ico_watsup">
+                                <svg class="watsup-ico iconed__ico">
+                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#watsup-ico"></use>
+                                </svg>
+                            </a>
+                        <?}?>
                     </div>
                 </div>
                 <?$APPLICATION->IncludeComponent(
@@ -337,26 +359,48 @@
                             </div>
                         </div>
                         <div class="soc window__soc">
-                            <a href="https://www.youtube.com/channel/UCm2VBq7IEbBI-vE3QvoIdqA" class="soc__ico soc__ico_you" target="_blank">
-                                <svg class="youtube-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#youtube-ico"></use>
-                                </svg>
-                            </a>
-                            <a href="https://www.instagram.com/kzdm_45/" class="soc__ico soc__ico_inst">
-                                <svg class="instagramm-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#instagramm-ico"></use>
-                                </svg>
-                            </a>
-                            <a href="https://vk.com/kurgandormash" class="soc__ico soc__ico_vk" target="_blank">
-                                <svg class="vk-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vk-ico"></use>
-                                </svg>
-                            </a>
-                            <a href="https://www.facebook.com/kurgandormash/" class="soc__ico soc__ico_fb" target="_blank">
-                                <svg class="fb-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
-                                </svg>
-                            </a>
+                            <?if (YOUTUBE) {?>
+                                <a href="<?=YOUTUBE?>" class="soc__ico soc__ico_you" target="_blank">
+                                    <svg class="youtube-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#youtube-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (INSTAGRAM) {?>
+                                <a href="<?=INSTAGRAM?>" class="soc__ico soc__ico_inst" target="_blank">
+                                    <svg class="instagramm-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#instagramm-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (VK) {?>
+                                <a href="<?=VK?>" class="soc__ico soc__ico_vk" target="_blank">
+                                    <svg class="vk-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vk-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (FACEBOOK) {?>
+                                <a href="<?=FACEBOOK?>" class="soc__ico soc__ico_fb" target="_blank">
+                                    <svg class="fb-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (TELEGRAM) {?>
+                                <a href="<?=TELEGRAM?>" target="_blank" class="soc__ico soc__ico_telegramm">
+                                    <svg class="telegramm-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#telegramm-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (WHATSAPP) {?>
+                                <a href="<?=WHATSAPP?>" target="_blank" class="soc__ico soc__ico_watsup">
+                                    <svg class="watsup-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#watsup-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
                         </div>
                     </div>
                 </div>

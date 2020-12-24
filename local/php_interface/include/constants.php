@@ -5,6 +5,13 @@ define('SITE_DEFAULT_TEMPLATE_PATH', getLocalPath('templates/.default', BX_PERSO
 define('DOMAIN', 'kzdm.ru');
 define('EN_DOMAIN', 'kzdm.net');
 
+define('FACEBOOK', 'https://www.facebook.com/kurgandormash/');
+define('TELEGRAM', 'https://t.me/kzdm_bot');
+define('WHATSAPP', 'https://api.whatsapp.com/send?phone=79125200607');
+define('VK', 'https://vk.com/kurgandormash');
+define('YOUTUBE', 'https://www.youtube.com/channel/UCm2VBq7IEbBI-vE3QvoIdqA');
+define('INSTAGRAM', 'https://www.instagram.com/kzdm_45/');
+
 if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
     isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
     define('PROTOCOL', 'https://');
