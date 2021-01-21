@@ -14,10 +14,12 @@ $(document).ready(function () {
 
                     if (GOOGLE_ANALYTICS_ID) {
                         gtag('event', 'vse_formy', {'event_category': 'sendform'});
+                        gtag('event', 'request_equipment', {'event_category': 'sendform'});
                     }
 
                     if (YANDEX_METRIKA_ID) {
                         ym(YANDEX_METRIKA_ID, 'reachGoal', 'vse_formy');
+                        ym(YANDEX_METRIKA_ID, 'reachGoal', 'request_equipment');
                     }
 
                     Swal.fire({
