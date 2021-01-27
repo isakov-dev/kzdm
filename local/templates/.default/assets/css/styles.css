@@ -1093,6 +1093,7 @@ p {
     top: 0;
     left: 0;
     transition: all .2s ease;
+    object-fit: contain;
 }
 
 .logo__pic:nth-child(1) {

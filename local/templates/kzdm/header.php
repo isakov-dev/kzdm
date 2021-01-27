@@ -115,8 +115,8 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                 <div class="header__content">
                     <div class="header__left">
                         <a href="<?= SITE_DIR; ?>" class="logo header__logo">
-                            <img class="logo__pic" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-white-en.svg' : 'logo-main-white.svg'; ?>" alt="">
-                            <img class="logo__pic" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-en.svg' : 'logo-main.svg'; ?>" alt="">
+                            <img class="logo__pic" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-white-en.svg' : 'logo-main-80-white.svg'; ?>" alt="">
+                            <img class="logo__pic" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-en.svg' : 'logo-main-80.svg'; ?>" alt="">
                         </a>
                         <?$APPLICATION->IncludeComponent(
                             "bitrix:menu",
@@ -188,7 +188,7 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                     </div>
                 </div>
                 <a href="<?= SITE_DIR; ?>" class="logo mobile__logo">
-                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/mobile-logo.svg" alt="">
+                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/mobile-logo-80.svg" alt="">
                 </a>
                 <div class="mobile__controls">
                     <button data-src="#search" class="search__btn search-popup-trigger">

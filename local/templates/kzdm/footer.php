@@ -63,7 +63,7 @@
             <div class="wrapper wrapper_default">
                 <div class="footer__row footer-up footer-up_offset">
                     <a href="<?= SITE_DIR; ?>" class="logo logo__footer">
-                        <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-en.svg' : 'logo-main.svg'; ?>" alt="">
+                        <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/<?= SITE_ID == 'en' ? 'logo-main-en.svg' : 'logo-main-80.svg'; ?>" alt="">
                     </a>
                     <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone footer__phone"><?=PHONE?></a>
                     <a href="mailto:omis@kzdm.ru" class="footer__mail title title_blue">omis@kzdm.ru</a>
