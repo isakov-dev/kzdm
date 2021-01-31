@@ -20,9 +20,9 @@ $this->setFrameMode(true);
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($value['DISPLAY_PROPERTIES']['URL']) && !empty($value['PREVIEW_PICTURE'])): ?>
-                            <a href="<?= $value['DISPLAY_PROPERTIES']['URL']['VALUE']; ?>" class="long-slider__img" style="background-image: url('<?= resizeImage($value['PREVIEW_PICTURE'], 484, 160, BX_RESIZE_IMAGE_EXACT); ?>')"></a>
+                            <a href="<?= $value['DISPLAY_PROPERTIES']['URL']['VALUE']; ?>" class="long-slider__img" style="background-image: url('<?= resizeImage($value['PREVIEW_PICTURE'], 375, 288, BX_RESIZE_IMAGE_EXACT); ?>')"></a>
                         <?php elseif($value['PREVIEW_PICTURE']): ?>
-                            <span class="long-slider__img" style="background-image: url('<?= resizeImage($value['PREVIEW_PICTURE'], 484, 160, BX_RESIZE_IMAGE_EXACT); ?>')"></span>
+                            <span class="long-slider__img" style="background-image: url('<?= resizeImage($value['PREVIEW_PICTURE'], 375, 288, BX_RESIZE_IMAGE_EXACT); ?>')"></span>
                         <?php endif; ?>
                     </div>
                 </div>

@@ -12,6 +12,9 @@ define('VK', 'https://vk.com/kurgandormash');
 define('YOUTUBE', 'https://www.youtube.com/channel/UCm2VBq7IEbBI-vE3QvoIdqA');
 define('INSTAGRAM', 'https://www.instagram.com/kzdm_45/');
 
+define('IOS_APP', 'https://apps.apple.com/ru/app/kzdm/id1546847668');
+define('ANDROID_APP', 'https://play.google.com/store/apps/details?id=pro.DreamPort.Kurgandormash');
+
 if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
     isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
     define('PROTOCOL', 'https://');

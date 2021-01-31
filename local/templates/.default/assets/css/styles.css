@@ -586,7 +586,7 @@ p {
 
 .window__left {
     width: calc(100% - 56rem);
-    padding: 3.6rem 10.6rem 2.4rem 6.8rem;
+    padding: 3.6rem 10.6rem 0 6.8rem;
 }
 
 .window__content {
@@ -724,10 +724,29 @@ p {
 
 .window-bottom {
     display: flex;
-    padding-top: 2rem;
+    padding: 2rem 6.8rem 2.4rem;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.window__soc-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.window__apps {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.window__app {
+    display: flex;
+}
+
+.window__app:not(:last-child) {
+    margin-right: 15px;
 }
 
 .window-bottom__left {
@@ -14053,9 +14072,16 @@ textarea {
 }
 
 @media (max-width: 1599px) {
+
     .window__left {
-        padding: 3.6rem 5.6rem 2.4rem 4.8rem;
+        padding: 3.6rem 5.6rem 0 4.8rem;
     }
+
+    .window-bottom {
+        padding-left: 4.8rem;
+        padding-right: 4.8rem;
+    }
+
 }
 
 @media (max-height: 1560px) {
@@ -14220,11 +14246,16 @@ textarea {
 
     .window__left {
         width: calc(100% - 40rem);
-        padding: 2.4rem 2.4rem 2.4rem 2.4rem;
+        padding: 2.4rem 2.4rem 0 2.4rem;
     }
 
     .window__right {
         width: 40rem;
+    }
+
+    .window-bottom {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
     }
 
     .index-video__title {
@@ -14459,8 +14490,16 @@ textarea {
         font-size: 1.8rem;
     }
 
-    .window__soc {
+    .window__soc-wrapper {
+        margin-top: 10px;
+    }
+
+    /*.window__soc {
         width: 100%;
+    }*/
+
+    .window__apps {
+        margin-left: 30px;
     }
 
     .window-bottom__left {
