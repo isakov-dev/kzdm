@@ -423,12 +423,12 @@
                     </div>
                     <div class="window__apps">
                         <?if (IOS_APP) {?>
-                            <a href="<?=IOS_APP?>" class="window__app">
+                            <a href="<?=IOS_APP?>" class="window__app" target="_blank">
                                 <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/app-store-<?=LANGUAGE_ID?>.png" alt="">
                             </a>
                         <?}?>
                         <?if (ANDROID_APP) {?>
-                            <a href="<?=ANDROID_APP?>" class="window__app">
+                            <a href="<?=ANDROID_APP?>" class="window__app" target="_blank">
                                 <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/google-play-<?=LANGUAGE_ID?>.png" alt="">
                             </a>
                         <?}?>

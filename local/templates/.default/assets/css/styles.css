@@ -8665,6 +8665,14 @@ img.mfp-img {
     opacity: .6;
 }
 
+.long-slider__desc a {
+    text-decoration: underline;
+}
+
+.long-slider__desc a:hover {
+    text-decoration: none
+}
+
 .down {
     position: absolute;
     z-index: 8;
