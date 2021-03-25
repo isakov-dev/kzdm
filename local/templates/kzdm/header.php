@@ -20,38 +20,50 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
         $APPLICATION->ShowMeta('description', false);
         $APPLICATION->ShowCSS(true);
         $APPLICATION->ShowHeadStrings();
+
+        $assetsCss = [
+            'scale.css',
+            'styles.css',
+            'custom.css',
+            'custom2.css',
+            'sweetalert-custom.css',
+        ];
+
+        foreach ($assetsCss as $css) {
+            \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/' . $css);
+        }
+
         $APPLICATION->ShowHeadScripts();
 
-        \Bitrix\Main\Page\Asset::getInstance()->addCss('https://unpkg.com/tippy.js@6/animations/scale.css');
-        \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/styles.css');
-        \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/custom.css');
-        \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/custom2.css');
-        \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/sweetalert-custom.css');
+        $assetsJs = [
+            'popper.min.js',
+            'tippy-bundle.umd.min.js',
+            'js.cookie.min.js',
+            'jquery-2.2.4.min.js',
+            'slick.js',
+            'ScrollMagic.min.js',
+            'animation.gsap.min.js',
+            'TweenMax.min.js',
+            'debug.addIndicators.min.js',
+            'jquery.viewportchecker.min.js',
+            'jquery.matchHeight.js',
+            'jquery.fancybox.min.js',
+            'wow.min.js',
+            'jquery.sticky-kit.min.js',
+            'jquery.mCustomScrollbar.concat.min.js',
+            'jquery.fileuploader.min.js',
+            'jquery.inputmask.bundle.min.js',
+            'SmoothScroll.min.js',
+            'jquery.sticky.js',
+            'ScrollMagic.min.js',
+            '100years.js',
+            'main.js',
+            'custom.js',
+        ];
 
-        \Bitrix\Main\Page\Asset::getInstance()->addJs('https://unpkg.com/@popperjs/core@2');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs('https://unpkg.com/tippy.js@6');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/js.cookie.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery-2.2.4.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/slick.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/ScrollMagic.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/animation.gsap.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/TweenMax.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/debug.addIndicators.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.viewportchecker.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.matchHeight.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.fancybox.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/video.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/wow.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.sticky-kit.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.mCustomScrollbar.concat.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.fileuploader.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.inputmask.bundle.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/SmoothScroll.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/jquery.sticky.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/ScrollMagic.min.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/100years.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/main.js');
-        \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/custom.js');
+        foreach ($assetsJs as $js) {
+            \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/' . $js);
+        }
         ?>
         <script data-skip-moving="true">
             const cookieDomain = '<?= sprintf('.%s', DOMAIN); ?>';

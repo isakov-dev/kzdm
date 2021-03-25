@@ -286,8 +286,9 @@ body:not(.homepage) {
     font-size: 1.4rem;
 }
 
-.my-video-dimensions {
-    height: 100%;
+.video-js_popup {
+    width: 80vw;
+    height: 46vw;
 }
 
 .sticker {
@@ -632,9 +633,9 @@ body:not(.homepage) {
 }
 
 @media (min-width: 1200px) {
-    .my-video-dimensions {
+    .video-js_popup {
         height: 530px !important;
-        max-width: 69vw;
+        width: 69vw;
     }
 
     .from-youtube {
@@ -651,15 +652,15 @@ body:not(.homepage) {
 }
 
 @media (min-width: 1600px) {
-    .my-video-dimensions {
+    .video-js_popup {
         height: 850px !important;
     }
-}S
+}
 
 @media (min-width: 2000px) {
-    .my-video-dimensions {
+    .video-js_popup {
         height: 1080px !important;
-        max-width: 89vw;
+        width: 89vw;
     }
 }
 

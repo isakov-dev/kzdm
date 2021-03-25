@@ -3,7 +3,7 @@ $this->setFrameMode(true);
 ?>
 <?php if (!empty($arResult['ITEMS'])): ?>
     <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
-        <a data-fancybox="" data-src="#video" href="javascript:;" class="index-video__mobile">
+        <a data-fancybox data-type="ajax" data-src="/ajax/video-popup.php" href="javascript:;" class="index-video__mobile">
             <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 799, 451, BX_RESIZE_IMAGE_EXACT); ?>" alt="<?= $value['NAME'] ?>">
         </a>
 
