@@ -62,7 +62,7 @@ $(document).ready(function () {
                             field[0].classList.remove('error');
                         });
                     } else {
-                        let fields = blueForm.getElementsByClassName('form-field');
+                        let fields = blueForm[0].getElementsByClassName('form-field');
 
                         $.each(fields, (key, value) => {
                             let msgElement = value.parentNode.getElementsByClassName('error-msg');
@@ -77,7 +77,7 @@ $(document).ready(function () {
 
                         $.each(data.errors, (key, value) => {
                             let name = key.toUpperCase();
-                            let field = blueForm.querySelectorAll('[name="' + name + '"]');
+                            let field = blueForm[0].querySelectorAll('[name="' + name + '"]');
                             let msgElement = field[0].parentNode.getElementsByClassName('error-msg');
 
                             msgElement[0].classList.add('active');
