@@ -11,7 +11,11 @@ $this->setFrameMode(true);
                             <div class="car-article car-article_offset">
                                 <?php if (!empty($value['PREVIEW_PICTURE'])): ?>
                                     <a href="<?= $value['DETAIL_PAGE_URL']; ?>" class="car-article__img">
-                                        <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 884, 497); ?>" alt="<?= $value['NAME']; ?>">
+                                        <picture>
+                                            <source media="(max-width: 991px)" srcset="<?= resizeImage($value['PREVIEW_PICTURE'], 467, 263); ?>">
+                                            <source media="(max-width: 575px)" srcset="<?= resizeImage($value['PREVIEW_PICTURE'], 295, 197); ?>">
+                                            <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 884, 497); ?>" alt="<?= $value['NAME']; ?>">
+                                        </picture>
                                     </a>
                                 <?php endif; ?>
                                 <div class="car-article__detail">

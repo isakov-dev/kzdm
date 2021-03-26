@@ -34,3 +34,6 @@
         <button class="btn btn_submit btn_box btn_orange"><?= Bitrix\Main\Localization\Loc::getMessage('BUTTON'); ?></button>
     </div>
 </form>
+
+<?php
+\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/fileuploader.css');

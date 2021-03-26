@@ -176,7 +176,7 @@ $(document).ready(function () {
         }
     });
 
-    $.fn.sliderUpdate = function () {
+   /* $.fn.sliderUpdate = function () {
         return this.each(function (i, el) {
 
             var counter = 0;
@@ -186,34 +186,33 @@ $(document).ready(function () {
             }, 9500);
 
         });
-    };
-    // $('.work-slider').sliderUpdate();
-    //$('.news-slider').sliderUpdate();
+    };*/
+    /*$('.work-slider').sliderUpdate();
+    $('.news-slider').sliderUpdate();
 
-//            $('.work-slider').slick({
-//                slidesToShow: 1,
-//                arrows: false,
-//                pauseOnHover: false,
-//                pauseOnFocus: false,
-//                centerMode: true,
-//                centerPadding: '20%',
-//                responsive: [
-//                    {
-//                        breakpoint: 760,
-//                        settings: {
-//                            slidesToShow: 1,
-//                            slidesToScroll: 1,
-//                            infinite: true,
-//                            centerMode: false,
-//                            centerPadding: '0%',
-//
-//                        }
-//    }]
-//            })
+    $('.work-slider').slick({
+       slidesToShow: 1,
+       arrows: false,
+       pauseOnHover: false,
+       pauseOnFocus: false,
+       centerMode: true,
+       centerPadding: '20%',
+       responsive: [
+           {
+               breakpoint: 760,
+               settings: {
+                   slidesToShow: 1,
+                   slidesToScroll: 1,
+                   infinite: true,
+                   centerMode: false,
+                   centerPadding: '0%',
+
+               }
+        }]
+    })*/
 
 
     $(".prod-slider__widget").stick_in_parent({
-
         offset_top: 81
     });
 
@@ -256,17 +255,7 @@ $(document).ready(function () {
             scrollTop: $('#catalog-section').offset().top
         }, 600);
     })
-    $('.long-slider').slick({
-        dots: true,
-        arrows: false,
-        autoplay: true,
-        autoplaySpeed: 9500,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        customPaging: function (slider, i) {
-            return '<button class="slider-dot"><svg viewBox="0 0 36 36" class="circular-chart" data-speed="5000"><path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path></svg></button>';
-        },
-    });
+
 
 //            $('.footer__title-js').click(function () {
 //                $(this).closest('.footer__col').find('.footer-links').stop().slideToggle();
@@ -530,14 +519,25 @@ $(document).ready(function () {
     });
 
 
-    var time = 5;
-    var $bar,
-        $slick,
+    var time = 5,
         isPause,
         tick,
         percentTime;
 
-    $slick = $('.full-slider');
+    let $longSlider = $('.long-slider');
+    $longSlider.slick({
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 9500,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        customPaging: function (slider, i) {
+            return '<button class="slider-dot"><svg viewBox="0 0 36 36" class="circular-chart" data-speed="9500"><path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path></svg></button>';
+        },
+    });
+
+    var $slick = $('.full-slider');
     $slick.slick({
         draggable: false,
         adaptiveHeight: false,
@@ -547,56 +547,7 @@ $(document).ready(function () {
         pauseOnDotsHover: true,
     });
 
-    $bar = $('.slider-progress .progress');
-
-    $('.slider-wrapper').on({
-        mouseenter: function () {
-            isPause = true;
-        },
-        mouseleave: function () {
-            isPause = false;
-        }
-    })
-
-    function startProgressbar() {
-        resetProgressbar();
-        percentTime = 0;
-        isPause = false;
-        tick = setInterval(interval, 10);
-    }
-
-    function interval() {
-        if (isPause === false) {
-            percentTime += 1 / (time + 0.1);
-            $bar.css({
-                width: percentTime + "%"
-            });
-            if (percentTime >= 100) {
-                $slick.slick('slickNext');
-                startProgressbar();
-            }
-        }
-    }
-
-
-    function resetProgressbar() {
-        $bar.css({
-            width: 0 + '%'
-        });
-        clearTimeout(tick);
-    }
-
-    startProgressbar();
-    /**/
-
-    var time2 = 5;
-    var $bar2,
-        $slick2,
-        isPause2,
-        tick2,
-        percentTime2;
-
-    $slick2 = $('.work-slider');
+    var $slick2 = $('.work-slider');
     $slick2.slick({
         slidesToShow: 1,
         arrows: false,
@@ -619,47 +570,7 @@ $(document).ready(function () {
 
     });
 
-    $bar2 = $('.circle');
-
-    function startProgressbar2() {
-        resetProgressbar2();
-        percentTime2 = 100;
-        isPause2 = false;
-        tick2 = setInterval(interval2, 10);
-    }
-
-    function interval2() {
-        if (isPause === false) {
-            percentTime2 -= 1 / (time2 + 0.1);
-            $bar2.css({
-                'stroke-dashoffset': '' + parseInt(percentTime2) + ""
-            });
-            if (percentTime2 <= 1) {
-                $slick2.slick('slickNext');
-                startProgressbar2();
-            }
-        }
-    }
-
-
-    function resetProgressbar2() {
-        $bar2.css({
-            width: 0 + '%'
-        });
-        clearTimeout(tick2);
-    }
-
-    startProgressbar2();
-
-    /*news-slider*/
-    var time3 = 5;
-    var $bar3,
-        $slick3,
-        isPause3,
-        tick3,
-        percentTime3;
-
-    $slick3 = $('.news-slider');
+    var $slick3 = $('.news-slider');
     $slick3.slick({
         slidesToShow: 2,
         arrows: false,
@@ -679,39 +590,55 @@ $(document).ready(function () {
             }]
     });
 
-    $bar3 = $('.circle');
+    let $bar = $('.slider-progress .progress');
+    let $bar2 = $('.circle');
 
-    function startProgressbar3() {
-        resetProgressbar3();
-        percentTime3 = 100;
-        isPause3 = false;
-        tick3 = setInterval(interval3, 10);
-    }
-
-    function interval3() {
-        if (isPause === false) {
-            percentTime3 -= 1 / (time3 + 0.1);
-            $bar3.css({
-                'stroke-dashoffset': '' + parseInt(percentTime3) + ""
-            });
-            if (percentTime3 <= 1) {
-                $slick3.slick('slickNext');
-                startProgressbar3();
-            }
+    $('.slider-wrapper').on({
+        mouseenter: function () {
+            isPause = true;
+        },
+        mouseleave: function () {
+            isPause = false;
         }
-    }
+    })
 
-
-    function resetProgressbar3() {
-        $bar3.css({
+    function startProgressbar() {
+        $bar.css({
             width: 0 + '%'
         });
-        clearTimeout(tick3);
+
+        percentTime = 0;
+        isPause = false;
+        tick = requestAnimationFrame(animate);
     }
 
-    startProgressbar3();
+    function animate() {
+        requestAnimationFrame(animate);
 
+        if (isPause === false) {
+            percentTime += 1 / (time + 0.1);
 
+            $bar.css({
+                width: percentTime + "%"
+            });
+
+            $bar2.css({
+                'stroke-dashoffset': '' + parseInt(100 - percentTime) + ""
+            });
+
+            if (percentTime >= 100) {
+                $slick.slick('slickNext');
+                $slick2.slick('slickNext');
+                $slick3.slick('slickNext');
+
+                startProgressbar();
+            }
+        }
+
+        cancelAnimationFrame(tick);
+    }
+
+    startProgressbar();
 });
 
 $(window).scroll(function () {

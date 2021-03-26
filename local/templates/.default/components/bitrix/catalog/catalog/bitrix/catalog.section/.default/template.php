@@ -27,7 +27,10 @@ while ($arExtProps = $rsExtProps->GetNext()) {
                                 <div class="car-article car-article_offset">
                                     <a href="<?= $value['DETAIL_PAGE_URL']; ?>" class="car-article__img">
                                         <?php if (!empty($value['PREVIEW_PICTURE'])): ?>
-                                            <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 884, 497); ?>" alt="<?= $value['NAME']; ?>">
+                                            <picture>
+                                                <source media="(max-width: 575px)" srcset="<?= resizeImage($value['PREVIEW_PICTURE'], 295, 197); ?>">
+                                                <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 884, 497); ?>" alt="<?= $value['NAME']; ?>">
+                                            </picture>
                                         <?php else: ?>
                                             <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/no-image-884.jpg" alt="<?= $value['NAME']; ?>">
                                         <?php endif; ?>

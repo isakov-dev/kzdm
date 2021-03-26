@@ -14,6 +14,9 @@
 
 $this->setFrameMode(true);
 ?>
+<?php
+\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/custom-scroll.css');
+?>
 <?php if (!empty($arResult['SECTIONS'])): ?>
     <div class="top-nav top-nav_centered top-nav_bordered sub-menu stick-menu">
         <div class="wrapper wrapper_default">

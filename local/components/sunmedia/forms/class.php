@@ -167,9 +167,9 @@ class FormsComponent extends \CBitrixComponent
             die;
         } else {
             $this->includeComponentTemplate();
-            $this->getTemplate()->addExternalJs('https://cdn.jsdelivr.net/npm/sweetalert2@8.18.6/dist/sweetalert2.all.min.js');
-            $this->getTemplate()->addExternalCss('https://cdn.jsdelivr.net/npm/sweetalert2@8.18.6/dist/sweetalert2.min.css');
-            \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/css/sweetalert-custom.css', true);
+            \Bitrix\Main\Page\Asset::getInstance()->addJs(SITE_DEFAULT_TEMPLATE_PATH . '/assets/js/sweetalert2.all.min.js');
+            \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/sweetalert2.min.css');
+            \Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/sweetalert-custom.css');
         }
     }
 }

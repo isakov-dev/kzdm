@@ -23,6 +23,7 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
 
         $assetsCss = [
             'scale.css',
+            'fancybox3.css',
             'styles.css',
             'custom.css',
             'custom2.css',
@@ -36,10 +37,10 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
         $APPLICATION->ShowHeadScripts();
 
         $assetsJs = [
+            'jquery-2.2.4.min.js',
             'popper.min.js',
             'tippy-bundle.umd.min.js',
             'js.cookie.min.js',
-            'jquery-2.2.4.min.js',
             'slick.js',
             'ScrollMagic.min.js',
             'animation.gsap.min.js',

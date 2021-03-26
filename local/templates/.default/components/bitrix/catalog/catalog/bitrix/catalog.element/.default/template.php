@@ -45,6 +45,9 @@ switch ($arResult['SECTION']['CODE']) {
 
 }
 ?>
+<?php
+\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/custom-scroll.css');
+?>
 <script>
     const YANDEX_INTEREST_GOAL = '<?=$yandexInterestGoal?>';
     const GOOGLE_INTEREST_GOAL = '<?=$googleInterestGoal?>';
@@ -113,7 +116,11 @@ switch ($arResult['SECTION']['CODE']) {
                             </div>
                             <div class="card-gen__pic">
                                 <?php if (!empty($arResult['DETAIL_PICTURE'])): ?>
-                                    <img src="<?= resizeImage($arResult['DETAIL_PICTURE'], 1043, 757); ?>" alt="<?= $arResult['NAME']; ?>">
+                                    <link rel="preload" as="image" href="<?= resizeImage($arResult['DETAIL_PICTURE'], 575, 417); ?>">
+                                    <picture>
+                                        <source media="(max-width: 575px)" srcset="<?= resizeImage($arResult['DETAIL_PICTURE'], 575, 417); ?>">
+                                        <img src="<?= resizeImage($arResult['DETAIL_PICTURE'], 1043, 757); ?>" alt="<?= $arResult['NAME']; ?>">
+                                    </picture>
                                 <?php else: ?>
                                     <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/no-image.jpg" alt="<?= $arResult['NAME']; ?>">
                                 <?php endif; ?>
@@ -537,12 +544,6 @@ switch ($arResult['SECTION']['CODE']) {
         </div>
     </div>
 <?php endif; ?>
-
-<?php
-$this->addExternalJs('https://cdn.jsdelivr.net/npm/sweetalert2@8.18.6/dist/sweetalert2.all.min.js', true);
-$this->addExternalCss('https://cdn.jsdelivr.net/npm/sweetalert2@8.18.6/dist/sweetalert2.min.css', true);
-$this->addExternalCss(SITE_DEFAULT_TEMPLATE_PATH . '/css/sweetalert-custom.css', true);
-?>
 
 <script>
     let compareObj = <?= json_encode($arResult); ?>;

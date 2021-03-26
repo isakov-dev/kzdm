@@ -4,7 +4,11 @@ $this->setFrameMode(true);
 <?php if (!empty($arResult['ITEMS'])): ?>
     <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
         <a data-fancybox data-type="ajax" data-src="/ajax/video-popup.php" href="javascript:;" class="index-video__mobile">
-            <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 799, 451, BX_RESIZE_IMAGE_EXACT); ?>" alt="<?= $value['NAME'] ?>">
+            <link rel="preload" as="image" href="<?= resizeImage($value['PREVIEW_PICTURE'], 545, 308, BX_RESIZE_IMAGE_EXACT); ?>">
+            <picture>
+                <source media="(max-width: 575px)" srcset="<?= resizeImage($value['PREVIEW_PICTURE'], 545, 308, BX_RESIZE_IMAGE_EXACT); ?>">
+                <img src="<?= resizeImage($value['PREVIEW_PICTURE'], 799, 451, BX_RESIZE_IMAGE_EXACT); ?>" alt="<?= $value['NAME']; ?>">
+            </picture>
         </a>
 
         <?php if (!empty($value['DISPLAY_PROPERTIES']['VIDEO'])): ?>

@@ -1,3 +1,6 @@
+<?php
+\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/custom-scroll.css');
+?>
 <?php if (!empty($arResult)): ?>
     <div class="section section_default section_animated wow">
         <div class="wrapper wrapper_default">

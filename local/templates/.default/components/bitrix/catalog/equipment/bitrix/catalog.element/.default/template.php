@@ -1,6 +1,9 @@
 <?php
 $this->setFrameMode(true);
 ?>
+<?php
+\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_DEFAULT_TEMPLATE_PATH . '/assets/css/custom-scroll.css');
+?>
 <div id="model" class="preview card-preview">
     <div class="wrapper wrapper_default">
         <div class="preview__top">
