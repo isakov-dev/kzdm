@@ -210,6 +210,7 @@ $APPLICATION->SetPageProperty('description', 'Производство и про
 	false
 );?>
 
+<?if ($APPLICATION->GetCurPage(false) == '/catalog/') {?>
     <div class="section section_animated wow">
         <div class="wrapper wrapper_default">
             <div class="paragraph paragraph_middle">
@@ -265,5 +266,6 @@ $APPLICATION->SetPageProperty('description', 'Производство и про
             </div>
         </div>
     </div>
+<? } ?>
 
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
