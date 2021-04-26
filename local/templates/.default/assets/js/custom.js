@@ -12,6 +12,36 @@ $(document).ready(function () {
 
     //$('input[type="tel"]').inputmask({'mask': '+9{1,3}(999)999-99-99'});
     $('input[type="tel"]').inputmask({'mask': '+7 (999) 999 99 99'});
+
+    $('.leasing-partner').each(function () {
+        if ($(this).find('[data-hidden-text]').length) {
+            $(this).append('<div class="leasing-partner__show-more-wr">\n' +
+                '   <div class="leasing-partner__show-more" data-leasing-show-more>подробнее</div>\n' +
+                '</div>')
+        }
+    })
+
+    $('[data-leasing-show-more]').click(function () {
+        let $container = $(this).parents('.leasing-partner'),
+            expanded_cls = '--expanded',
+            bth_hide_cls = '--hide',
+            is_expanded = $container.hasClass(expanded_cls);
+
+        if (is_expanded) {
+            $container.removeClass(expanded_cls)
+            $(this).removeClass(bth_hide_cls).text('Подробнее')
+        } else {
+            if (window.innerWidth > 767) {
+                let $itemWr = $(this).parents('.leasing-partner-wr'),
+                    itemWr_h = $itemWr.outerHeight();
+
+                $itemWr.outerHeight(itemWr_h)
+            }
+
+            $container.addClass(expanded_cls)
+            $(this).addClass(bth_hide_cls).text('Свернуть')
+        }
+    })
 });
 
 

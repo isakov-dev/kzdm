@@ -57,6 +57,8 @@ $this->setFrameMode(true);
                     </div>
                 </div>
             </div>
+
+            <?php $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/include/leasing-content.php'); ?>
         <?}?>
 
         <?php if (!empty($arResult['DETAIL_TEXT'])): ?>

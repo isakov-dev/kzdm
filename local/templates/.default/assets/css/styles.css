@@ -5108,6 +5108,233 @@ img.mfp-img {
     margin-bottom: 8rem;
 }
 
+.leasing__subsidizing {
+    margin-bottom: 40px;
+}
+
+.leasing__subsidizing-row {
+    margin-bottom: 20px;
+}
+
+.leasing__subsidizing-logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10px;
+    margin-bottom: 36px;
+}
+
+.leasing-conditions {
+    margin-top: 40px;
+}
+
+.leasing-conditions .title {
+    margin-bottom: 40px;
+}
+
+.leasing-conditions__item {
+    position: relative;
+    min-height: 70px;
+    padding-top: 22px;
+    margin-bottom: 30px;
+}
+
+.leasing-conditions__num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 90px;
+    line-height: 70px;
+    letter-spacing: -0.03em;
+    color: rgba(15, 53, 153, 0.05);
+}
+
+.leasing-conditions__text {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.leasing-conditions__text b {
+    white-space: nowrap;
+}
+
+.leasing__partners .title {
+    margin-bottom: 30px;
+}
+
+.leasing__partners-masonry {
+    -moz-column-gap: 30px;
+    -webkit-column-gap: 30px;
+    column-gap: 30px;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+
+.leasing-partner-wr {
+    position: relative;
+}
+
+.leasing-partner {
+    height: calc(100% - 30px);
+    margin-bottom: 30px;
+    padding: 30px;
+    background: #FAFAFA;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    page-break-inside: avoid;
+}
+
+.leasing-partner__title {
+    margin-bottom: 22px;
+}
+
+.leasing-partner__logo {
+    width: 176px;
+    height: 106px;
+    padding: 10px;
+    border: 1px solid rgba(15, 53, 153, 0.2);
+}
+
+.leasing-partner__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.leasing-partner__name {
+    font-weight: 450;
+    font-size: 22px;
+    line-height: 28px;
+    color: #0F3599;
+    margin-bottom: 10px;
+}
+
+.leasing-partner__link {
+    font-weight: 450;
+    font-size: 20px;
+    line-height: 26px;
+    color: #0F3599;
+    border-bottom: 1px solid;
+}
+
+.leasing-partner__show-more-wr {
+    text-align: right;
+}
+
+.leasing-partner__show-more {
+    display: inline-flex;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FF6E00;
+    cursor: pointer;
+}
+
+.leasing-partner [data-hidden-text] {
+    display: none;
+}
+
+.leasing-partner.--expanded [data-hidden-text] {
+    display: block;
+}
+
+.leasing-partner__show-more:before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 7px;
+    margin-top: 5px;
+    margin-right: 18px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3e%3cpath d='M10.699 1.998L6.032 6.669 1.365 1.998' stroke='%23ff6e00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.leasing-partner__show-more.--hide:before {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 992px) {
+    .leasing-conditions__item {
+        min-height: 90px;
+        padding-top: 42px;
+        padding-left: 68px;
+        margin-bottom: 40px;
+    }
+
+    .leasing-conditions__num {
+        font-size: 130px;
+        line-height: 90px;
+    }
+
+    .leasing__subsidizing-row .col:first-child {
+        order: 2;
+    }
+
+    .leasing__subsidizing-logo {
+        margin-bottom: 0;
+    }
+
+    .leasing__partners .title {
+        margin-bottom: 48px;
+    }
+
+    .leasing-partner__title {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .leasing-partner__logo {
+        flex: 0 0 176px;
+        order: 2;
+    }
+
+    .leasing-partner__name {
+        font-size: 32px;
+        line-height: 41px;
+    }
+}
+
+@media (min-width: 768px) {
+    .leasing-partner {
+        top: 0;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+    }
+
+    .leasing-partner__text {
+        flex-grow: 1;
+    }
+
+    .leasing-partner.--expanded {
+        position: absolute;
+        height: auto;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .leasing-partner__title {
+        text-align: center;
+    }
+
+    .leasing-partner__logo {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+}
+
+
+
 .blue-widget {
     padding: 2.4rem 4rem;
     color: #fff;
