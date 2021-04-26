@@ -5308,7 +5308,7 @@ img.mfp-img {
         right: 15px;
         display: flex;
         flex-direction: column;
-        z-index: 100;
+        z-index: 1;
     }
 
     .leasing-partner__text {

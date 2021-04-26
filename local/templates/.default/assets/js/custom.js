@@ -38,6 +38,9 @@ $(document).ready(function () {
                 $itemWr.outerHeight(itemWr_h)
             }
 
+            $('.leasing-partner').removeClass(expanded_cls)
+            $('[data-leasing-show-more]').removeClass(bth_hide_cls).text('Подробнее')
+
             $container.addClass(expanded_cls)
             $(this).addClass(bth_hide_cls).text('Свернуть')
         }
