@@ -5335,6 +5335,78 @@ img.mfp-img {
 
 
 
+.leasing-banner {
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    color: #ffffff;
+    background: #0F3599 url("../images/leasing/leasing-banner-bg-mob.svg") right bottom/auto no-repeat;
+}
+
+.leasing-banner .title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 23px;
+}
+
+.leasing-banner p {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.leasing-banner__right {
+    display: flex;
+    align-items: center;
+}
+
+.leasing-banner__phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 24px;
+    margin-top: 30px;
+}
+
+.leasing-banner__phone:before {
+    content: '';
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    background: url('../images/leasing/icon_phone.svg') center/contain no-repeat;
+    margin-right: 10px;
+}
+
+@media (min-width: 992px) {
+    .leasing-banner {
+        margin-top: 70px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        background: #0F3599 url("../images/leasing/leasing-banner-bg.svg") center/cover no-repeat;
+    }
+
+    .leasing-banner .title {
+        font-size: 40px;
+        line-height: 51px;
+        margin-bottom: 10px;
+    }
+
+    .leasing-banner__phone {
+        font-size: 40px;
+        line-height: 24px;
+        margin-top: 0;
+    }
+
+    .leasing-banner__phone:before {
+        flex: 0 0 30px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
 .blue-widget {
     padding: 2.4rem 4rem;
     color: #fff;

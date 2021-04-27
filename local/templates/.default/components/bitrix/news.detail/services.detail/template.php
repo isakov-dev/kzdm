@@ -50,6 +50,25 @@ $this->setFrameMode(true);
 
         <?if (($arResult['CODE'] == 'lizing' || $arResult['CODE'] == 'leasing')
             && file_exists($_SERVER['DOCUMENT_ROOT'] . '/apps/leasing-calc/app.php')) {?>
+
+            <div class="leasing-banner wrapper wrapper_default">
+                <div class="row">
+                    <div class="col col--xl-10 col--xl-offset-1">
+                        <div class="row">
+                            <div class="col col--md-6">
+                                <div class="h3 title">Позвоните нам!</div>
+                                <p>И мы максимально оперативно и компетентно поможем вам оформить договор льготного лизинга</p>
+                            </div>
+                            <div class="leasing-banner__right col col--md-5 col--md-offset-1">
+                                <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="leasing-banner__phone">
+                                    <?=PHONE?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="wrapper wrapper_default">
                 <div class="row">
                     <div class="col col--xl-10 col--xl-offset-1">

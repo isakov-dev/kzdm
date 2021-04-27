@@ -13,7 +13,10 @@ $(document).ready(function () {
     //$('input[type="tel"]').inputmask({'mask': '+9{1,3}(999)999-99-99'});
     $('input[type="tel"]').inputmask({'mask': '+7 (999) 999 99 99'});
 
-    $('.leasing-partner').each(function () {
+    /*
+     * Отключена кнопка Показать ещё
+     */
+    /*$('.leasing-partner').each(function () {
         if ($(this).find('[data-hidden-text]').length) {
             $(this).append('<div class="leasing-partner__show-more-wr">\n' +
                 '   <div class="leasing-partner__show-more" data-leasing-show-more>подробнее</div>\n' +
@@ -44,7 +47,7 @@ $(document).ready(function () {
             $container.addClass(expanded_cls)
             $(this).addClass(bth_hide_cls).text('Свернуть')
         }
-    })
+    })*/
 });
 
 
