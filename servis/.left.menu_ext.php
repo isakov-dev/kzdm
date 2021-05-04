@@ -26,13 +26,26 @@ try {
     );
 
     while ($ob = $res->GetNext()) {
-        $aMenuLinksExt[] = [
-            $ob['NAME'],
-            $ob['DETAIL_PAGE_URL'],
-            [],
-            [],
-            ''
-        ];
+        if(DOMAIN_ZONE == 'kz') {
+            if($ob['NAME'] != 'Лизинг') {
+                $aMenuLinksExt[] = [
+                    $ob['NAME'],
+                    $ob['DETAIL_PAGE_URL'],
+                    [],
+                    [],
+                    ''
+                ];
+            }
+        } else {
+            $aMenuLinksExt[] = [
+                $ob['NAME'],
+                $ob['DETAIL_PAGE_URL'],
+                [],
+                [],
+                ''
+            ];
+        }
+
     }
 
     $aMenuLinks = array_merge($aMenuLinks, $aMenuLinksExt);
