@@ -19,6 +19,10 @@ $this->setFrameMode(true);
                         <span class="map-baloon__popover"><?= Bitrix\Main\Localization\Loc::getMessage('REGIONS_3'); ?></span>
                         <span class="map-baloon__center"></span>
                     </div>
+                    <div class="map-baloon map-baloon" style="top: 81%;left: 56%;">
+                        <span class="map-baloon__popover"><?= Bitrix\Main\Localization\Loc::getMessage('REGIONS_4'); ?></span>
+                        <span class="map-baloon__center"></span>
+                    </div>
                     <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/map-sales-kz.png" alt="">
                 </div>
             </div>
