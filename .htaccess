@@ -200,6 +200,8 @@ Redirect 301 /catalog/gotovaya-produktsiya/irbis-350/ https://kzdm.ru/catalog/sn
 
 Redirect 301 /products/ https://kzdm.ru/catalog/
 
+Redirect 301 /novosti/poleznoe/navesnoe-oborudovanie-dlya-mini-pogruzchikov/ https://kzdm.ru/oborudovaniye/navesnoe-dlya-mini-pogruzchika/
+
 
 
 
