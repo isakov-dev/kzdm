@@ -18,7 +18,7 @@ $this->setFrameMode(true);
     <div class="single-header single-header_gray">
         <div class="single-header__content">
             <div class="wrapper wrapper_default">
-                <h1 class="h1 single__title"><?php $APPLICATION->ShowTitle(); ?></h1>
+                <h1 class="h1 single__title"><?php $APPLICATION->ShowTitle(false); ?></h1>
 
                 <?php $APPLICATION->ShowViewContent('page_description'); ?>
             </div>
