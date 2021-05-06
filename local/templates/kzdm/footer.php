@@ -177,6 +177,10 @@
                     <span class="copy__title">
                         © <?= Bitrix\Main\Localization\Loc::getMessage('COPYRIGHT'); ?>, <?= date('Y'); ?>
                     </span>
+                    <span class="copy__ofer">
+                        Не является публичной офертой. Информация носит ознакомительный характер и не является окончательной.
+                        Производитель оставляет за собой право изменять конфигурацию и характеристики оборудования.
+                    </span>
                     <span class="south-copy">
                         <span class="south-copy__title">
                             <?= Bitrix\Main\Localization\Loc::getMessage('POWERED'); ?>&nbsp;<a href="//sun-media.ru" class="south-copy__link title title_bold " target="_blank">sunmedia.</a>
