@@ -31,7 +31,7 @@ $APPLICATION->SetPageProperty('description', 'Завод дорожных маш
             "MAX_LEVEL" => "1",
             "MENU_CACHE_GET_VARS" => array(""),
             "MENU_CACHE_TIME" => "36000000",
-            "MENU_CACHE_TYPE" => "A",
+            "MENU_CACHE_TYPE" => (DOMAIN_ZONE == 'kz' ? "N" : "A"),
             "MENU_CACHE_USE_GROUPS" => "Y",
             "ROOT_MENU_TYPE" => "about",
             "USE_EXT" => "N"
