@@ -34,13 +34,13 @@ $this->setFrameMode(true);
                         <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
                             <?php if ($key + 1 !== count($arResult['ITEMS'])): ?>
                                 <a href="<?= $value['DISPLAY_PROPERTIES']['URL']['VALUE']; ?>" class="sale sale-map sale_small sale_offset" style="">
-                                    <span class="sale__pic" style="background-image: url('<?= resizeImage($value['PREVIEW_PICTURE'], 872, 380); ?>')"></span>
-                                    <span class="sale-map__item" style="background-image:url('<?= resizeImage($value['PREVIEW_PICTURE'], 872, 380); ?>')"></span>
+                                    <span class="sale__pic" style="background-image: url('<?= DOMAIN_ZONE == 'kz' ? SITE_DEFAULT_TEMPLATE_PATH . '/assets/images/delivery_kz.png' : resizeImage($value['PREVIEW_PICTURE'], 872, 380); ?>')"></span>
+                                    <span class="sale-map__item" style="background-image:url('<?= DOMAIN_ZONE == 'kz' ? SITE_DEFAULT_TEMPLATE_PATH . '/assets/images/delivery_kz.png' : resizeImage($value['PREVIEW_PICTURE'], 872, 380); ?>')"></span>
                                     <span id="index-map" class="index-map_edited"></span>
                                     <span class="sale__content">
                                     <span class="sale__header">
                                         <span class="sale__cat"><?= Bitrix\Main\Localization\Loc::getMessage('ADVANTAGES_BLOC_TITLE'); ?></span>
-                                        <h3 class="h3 title  sale__title"><?= $value['NAME']; ?></h3>
+                                        <h3 class="h3 title  sale__title"><?= DOMAIN_ZONE == 'kz' ? 'Доставим технику в любой регион Казахстана' : $value['NAME']; ?></h3>
                                     </span>
                                     <span class="arrow-link arrow-link_orange sale__arrow-link iconed iconed_center">
                                         <span class="arrow-link__title"><?= $value['DISPLAY_PROPERTIES']['URL']['DESCRIPTION']; ?></span>
