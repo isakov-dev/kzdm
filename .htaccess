@@ -170,12 +170,22 @@ RewriteRule .* /$0 [R=301,L]
     RewriteRule ^service /servis/ [R=301,L]
     RewriteRule ^catalog/snegopogruzchik/ /catalog/snegopogruzchiki/ [R=301,L]
 
+    RewriteEngine on
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !(.html)
+    RewriteCond %{REQUEST_URI} !(.jpg)
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteRule ^(.*)$ https://kzdm.ru/$1/ [L,R=301]
+
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
     RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
     RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
 
 </IfModule>
 
