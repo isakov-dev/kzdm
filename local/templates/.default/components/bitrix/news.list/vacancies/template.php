@@ -5,7 +5,7 @@ $this->setFrameMode(true);
     <div class="section section_default section_last">
         <div class="vacancy__list">
             <?php foreach ($arResult['ITEMS'] as $key => $value): ?>
-                <div class="vacancy<?= ($key === 0) ? ' vacancy_offset' : false; ?>">
+                <div id="vacancy-<?= $value['ID']; ?>" class="vacancy<?= ($key === 0) ? ' vacancy_offset' : false; ?>">
                     <span class="date vacancy__date title title_large title_grey title_small-offset title_block">
                         опубликовано <?= FormatDate('d.m.Y'); ?>
                     </span>
