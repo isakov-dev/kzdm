@@ -48,7 +48,7 @@ $this->setFrameMode(true);
                             <?}?>
                         </div>
                     </div>
-                    <div class="col col--lg-4 col--lg-offset-1">
+                    <?php /*<div class="col col--lg-4 col--lg-offset-1">
                         <? $APPLICATION->IncludeComponent(
                             "bitrix:news.list",
                             "homepage.header.video.popup.btn",
@@ -107,7 +107,7 @@ $this->setFrameMode(true);
                             ),
                             $this->getComponent()
                         ); ?>
-                    </div>
+                    </div> */ ?>
                 </div>
             </div>
         </div>

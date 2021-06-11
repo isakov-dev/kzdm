@@ -150,9 +150,22 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                     </div>
                     <div class="header__right">
                         <div class="header__region">
-                            <a class="header__region-link" href="<?= SITE_ID == 'en' ? '//'.DOMAIN : '//'.EN_DOMAIN; ?>">
-                                <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/region-icon.svg" alt="">
-                            </a>
+                            <div class="region-link">
+                                <?php
+                                $langNames = ['s1' => 'Ru', 'en' => 'En'];
+                                ?>
+                                <span class="region-link__el"><?= $langNames[SITE_ID]; ?><i class="i-arrow"></i></span>
+                                <div class="region-link__dropdown">
+                                    <?php
+                                    $rsSites = CSite::GetList($by="sort", $order="desc", Array());
+                                    while ($arSite = $rsSites->Fetch()) {
+                                        if ($arSite['LID'] == SITE_ID)
+                                            continue;
+                                        ?>
+                                        <a href="<?= $arSite['SITE_URL']; ?>" class="region-link__el"><?= $langNames[$arSite['LID']]; ?></a>
+                                    <?php } ?>
+                                </div>
+                            </div>
                         </div>
                         <?php $APPLICATION->IncludeComponent('sunmedia:geolocation.city', '', [
                             'IBLOCK_ID' => 16
@@ -166,7 +179,7 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                         </div>
                         <div class="phone header__phone iconed iconed_center">
                             <svg class="phone-ico iconed__ico_r-default">
-                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#smart-circle"></use>
+                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#phone"></use>
                             </svg>
                             <div class="phone__content">
                                 <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone__numb"><?=PHONE?></a>

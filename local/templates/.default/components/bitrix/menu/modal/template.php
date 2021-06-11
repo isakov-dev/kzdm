@@ -22,15 +22,25 @@
                     <a href="<?= $arItem['LINK']; ?>" class="h4 title title_upper title_bold window__title title_small-offset title_block"><?= $arItem['TEXT']; ?></a>
                 </div>
             <?php else: ?>
-                <?php if (!empty($arItem['PARAMS']['UF_ICON_ID'])): ?>
-                    <a href="<?= $arItem['LINK']; ?>" class="iconed iconed_center window-menu__link">
-                        <span class="window-menu__title title title_m"><?= $arItem['TEXT']; ?></span>
-                    </a>
-                <?php else: ?>
-                    <a href="<?= $arItem['LINK']; ?>" class="iconed iconed_center  window-menu__link">
-                        <span class="window-menu__title title title_m"><?= $arItem['TEXT']; ?></span>
-                    </a>
-                <?php endif; ?>
+                <?php
+                $hasIcon = !empty($arItem['PARAMS']['UF_ICON_ID']) || !empty($arItem['PARAMS']['UF_ICON']);
+                ?>
+                <a href="<?= $arItem['LINK']; ?>"
+                   class="iconed iconed_center window-menu__link<?= $hasIcon ? ' window-menu__link_mb' : ''; ?>">
+                    <?php if (!empty($arItem['PARAMS']['UF_ICON'])): ?>
+                        <span class="window-menu__ico uploaded-ico">
+                            <?= $arItem['PARAMS']['UF_ICON']; ?>
+                        </span>
+                    <?php elseif (!empty($arItem['PARAMS']['UF_ICON_ID'])): ?>
+                        <span class="window-menu__ico">
+                            <svg class="<?= $arItem['PARAMS']['UF_ICON_ID']; ?> window-menu__car iconed__ico_r-default">
+                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/cars.svg#<?= $arItem['PARAMS']['UF_ICON_ID']; ?>"></use>
+                            </svg>
+                        </span>
+                    <?php endif; ?>
+                    <span class="window-menu__title title title_m"><?= $arItem['TEXT']; ?></span>
+                </a>
+
             <?php endif; ?>
         <?php endif; ?>
 
