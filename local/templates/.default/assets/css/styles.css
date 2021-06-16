@@ -1352,6 +1352,15 @@ p {
     margin-left: .6rem;
 }
 
+.arrow-r-long-ico {
+    position: relative;
+    top: -.1rem;
+    width: 3.4rem;
+    height: 1rem;
+    margin-left: .6rem;
+}
+
+
 .lizing-ico {
     width: 9rem;
     height: 9rem;

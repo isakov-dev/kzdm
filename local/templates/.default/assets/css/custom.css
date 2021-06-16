@@ -792,4 +792,347 @@ body:not(.homepage) {
     top: 35%;
 }
 
-@media (max-width: 980.98px)
+
+.home-categories {
+    margin-top: 12rem;
+    margin-bottom: 4rem;
+}
+
+.home-categories__el {
+    display: block;
+    margin-bottom: 8rem;
+    color: #17181A;
+    text-align: center;
+    transition: all .2s ease;
+}
+
+.home-categories__el:hover {
+    color: #0F3599;
+}
+
+.home-categories__el:hover .arrow-r-long-ico {
+    stroke: #0F3599;
+    transform: translateX(1rem);
+}
+
+.home-categories__el img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30rem;
+    object-fit: contain;
+}
+
+.home-categories__el-name {
+    display: block;
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 100%;
+    color: inherit;
+}
+
+.home-categories__el .arrow-r-long-ico {
+    stroke: #17181A;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    transition: all .2s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .home-categories {
+        margin-top: 6rem;
+    }
+
+    .home-categories__el {
+        margin-bottom: 4rem;
+    }
+
+    .home-categories__el img {
+        height: 14rem;
+    }
+
+    .home-categories__el-name {
+        font-size: 1.6rem;
+    }
+}
+
+
+.homepage-about__row {
+    margin-bottom: 4rem;
+}
+
+.homepage-about__row .paragraph ul {
+    padding-left: 30px;
+}
+
+@media screen and (min-width: 992px) {
+    .homepage-about__title {
+        margin-bottom: 5rem;
+    }
+
+    .homepage-about__row {
+        margin-bottom: 6rem;
+    }
+
+    .homepage-about .paragraph p {
+        font-size: 1.8rem;
+    }
+
+    .homepage-about__row .paragraph_pt {
+        padding-top: 6rem;
+    }
+
+    .homepage-about__row_right {
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .homepage-about__row img {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+.home-advantages {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+
+.home-advantages__el-img {
+    display: block;
+}
+
+.home-advantages__el-text {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-align: center;
+    color: #17181A;
+}
+
+@media screen and (min-width: 992px) {
+    .home-advantages {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+    }
+
+    .home-advantages__el {
+        margin-bottom: 4rem;
+    }
+
+    .home-advantages__el-img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .home-advantages {
+        margin-bottom: 4rem;
+    }
+
+    .home-advantages__el {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .home-advantages__el-img {
+        flex: 0 0 80px;
+        width: 80px;
+    }
+
+    .home-advantages__el-text {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+}
+
+
+.homepage-questions {
+    margin-bottom: 4rem;
+}
+
+.homepage-questions__row {
+    margin-top: 3rem;
+}
+
+.homepage-questions__row:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+.homepage-questions__el {
+    position: relative;
+    width: max-content;
+    z-index: 0;
+}
+
+.homepage-questions__el:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.homepage-questions__el:after {
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+
+.homepage-questions__el-inner {
+    position: relative;
+    width: max-content;
+    max-width: 1200px;
+    height: 100%;
+    padding: 35px 50px 38px;
+    z-index: 2;
+}
+
+.homepage-questions__q {
+    margin-left: 113px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #17181A;
+}
+
+.homepage-questions__q .homepage-questions__el-inner {
+    background: #EDF2FF;
+}
+
+.homepage-questions__q:before {
+    left: -113px;
+    background: url('../images/qa_question.svg') center no-repeat, #0C588F;
+}
+
+.homepage-questions__q:after {
+    top: 35px;
+    left: -38px;
+    width: 38px;
+    height: 28px;
+    background: url('../images/qa-triangle.svg') center/contain no-repeat;
+}
+
+.homepage-questions__a {
+    margin-right: 113px;
+    margin-left: auto;
+    font-size: 18px;
+    line-height: 24px;
+    color: #3F4449;
+    text-align: right;
+    box-shadow: 0 0 10px rgba(102, 102, 102, 0.15);
+}
+
+.homepage-questions__a .homepage-questions__el-inner {
+    background: #fff;
+}
+
+.homepage-questions__a:before {
+    right: -113px;
+    background: url('../images/qa_answer.svg') center no-repeat, #FF6E00;
+}
+
+.homepage-questions__a:after {
+    top: 25px;
+    right: -48px;
+    width: 58px;
+    height: 48px;
+    background: url('../images/qa-triangle-sh.svg') center/contain no-repeat;
+}
+
+
+@media screen and (min-width: 992px) {
+    .homepage-questions {
+        margin-bottom: 6rem;
+    }
+
+    .homepage-questions__row {
+        margin-top: 4rem;
+    }
+
+    .homepage-questions__row:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .homepage-questions__el-inner {
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .homepage-questions__el {
+        width: calc(100% - 226px);
+    }
+
+    .homepage-questions__q {
+        margin-right: 113px;
+    }
+
+    .homepage-questions__a {
+        margin-left: 113px;
+    }
+
+    .homepage-questions__el-inner {
+        width: 100%;
+    }
+
+    .homepage-questions__a .homepage-questions__el-inner {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homepage-questions__el {
+        width: calc(100% - 93px);
+    }
+
+    .homepage-questions__el:before {
+        top: 28px;
+        width: 40px;
+        height: 40px;
+        background-size: 50%;
+    }
+
+    .homepage-questions__el-inner {
+        padding: 20px 20px 23px;
+    }
+
+    .homepage-questions__q {
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 93px;
+        margin-right: 0;
+    }
+
+    .homepage-questions__q:before {
+        left: -93px;
+    }
+
+    .homepage-questions__a {
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 0;
+        margin-right: 93px;
+    }
+
+    .homepage-questions__a:before {
+        right: -93px;
+    }
+
+}

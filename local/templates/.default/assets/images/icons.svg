@@ -210,8 +210,12 @@
                 </g>
             </g>
         </symbol>
-
-
-
+        <symbol viewBox="0 0 36 12" id="arrow-r-long">
+            <g fill-rule="evenodd">
+                <g>
+                    <path d="M1 5.667h33.368M29.697 1l4.672 4.667-4.672 4.667"/>
+                </g>
+            </g>
+        </symbol>
     </defs>
 </svg>
