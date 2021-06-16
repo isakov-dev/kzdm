@@ -1488,14 +1488,16 @@ p {
     stroke: #7d8288;
 }
 
-.rule-ico {
+.rule-ico,
+.loc-circle-ico {
     width: 6.4rem;
     height: 6.4rem;
     fill: #0f3599;
     stroke: #d3dbe2;
 }
 
-.rub-ico {
+.rub-ico,
+.rub-circle-ico {
     width: 6.4rem;
     height: 6.4rem;
 }
@@ -9819,12 +9821,14 @@ textarea {
         padding-right: 5.5rem;
     }
 
-    .rule-ico {
+    .rule-ico,
+    .loc-circle-ico {
         width: 4rem;
         height: 4rem;
     }
 
-    .rub-ico {
+    .rub-ico,
+    .rub-circle-ico {
         width: 4rem;
         height: 4rem;
     }

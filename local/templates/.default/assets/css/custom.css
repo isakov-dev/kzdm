@@ -793,6 +793,10 @@ body:not(.homepage) {
 }
 
 
+
+/*
+ * Homepage
+ */
 .home-categories {
     margin-top: 12rem;
     margin-bottom: 4rem;
@@ -1134,5 +1138,215 @@ body:not(.homepage) {
     .homepage-questions__a:before {
         right: -93px;
     }
+}
 
+
+/*
+ * Card
+ */
+.wrapper-card-main {
+    max-width: 1320px;
+    margin-bottom: 12rem;
+}
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 54px;
+}
+
+.card-top .preview-char__title {
+    text-align: left;
+    padding-right: 50px;
+}
+
+.cards-nav {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cards-nav__link {
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-width: 1px;
+    border-style: solid;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: #201D1C;
+    opacity: .5;
+    transition: all .2s ease;
+}
+
+.cards-nav__link:hover {
+    opacity: 1;
+    color: #17181A;
+    border-color: #FF6E00;
+}
+
+.cards-nav__link:hover .vector-arrow-ico {
+    stroke: #17181A;
+}
+
+.cards-nav__link:not(:last-child) {
+    margin-right: 20px;
+}
+
+.cards-nav__link .vector-arrow-ico {
+    stroke: #201D1C;
+}
+
+.wrapper-card-main .card-gen {
+    margin-bottom: 50px;
+}
+
+.wrapper-card-main .card-gen__img {
+    padding-right: unset;
+}
+
+.wrapper-card-main .card-gen__stickers {
+    top: 0;
+}
+
+
+.card-gallery-slider {
+    display: flex;
+    max-width: 600px;
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease;
+}
+
+.card-gallery-slider.slick-initialized {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-gallery-slider .slick-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    width: 18px;
+    height: 18px;
+    outline: none;
+    border: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath opacity='.5' fill-rule='evenodd' d='M9 3L7.95 4.05l4.2 4.2H3v1.5h9.15l-4.2 4.2L9 15l6-6-6-6z' fill='%2317181a'/%3E%3C/svg%3E") center/contain no-repeat;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.card-gallery-slider .slick-arrow.slick-disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+.card-gallery-slider .slick-prev {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.card-gallery-slider .slick-next {
+    right: 0;
+}
+
+.card-gallery-slider__item {
+    margin: 1rem;
+    padding: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+    background-color: #fff;
+    opacity: .7;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.slick-current .card-gallery-slider__item {
+    border-color: #FF6E00;
+    opacity: 1;
+}
+
+.card-gallery-slider__pic {
+    display: block;
+}
+
+.card-char {
+    padding: 5rem 5.4rem;
+    background: #F3F5FA;
+    box-shadow: 0px 0px 10px rgba(92, 92, 92, 0.15);
+}
+
+.card-char__items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.wrapper-card-main .char-item_offset {
+    width: 33.333333%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+@media screen and (max-width: 991px) {
+    .card-top {
+        margin-bottom: 30px;
+    }
+
+    .wrapper-card-main .card-gen {
+        margin-bottom: 15px;
+    }
+
+    .card-gallery-slider {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-char {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper-card-main {
+        margin-bottom: 3rem;
+    }
+
+    .card-top .preview-char__title {
+        padding-right: 0;
+    }
+
+    .cards-nav {
+        display: none;
+    }
+
+    .card-char {
+        padding: 20px 10px;
+        margin-left: -19px;
+        margin-right: -19px;
+    }
+
+    .wrapper-card-main  .char-item {
+        text-align: center;
+    }
+
+    .card-gallery-slider {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .card-gallery-slider__item {
+        margin: 5px;
+    }
 }

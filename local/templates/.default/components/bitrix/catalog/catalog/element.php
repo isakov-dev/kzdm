@@ -25,6 +25,7 @@ $this->setFrameMode(true);
     );?>
 </div>
 
+
 <div class="single single_offset">
     <div class="card">
         <?php

@@ -54,106 +54,119 @@ switch ($arResult['SECTION']['CODE']) {
 </script>
 <!-- goals constants init -->
 
-<div class="preview card-preview">
-    <div class="wrapper wrapper_default">
-        <div class="preview__top">
-            <div class="preview__row preview__row_flex">
-                <div class="preview__nav preview__nav_left">
-                    <?php if (!empty($arResult['PREV'])): ?>
-                        <a href="<?= $arResult['PREV']['DETAIL_PAGE_URL']; ?>" class="preview-link preview-link_prev">
-                            <span class="preview__img">
-                                <?php if (!empty($arResult['PREV']['DETAIL_PICTURE'])): ?>
-                                    <img src="<?= resizeImage($arResult['PREV']['DETAIL_PICTURE'], 235, 140); ?>" alt="<?= $arResult['PREV']['NAME']; ?>">
-                                <?php elseif (!empty($arResult['PREV']['PREVIEW_PICTURE'])): ?>
-                                    <img src="<?= resizeImage($arResult['PREV']['PREVIEW_PICTURE'], 235, 140); ?>" alt="<?= $arResult['PREV']['NAME']; ?>">
-                                <?php else: ?>
-                                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/no-image.jpg" alt="<?= $arResult['PREV']['NAME']; ?>">
-                                <?php endif; ?>
-                            </span>
-                            <span class="preview-link__title iconed iconed_center iconed__ico_r-small">
-                                <svg class="iconed_ico vector-arrow-ico iconed__ico_r-small">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vector-arrow-l-ico"></use>
-                                </svg>
-                                <span class="preview-link__text title title_m title_upper title_grey title_demi"><?= $arResult['PREV']['NAME']; ?></span>
-                            </span>
-                        </a>
-                    <?php endif; ?>
-                </div>
-                <div class="card-preview__item">
-                    <div class="card-gen">
-                        <div class="card-gen__img">
-                            <div class="stickers card-gen__stickers">
-                                <a href="<?= SITE_DIR; ?>o-zavode/test-drive/" class="sticker sticker_offset interest-goal">
-                                    <span class="sticker__content">
-                                        <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage('TEST_DRIVE'); ?></span>
-                                    </span>
-                                    <span class="sticker__ico">
-                                        <svg class="iconed_ico rule-ico">
-                                            <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#rule-ico"></use>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="<?= SITE_DIR; ?>prodazha-v-regionakh/" class="sticker sticker_offset interest-goal">
-                                    <span class="sticker__content">
-                                        <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage('SALE_IN_REGIONS'); ?></span>
-                                    </span>
-                                    <span class="sticker__ico">
-                                        <svg class="iconed_ico rule-ico">
-                                            <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#loc-circle-ico"></use>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="<?= SITE_DIR; ?>servis/lizing/" class="sticker sticker_offset rouble-goal">
-                                    <span class="sticker__content">
-                                        <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage('BY_LEASING'); ?></span>
-                                    </span>
-                                    <span class="sticker__ico">
-                                        <svg class="iconed_ico rub-ico">
-                                            <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#rub-circle-ico"></use>
-                                        </svg>
-                                    </span>
-                                </a>
+<div class="wrapper wrapper-card-main">
+    <div class="card-top">
+        <h1 class="h2 preview-char__title"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></h1>
+        <div class="cards-nav">
+            <?php if (!empty($arResult['PREV'])): ?>
+                <a href="<?= $arResult['PREV']['DETAIL_PAGE_URL']; ?>" class="cards-nav__link">
+                    <svg class="iconed_ico vector-arrow-ico iconed__ico_r-small">
+                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vector-arrow-l-ico"></use>
+                    </svg>
+                    <span class="cards-nav__link-text"><?= $arResult['PREV']['NAME']; ?></span>
+                </a>
+            <?php endif; ?>
+
+            <?php if (!empty($arResult['NEXT'])): ?>
+                <a href="<?= $arResult['NEXT']['DETAIL_PAGE_URL']; ?>" class="cards-nav__link">
+                    <span class="cards-nav__link-text"><?= $arResult['NEXT']['NAME']; ?></span>
+                    <svg class="iconed_ico vector-arrow-ico iconed__ico_l-small">
+                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vector-arrow-r-ico"></use>
+                    </svg>
+                </a>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="card-gen">
+        <div class="card-gen__img">
+            <div class="stickers card-gen__stickers">
+                <?php
+                $stickers = [
+                    [
+                        'link' => 'o-zavode/test-drive/',
+                        'goal' => 'interest-goal',
+                        'text_var' => 'TEST_DRIVE',
+                        'icon' => 'rule-ico',
+                    ],
+                    [
+                        'link' => 'prodazha-v-regionakh/',
+                        'goal' => 'interest-goal',
+                        'text_var' => 'SALE_IN_REGIONS',
+                        'icon' => 'loc-circle-ico',
+                    ],
+                    [
+                        'link' => 'servis/lizing/',
+                        'goal' => 'rouble-goal',
+                        'text_var' => 'BY_LEASING',
+                        'icon' => 'rub-circle-ico',
+                    ],
+                ];
+                ?>
+                <?php foreach ($stickers as $sticker) { ?>
+                    <a href="<?= SITE_DIR . $sticker['link']; ?>" class="sticker sticker_offset <?= $sticker['goal']; ?>">
+                        <span class="sticker__content">
+                            <span class="sticker__title"><?= Bitrix\Main\Localization\Loc::getMessage($sticker['text_var']); ?></span>
+                        </span>
+                        <span class="sticker__ico">
+                            <svg class="iconed_ico <?= $sticker['icon']; ?>">
+                                <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#<?= $sticker['icon']; ?>"></use>
+                            </svg>
+                        </span>
+                    </a>
+                <?php } ?>
+            </div>
+
+            <div class="card-gen__pic">
+                <?php if (!empty($arResult['DETAIL_PICTURE'])): ?>
+                    <link rel="preload" as="image"
+                          href="<?= resizeImage($arResult['DETAIL_PICTURE'], 575, 334); ?>">
+                    <picture>
+                        <source media="(max-width: 575px)"
+                                srcset="<?= resizeImage($arResult['DETAIL_PICTURE'], 575, 334); ?>">
+                        <img src="<?= resizeImage($arResult['DETAIL_PICTURE'], 1150, 668); ?>"
+                             alt="<?= $arResult['NAME']; ?>">
+                    </picture>
+                <?php else: ?>
+                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/no-image.jpg"
+                         alt="<?= $arResult['NAME']; ?>">
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-main-bottom row">
+        <div class="col col--lg-6">
+            <?php if (!empty($arResult['PROPERTIES']['GALLERY'])): ?>
+                <div class="card-gallery">
+                    <div class="card-gallery-slider">
+                        <?php
+                        if (!empty($arResult['DETAIL_PICTURE'])) {
+                            $detailFirst = $arResult['DETAIL_PICTURE'];
+
+                            array_unshift($arResult['PROPERTIES']['GALLERY']['VALUE'], $detailFirst);
+                        }
+
+                        foreach ($arResult['PROPERTIES']['GALLERY']['VALUE'] as $key => $value): ?>
+                            <div>
+                                <div class="card-gallery-slider__item">
+                                    <img class="card-gallery-slider__pic"
+                                         src="<?= resizeImage($value, 155, 120); ?>"
+                                         data-mob="<?= resizeImage($value, 575, 334); ?>"
+                                         data-orig="<?= resizeImage($value, 1150, 668); ?>"
+                                         alt="">
+                                </div>
                             </div>
-                            <div class="card-gen__pic">
-                                <?php if (!empty($arResult['DETAIL_PICTURE'])): ?>
-                                    <link rel="preload" as="image" href="<?= resizeImage($arResult['DETAIL_PICTURE'], 575, 417); ?>">
-                                    <picture>
-                                        <source media="(max-width: 575px)" srcset="<?= resizeImage($arResult['DETAIL_PICTURE'], 575, 417); ?>">
-                                        <img src="<?= resizeImage($arResult['DETAIL_PICTURE'], 1043, 757); ?>" alt="<?= $arResult['NAME']; ?>">
-                                    </picture>
-                                <?php else: ?>
-                                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/no-image.jpg" alt="<?= $arResult['NAME']; ?>">
-                                <?php endif; ?>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="preview__nav preview__nav_right">
-                    <?php if (!empty($arResult['NEXT'])): ?>
-                        <a href="<?= $arResult['NEXT']['DETAIL_PAGE_URL']; ?>" class="preview-link preview-link_next">
-                            <span class="preview__img">
-                                <?php if (!empty($arResult['NEXT']['DETAIL_PICTURE'])): ?>
-                                    <img src="<?= resizeImage($arResult['NEXT']['DETAIL_PICTURE'], 235, 140); ?>" alt="<?= $arResult['NEXT']['NAME']; ?>">
-                                <?php elseif (!empty($arResult['NEXT']['PREVIEW_PICTURE'])): ?>
-                                    <img src="<?= resizeImage($arResult['NEXT']['PREVIEW_PICTURE'], 235, 140); ?>" alt="<?= $arResult['NEXT']['NAME']; ?>">
-                                <?php else: ?>
-                                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/no-image.jpg" alt="<?= $arResult['NEXT']['NAME']; ?>">
-                                <?php endif; ?>
-                            </span>
-                            <span class="preview-link__title iconed iconed_center iconed__ico_r-small">
-                                <span class="preview-link__text title title_m title_upper title_grey title_demi"><?= $arResult['NEXT']['NAME']; ?></span>
-                                <svg class="iconed_ico vector-arrow-ico vector-arrow-ico_reverce iconed__ico_l-small">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vector-arrow-r-ico"></use>
-                                </svg>
-                            </span>
-                        </a>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <div class="preview-char">
-                <h1 class="h2 preview-char__title"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></h1>
+            <?php endif; ?>
+        </div>
+
+        <div class="col col--lg-6">
+            <div class="card-char">
                 <?php if (!empty($arResult['PROPERTIES']['MAIN_PROPS']['VALUE'])): ?>
-                    <div class="preview-char__items">
+                    <div class="card-char__items">
                         <?php foreach ($arResult['PROPERTIES']['MAIN_PROPS']['VALUE'] as $key => $value): ?>
                             <div class="char-item char-item_offset">
                                 <h3 class="h3 char-item__title"><?= $value; ?></h3>
@@ -164,10 +177,10 @@ switch ($arResult['SECTION']['CODE']) {
                 <?php endif; ?>
                 <?php if(!empty($arResult['PROPERTIES']['PRICE']['VALUE'])): ?>
                     <a data-src="#callback" href="javascript:;" class="preview-price phone-popup-trigger">
-                        <span class="preview-price__content">
-                            <span class="preview-price__title title title_block"><?= Bitrix\Main\Localization\Loc::getMessage('FROM'); ?> <?= number_format($arResult['PROPERTIES']['PRICE']['VALUE'], 0, '.', ' '); ?> <span class="rub">₽</span></span>
-                            <span class="preview-price__desc"><?= Bitrix\Main\Localization\Loc::getMessage('VARIABLE'); ?></span>
-                        </span>
+                    <span class="preview-price__content">
+                        <span class="preview-price__title title title_block"><?= Bitrix\Main\Localization\Loc::getMessage('FROM'); ?> <?= number_format($arResult['PROPERTIES']['PRICE']['VALUE'], 0, '.', ' '); ?> <span class="rub">₽</span></span>
+                        <span class="preview-price__desc"><?= Bitrix\Main\Localization\Loc::getMessage('VARIABLE'); ?></span>
+                    </span>
                         <svg class="preview-arrow arrow-right-ico">
                             <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#arrow-right-slim-ico"></use>
                         </svg>
