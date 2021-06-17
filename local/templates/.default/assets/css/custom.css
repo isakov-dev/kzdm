@@ -700,7 +700,7 @@ body:not(.homepage) {
 
     .sub-menu__content {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         overflow: hidden;
     }
 
@@ -1145,7 +1145,6 @@ body:not(.homepage) {
  * Card
  */
 .wrapper-card-main {
-    max-width: 1320px;
     margin-bottom: 12rem;
 }
 
@@ -1300,6 +1299,10 @@ body:not(.homepage) {
 
 
 @media screen and (max-width: 991px) {
+    .wrapper-card-main {
+        margin-bottom: 6rem;
+    }
+
     .card-top {
         margin-bottom: 30px;
     }
@@ -1348,5 +1351,73 @@ body:not(.homepage) {
 
     .card-gallery-slider__item {
         margin: 5px;
+    }
+}
+
+
+.card-tab-content {
+    display: none;
+}
+
+.card-tab-content_active {
+    display: block;
+}
+
+.feature_props {
+    margin-top: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+    .feature_props {
+        margin-top: 8rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .top-nav_w-controls {
+        background-color: transparent;
+        box-shadow: none;
+        margin-bottom: 2rem;
+    }
+
+    .top-nav_w-controls .sub-menu__content {
+        display: block;
+        overflow: visible;
+    }
+
+    .top-nav_w-controls .sub-menu__link {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 30px;
+        background: #FAFAFA;
+        font-size: 1.6rem;
+        text-align: left;
+        border: 1px solid #E0E0E0;
+    }
+
+    .top-nav_w-controls .sub-menu__link:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .top-nav_w-controls .sub-menu__link:before {
+        left: 0;
+        right: unset;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+
+    .top-nav_w-controls .sub-menu__link.active,
+    .top-nav_w-controls .sub-menu__link:hover {
+        border-color: transparent;
+        box-shadow: 0px 4px 4px rgba(92, 92, 92, 0.15);
+    }
+
+    .top-nav_w-controls .sub-menu__link.active:before,
+    .top-nav_w-controls .sub-menu__link:hover:before {
+        width: 3px;
     }
 }

@@ -80,6 +80,51 @@ $(document).ready(function () {
     }
 
 
+    $('.anchor-tab-js').click(function (e) {
+        e.preventDefault();
+
+        $('.anchor-tab-js').removeClass('active');
+
+        $('.card-tab-content').removeClass('animated card-tab-content_active').css('visibility', 'visible')
+
+        let $tab = $('.card-tab-content' + $(this).attr('href'));
+
+        $tab.addClass('card-tab-content_active')
+
+        setTimeout(function () {
+            $tab.addClass('animated')
+        }, 1)
+
+        $('html').animate({
+            scrollTop: $($(this).attr('href')).offset().top - 160// прокручиваем страницу к требуемому элементу
+        }, 500);
+
+
+        $('.work-slider').slick('slickSetOption', {
+            slidesToShow: 1,
+            arrows: false,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            centerMode: true,
+            centerPadding: '20%',
+            responsive: [
+                {
+                    breakpoint: 760,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        centerMode: false,
+                        centerPadding: '0%',
+
+                    }
+                }]
+        })
+
+        $(this).addClass('active');
+    })
+
+
 });
 
 function createButton(text, cb) {

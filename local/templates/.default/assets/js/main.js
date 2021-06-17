@@ -531,7 +531,6 @@ $(document).ready(function () {
 
                 }
             }]
-
     });
 
     var $slick3 = $('.news-slider');

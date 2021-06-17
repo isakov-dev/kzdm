@@ -54,7 +54,7 @@ switch ($arResult['SECTION']['CODE']) {
 </script>
 <!-- goals constants init -->
 
-<div class="wrapper wrapper-card-main">
+<div class="wrapper wrapper_fixed wrapper-card-main">
     <div class="card-top">
         <h1 class="h2 preview-char__title"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></h1>
         <div class="cards-nav">
@@ -77,7 +77,6 @@ switch ($arResult['SECTION']['CODE']) {
             <?php endif; ?>
         </div>
     </div>
-
     <div class="card-gen">
         <div class="card-gen__img">
             <div class="stickers card-gen__stickers">
@@ -134,7 +133,6 @@ switch ($arResult['SECTION']['CODE']) {
             </div>
         </div>
     </div>
-
     <div class="card-main-bottom row">
         <div class="col col--lg-6">
             <?php if (!empty($arResult['PROPERTIES']['GALLERY'])): ?>
@@ -191,98 +189,101 @@ switch ($arResult['SECTION']['CODE']) {
     </div>
 </div>
 
+<div class="card-mobile-nav">
+    <div class="btns btns_center">
+        <a href="javascript:" data-src="#leasing" class="btns__item btn btn_box btn_blue phone-popup-trigger leasing-trigger" data-item="<?= $arResult['NAME']; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?></a>
+        <?php /* <a href="<?= SITE_DIR; ?>configurator/" class="btns__item btn btn_box btn_blue"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></a> */ ?>
+        <a href="javascript:" data-src="#callback" class="btns__item btn btn_box btn_orange phone-popup-trigger"><?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST'); ?></a>
+    </div>
+</div>
+
 <div class="top-nav top-nav_w-controls top-nav_widget top-nav_bordered sub-menu stick-menu stick-menu_fixed">
-    <div class="wrapper wrapper_default">
-        <div class="row">
-            <div class="col col--lg-12">
-                <div class="sub-menu-widget">
-                    <div class="sub-menu__content custom-scroll-x">
-                        <a href="#model" class="sub-menu__link anchor-js active"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_MODEL'); ?></a>
-                        <?php if (!empty($arResult['PROPS'])): ?>
-                            <a href="#props" class="sub-menu__link anchor-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_PROPS'); ?></a>
-                        <?php endif; ?>
-                        <a href="#desc" class="sub-menu__link anchor-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_DESCRIPTION'); ?></a>
-                        <?php if (!empty($arResult['PROPERTIES']['GALLERY']['VALUE'])): ?>
-                            <a href="#gallery" class="sub-menu__link anchor-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_GALLERY'); ?></a>
-                        <?php endif; ?>
-                        <?php if (!empty($arResult['PROPERTIES']['ADVANTAGES']['VALUE'])): ?>
-                            <a href="#advant" class="sub-menu__link anchor-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_ADV'); ?></a>
-                        <?php endif; ?>
-                        <?php if (!empty($arResult['PROPERTIES']['ADDITIONAL_SPEC']['VALUE'])): ?>
-                            <a href="#fetures" class="sub-menu__link anchor-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_FEATURES'); ?></a>
-                        <?php endif; ?>
-                    </div>
-                    <div class="sub-menu__controls">
-                        <a href="javascript:;" data-src="#leasing" data-item="<?= $arResult['NAME']; ?>"
-                           class="btn btn_box btn_transparent phone-popup-trigger leasing-trigger">
-                            <?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?>
-                        </a>
-                        <?php /*if ($arResult['IBLOCK_SECTION_ID'] == 1): ?>
-                            <a href="<?= SITE_DIR; ?>configurator/" class="btn btn_box btn_blue"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></a>
-                        <?php endif;*/ ?>
-                        <a href="javascript:;" data-src="#callback" class="btn btn_box btn_orange phone-popup-trigger">
-                            <?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST'); ?>
-                        </a>
-                    </div>
-                </div>
+    <div class="wrapper wrapper_fixed">
+        <div class="sub-menu-widget">
+            <div class="sub-menu__content">
+                <a href="#model" class="sub-menu__link anchor-tab-js active">
+                    <?php if (!empty($arResult['PROPS'])): ?>
+                        <?= Bitrix\Main\Localization\Loc::getMessage('MENU_PROPS'); ?>
+                    <?php else: ?>
+                        <?= Bitrix\Main\Localization\Loc::getMessage('MENU_MODEL'); ?>
+                    <?php endif; ?>
+                </a>
+                <a href="#desc" class="sub-menu__link anchor-tab-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_DESCRIPTION'); ?></a>
+                <?php if (!empty($arResult['PROPERTIES']['GALLERY']['VALUE'])): ?>
+                    <a href="#gallery" class="sub-menu__link anchor-tab-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_GALLERY'); ?></a>
+                <?php endif; ?>
+                <?php if (!empty($arResult['PROPERTIES']['ADVANTAGES']['VALUE'])): ?>
+                    <a href="#advant" class="sub-menu__link anchor-tab-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_ADV'); ?></a>
+                <?php endif; ?>
+                <?php if (!empty($arResult['PROPERTIES']['ADDITIONAL_SPEC']['VALUE'])): ?>
+                    <a href="#fetures" class="sub-menu__link anchor-tab-js"><?= Bitrix\Main\Localization\Loc::getMessage('MENU_FEATURES'); ?></a>
+                <?php endif; ?>
+            </div>
+            <div class="sub-menu__controls">
+                <a href="javascript:;" data-src="#leasing" data-item="<?= $arResult['NAME']; ?>"
+                   class="btn btn_box btn_transparent phone-popup-trigger leasing-trigger">
+                    <?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?>
+                </a>
+                <?php /*if ($arResult['IBLOCK_SECTION_ID'] == 1): ?>
+                    <a href="<?= SITE_DIR; ?>configurator/" class="btn btn_box btn_blue"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></a>
+                <?php endif;*/ ?>
+                <a href="javascript:;" data-src="#callback" class="btn btn_box btn_orange phone-popup-trigger">
+                    <?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST'); ?>
+                </a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="card-mobile-nav">
-    <div class="btns btns_center">
-        <a href="javascript:;" data-src="#leasing" class="btns__item btn btn_box btn_blue phone-popup-trigger leasing-trigger" data-item="<?= $arResult['NAME']; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('LEASING_REQUEST'); ?></a>
-        <a href="<?= SITE_DIR; ?>configurator/" class="btns__item btn btn_box btn_blue"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></a>
-        <a href="javascript:;" data-src="#callback" class="btns__item btn btn_box btn_orange phone-popup-trigger"><?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST'); ?></a>
-    </div>
-</div>
-<div class="section section_animated secton_b-small wow " id="model">
-    <div class="wrapper wrapper_default">
+<div class="section section_animated secton_b-small wow card-tab-content card-tab-content_active" id="model">
+    <div class="wrapper wrapper_fixed">
         <div class="feature">
-            <div class="row">
-                <div class="col col--xl-5">
-                    <?php if (!empty($arResult['PROPERTIES']['LESS_TEXT']['VALUE'])): ?>
-                        <div class="feature-desc h3 title title_medium title_big-offset"><?= $arResult['PROPERTIES']['LESS_TEXT']['VALUE']['TEXT']; ?></div>
-                    <?php endif; ?>
-                    <?php if (!empty($arResult['BLUEPRINTS'])):
-                        $bp = $arResult['BLUEPRINTS'];
-                        $firstBlueprint = array_pop($arResult['BLUEPRINTS']);
-                        ?>
-                        <div class="feature__box box box_middle-b">
-                            <div class="tile-gallery">
-                                <a href="<?= $firstBlueprint['SRC']; ?>" data-fancybox="gallery" class="tile-gallery__item tile-gallery__item_big">
-                                    <img src="<?= resizeImage($firstBlueprint, 330, 120); ?>" alt="<?= $arResult['NAME']; ?>">
-                                </a>
-                                <?php if (count($arResult['PROPERTIES']['BLUEPRINTS']['VALUE']) > 1): ?>
-                                    <div class="tile-gallery__other">
-                                        <?php foreach ($arResult['BLUEPRINTS'] as $key => $value): ?>
-                                            <?php if ($key + 1 <= 3): ?>
-                                                <a href="<?= $value['SRC']; ?>" data-fancybox="gallery" class="tile-gallery__item">
-                                                    <img src="<?= resizeImage($value, 124, 88); ?>" alt="<?= $arResult['NAME']; ?>">
-                                                </a>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                        <?php if (count($arResult['PROPERTIES']['BLUEPRINTS']['VALUE']) > 4): ?>
-                                            <a href="<?= $arResult['BLUEPRINTS'][3]['SRC']; ?>" data-fancybox="gallery" class="tile-gallery__item galley-more">
-                                                <?php
-                                                $countBlueprintMsg = explode(' ', pluralForm(count(array_slice($arResult['PROPERTIES']['BLUEPRINTS']['VALUE'], 4)), [Bitrix\Main\Localization\Loc::getMessage('BLUEPRINT'), Bitrix\Main\Localization\Loc::getMessage('BLUEPRINTS_FEW'), Bitrix\Main\Localization\Loc::getMessage('BLUEPRINTS_MANY')]));
-                                                ?>
-                                                <span class="galley-more__content">
+            <div class="h3 title title_big-offset"><?= $arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']; ?></div>
+
+            <?php if (!empty($arResult['PROPERTIES']['LESS_TEXT']['VALUE'])): ?>
+                <div class="feature-desc box_middle-b"><?= $arResult['PROPERTIES']['LESS_TEXT']['VALUE']['TEXT']; ?></div>
+            <?php endif; ?>
+
+            <?php if (!empty($arResult['BLUEPRINTS'])):
+                $bp = $arResult['BLUEPRINTS'];
+                $firstBlueprint = array_pop($arResult['BLUEPRINTS']);
+                ?>
+                <div class="feature__box box box_middle-b">
+                    <div class="tile-gallery">
+                        <a href="<?= $firstBlueprint['SRC']; ?>" data-fancybox="gallery" class="tile-gallery__item tile-gallery__item_big">
+                            <img src="<?= resizeImage($firstBlueprint, 330, 120); ?>" alt="<?= $arResult['NAME']; ?>">
+                        </a>
+                        <?php if (count($arResult['PROPERTIES']['BLUEPRINTS']['VALUE']) > 1): ?>
+                            <div class="tile-gallery__other">
+                                <?php foreach ($arResult['BLUEPRINTS'] as $key => $value): ?>
+                                    <?php if ($key + 1 <= 3): ?>
+                                        <a href="<?= $value['SRC']; ?>" data-fancybox="gallery" class="tile-gallery__item">
+                                            <img src="<?= resizeImage($value, 124, 88); ?>" alt="<?= $arResult['NAME']; ?>">
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                <?php if (count($arResult['PROPERTIES']['BLUEPRINTS']['VALUE']) > 4): ?>
+                                    <a href="<?= $arResult['BLUEPRINTS'][3]['SRC']; ?>" data-fancybox="gallery" class="tile-gallery__item galley-more">
+                                        <?php
+                                        $countBlueprintMsg = explode(' ', pluralForm(count(array_slice($arResult['PROPERTIES']['BLUEPRINTS']['VALUE'], 4)), [Bitrix\Main\Localization\Loc::getMessage('BLUEPRINT'), Bitrix\Main\Localization\Loc::getMessage('BLUEPRINTS_FEW'), Bitrix\Main\Localization\Loc::getMessage('BLUEPRINTS_MANY')]));
+                                        ?>
+                                        <span class="galley-more__content">
                                                     <span class="galley-more__numb">+<?= $countBlueprintMsg[0]; ?></span>
                                                     <span class="galley-more__title"><?= $countBlueprintMsg[1]; ?></span>
                                                 </span>
-                                            </a>
-                                            <?php foreach (array_slice($bp, 4) as $key => $value): ?>
-                                                <a class="gallery-hide" href="<?= $value['SRC']; ?>" data-fancybox="gallery"></a>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-                                    </div>
+                                    </a>
+                                    <?php foreach (array_slice($bp, 4) as $key => $value): ?>
+                                        <a class="gallery-hide" href="<?= $value['SRC']; ?>" data-fancybox="gallery"></a>
+                                    <?php endforeach; ?>
                                 <?php endif; ?>
                             </div>
-                        </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
 
+            <div class="row">
+                <div class="col col--lg-6">
                     <div class="feature__box box box_middle-b">
                         <div class="row row_micro feature__nav">
                             <?php if (!empty($arResult['PDF'])): ?>
@@ -327,53 +328,55 @@ switch ($arResult['SECTION']['CODE']) {
                         </div>
                     </div>
                 </div>
-                <?php if (!empty($arResult['PROPS'])): ?>
-                    <div id="props" class="col col--xl-offset-1 col--xl-6">
-                        <div class="tab-widget feature-tab">
-                            <div class="tab-widget__scroll">
-                                <div class="tab-widget__nav feature-tab__nav">
-                                    <?php foreach ($arResult['PROPS'] as $key => $value): ?>
-                                        <?php if (!empty($value['ELEMENTS'])): ?>
-                                            <button type="button" class="feature-tab__link tab-widget__link<?= ($key === 0) ? ' active' : false; ?> interest-goal">
-                                                <?= $value['NAME']; ?>
-                                            </button>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                            <div class="tab-widget__content">
-                                <?php foreach ($arResult['PROPS'] as $key => $value): ?>
-                                    <?php if (!empty($value['ELEMENTS'])): ?>
-                                        <div class="tab<?= ($key === 0) ? ' active' : false; ?>">
-                                            <div class="feature-tab__content">
-                                                <div class="table feature-table">
-                                                    <?php foreach ($value['ELEMENTS'] as $element): ?>
-                                                        <div class="table__row">
-                                                            <div class="table__td">
-                                                                <div class="feature-table__content"><?= $element['NAME']; ?></div>
-                                                            </div>
-                                                            <div class="table__td">
-                                                                <div class="feature-table__content"><?= $element['PROPERTY_VALUE_VALUE']; ?></div>
-                                                            </div>
-                                                        </div>
-                                                    <?php endforeach; ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
+
+        <?php if (!empty($arResult['PROPS'])): ?>
+            <div class="feature feature_props">
+                <div class="h3 title title_big-offset"><?= Bitrix\Main\Localization\Loc::getMessage('TECHSPEC'); ?></div>
+                <div class="tab-widget feature-tab">
+                    <div class="tab-widget__scroll">
+                        <div class="tab-widget__nav feature-tab__nav">
+                            <?php foreach ($arResult['PROPS'] as $key => $value): ?>
+                                <?php if (!empty($value['ELEMENTS'])): ?>
+                                    <button type="button" class="feature-tab__link tab-widget__link<?= ($key === 0) ? ' active' : false; ?> interest-goal">
+                                        <?= $value['NAME']; ?>
+                                    </button>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <div class="tab-widget__content">
+                        <?php foreach ($arResult['PROPS'] as $key => $value): ?>
+                            <?php if (!empty($value['ELEMENTS'])): ?>
+                                <div class="tab<?= ($key === 0) ? ' active' : false; ?>">
+                                    <div class="feature-tab__content">
+                                        <div class="table feature-table">
+                                            <?php foreach ($value['ELEMENTS'] as $element): ?>
+                                                <div class="table__row">
+                                                    <div class="table__td">
+                                                        <div class="feature-table__content"><?= $element['NAME']; ?></div>
+                                                    </div>
+                                                    <div class="table__td">
+                                                        <div class="feature-table__content"><?= $element['PROPERTY_VALUE_VALUE']; ?></div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 
-<div class="section section_animated secton_b-small wow ">
-    <div class="wrapper wrapper_default">
-        <div class="card-desc" id="desc">
+<div class="section section_animated secton_b-small wow card-tab-content" id="desc">
+    <div class="wrapper wrapper_fixed">
+        <div class="card-desc">
             <div class="row">
                 <div class="col col--lg-6 col--md-8">
                     <div class="card-desc__item">
@@ -397,48 +400,51 @@ switch ($arResult['SECTION']['CODE']) {
             </div>
         </div>
     </div>
+
+    <?php if (!empty($arResult['YOUTUBE'])): ?>
+        <div class="wrapper wrapper_fixed secton_b-small">
+            <div class="from-youtube" style="background-image: url('<?= $arResult['YOUTUBE']['COVERS']['MAX_HIGH']; ?>')">
+                <div class="video-widget">
+                    <a data-fancybox="video" href="<?= $arResult['YOUTUBE']['VIDEO']; ?>" class="video-popup__link">
+                        <span class="play-circle iconed__ico play-circle_r-offset play-circle_blue video-widget__play"></span>
+                    </a>
+                    <?php if (!empty($arResult['YOUTUBE']['DATA'])): ?>
+                        <div class="video-widget__content">
+                            <div class="wrapper wrapper_default">
+                                <h2 class="h2 video-widget__title video-widget__title_white"><?= $arResult['YOUTUBE']['DATA']['title']; ?></h2>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+
+    <?php elseif (!empty($arResult['VIDEO'])): ?>
+        <div class="wrapper wrapper_fixed secton_b-small">
+            <div class="video-widget">
+                <a data-fancybox="video" href="<?= $arResult['VIDEO']['SRC']; ?>" class="video-popup__link">
+                    <span class="play-circle iconed__ico play-circle_r-offset play-circle_blue video-widget__play"></span>
+                </a>
+                <?php if (!empty($arResult['VIDEO']['DESCRIPTION'])): ?>
+                    <div class="video-widget__content">
+                        <div class="wrapper wrapper_default">
+                            <h2 class="h2 video-widget__title video-widget__title_white"><?= $arResult['VIDEO']['DESCRIPTION']; ?></h2>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <video autoplay muted loop class="video-widget__bg video-js vjs-default-skin" data-setup='{"fluid": true}'>
+                    <source src="<?= $arResult['VIDEO']['SRC']; ?>" type="<?= $arResult['VIDEO']['CONTENT_TYPE']; ?>">
+                </video>
+            </div>
+        </div>
+    <?php endif; ?>
 </div>
 
-<?php if (!empty($arResult['YOUTUBE'])): ?>
-    <div class="section section_animated secton_b-small secton_b-none wow from-youtube" style="background-image: url('<?= $arResult['YOUTUBE']['COVERS']['MAX_HIGH']; ?>')">
-        <div class="video-widget">
-            <a data-fancybox="video" href="<?= $arResult['YOUTUBE']['VIDEO']; ?>" class="video-popup__link">
-                <span class="play-circle iconed__ico play-circle_r-offset play-circle_blue video-widget__play"></span>
-            </a>
-            <?php if (!empty($arResult['YOUTUBE']['DATA'])): ?>
-                <div class="video-widget__content">
-                    <div class="wrapper wrapper_default">
-                        <h2 class="h2 video-widget__title video-widget__title_white"><?= $arResult['YOUTUBE']['DATA']['title']; ?></h2>
-                    </div>
-                </div>
-            <?php endif; ?>
-        </div>
-    </div>
-<?php elseif (!empty($arResult['VIDEO'])): ?>
-    <div class="section section_animated secton_b-small secton_b-none wow ">
-        <div class="video-widget">
-            <a data-fancybox="video" href="<?= $arResult['VIDEO']['SRC']; ?>" class="video-popup__link">
-                <span class="play-circle iconed__ico play-circle_r-offset play-circle_blue video-widget__play"></span>
-            </a>
-            <?php if (!empty($arResult['VIDEO']['DESCRIPTION'])): ?>
-                <div class="video-widget__content">
-                    <div class="wrapper wrapper_default">
-                        <h2 class="h2 video-widget__title video-widget__title_white"><?= $arResult['VIDEO']['DESCRIPTION']; ?></h2>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <video autoplay muted loop class="video-widget__bg video-js vjs-default-skin" data-setup='{"fluid": true}'>
-                <source src="<?= $arResult['VIDEO']['SRC']; ?>" type="<?= $arResult['VIDEO']['CONTENT_TYPE']; ?>">
-            </video>
-        </div>
-    </div>
-<?php endif; ?>
-
 <?php if(!empty($arResult['PROPERTIES']['GALLERY']['VALUE']) || !empty($arResult['PROPERTIES']['RELIABILITY']['VALUE'])): ?>
-    <div class="section section_default section_animated wow">
+    <div class="section section_default section_animated wow card-tab-content" id="gallery">
         <div class="card-preim">
             <?php if (!empty($arResult['PROPERTIES']['RELIABILITY']['VALUE'])): ?>
-                <div class="wrapper wrapper_default">
+                <div class="wrapper wrapper_fixed">
                     <h2 class="card-preim__title title title_centered title_big-offset"><?= Bitrix\Main\Localization\Loc::getMessage('RELIABILITY_AND_EFFICIENCY'); ?></h2>
                     <div class="box box_offset">
                         <div class="row">
@@ -465,7 +471,7 @@ switch ($arResult['SECTION']['CODE']) {
             <?php endif; ?>
 
             <?php if (!empty($arResult['PROPERTIES']['GALLERY'])): ?>
-                <div id="gallery" class="work-widget">
+                <div class="work-widget">
                     <div class="work-widget__nav">
                         <div class="wrapper wrapper_default">
                             <div class="work-widget__arrows">
@@ -501,13 +507,13 @@ switch ($arResult['SECTION']['CODE']) {
 <?php endif; ?>
 
 <?php if (!empty($arResult['PROPERTIES']['ADVANTAGES']['VALUE']) || !empty($arResult['PROPERTIES']['ADVANTAGES_IMG']['VALUE'])): ?>
-    <div id="advant" class="section section_default section_animated wow">
+    <div class="section section_default section_animated wow card-tab-content" id="advant">
         <div class="car-preim">
-            <div class="wrapper wrapper_default">
+            <div class="wrapper wrapper_fixed">
                 <h2 class="card-preim__title title  title_big-offset"><?= Bitrix\Main\Localization\Loc::getMessage('ADVANTAGES'); ?></h2>
                 <div class="row">
                     <?php if (!empty($arResult['PROPERTIES']['ADVANTAGES_IMG']['VALUE'])): ?>
-                        <div class="col col--lg-6 ">
+                        <div class="col col--lg-6">
                             <div class="stick">
                                 <div class="car-preim__img">
                                     <img class="car-preim__pic" src="<?= resizeImage($arResult['PROPERTIES']['ADVANTAGES_IMG']['VALUE'], 872, 640); ?>" alt="преимущества">
@@ -517,7 +523,7 @@ switch ($arResult['SECTION']['CODE']) {
                     <?php endif; ?>
 
                     <?php if (!empty($arResult['PROPERTIES']['ADVANTAGES']['VALUE'])): ?>
-                        <div class="col col--lg-5<?= !empty($arResult['PROPERTIES']['ADVANTAGES_IMG']['VALUE']) ? ' col--lg-offset-1' : false; ?>">
+                        <div class="col col--lg-6">
                             <div class="car-preim__items">
                                 <?php foreach ($arResult['PROPERTIES']['ADVANTAGES']['VALUE'] as $key => $value): ?>
                                     <div class="car-preim__item car-preim__item_offset iconed iconed_start">
@@ -542,9 +548,9 @@ switch ($arResult['SECTION']['CODE']) {
 <?php endif; ?>
 
 <?php if (!empty($arResult['PROPERTIES']['ADDITIONAL_SPEC']['VALUE'])): ?>
-    <div class="section section_animated secton_b-small wow  animated" style="visibility: visible;">
-        <div class="wrapper wrapper_default">
-            <div class="card-desc" id="fetures">
+    <div class="section section_animated secton_b-small wow card-tab-content" id="fetures">
+        <div class="wrapper wrapper_fixed">
+            <div class="card-desc">
                 <div class="row">
                     <div class="col col--lg-12 col--md-12">
                         <div class="card-desc__item">
