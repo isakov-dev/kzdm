@@ -25,7 +25,7 @@ $context = $app->getContext();
               </span>
           </a>
       </div>
-      <?php if (empty($context->getRequest()->getCookie('CITY_ID'))): ?>
+      <?php /*if (empty($context->getRequest()->getCookie('CITY_ID'))): ?>
           <div class="header-active-city__selector">
               <div class="header-active-city__selector-title">
                   <?= Bitrix\Main\Localization\Loc::getMessage('CITY_SELECTOR_TITLE'); ?>
@@ -41,7 +41,7 @@ $context = $app->getContext();
                   </button>
               </div>
           </div>
-      <?php endif; ?>
+      <?php endif;*/ ?>
   </div>
 
 <?php endif; ?>
