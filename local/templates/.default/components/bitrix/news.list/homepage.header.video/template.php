@@ -21,9 +21,9 @@ $this->setFrameMode(true);
             <div class="index-video__content">
                 <div class="row">
                     <div class="col col--lg-7">
-                        <?if ($value['PROPERTIES']['H1']['VALUE']) {?>
+                        <?/*if ($value['PROPERTIES']['H1']['VALUE']) {?>
                             <h1 class="index-video__h1"><?=$value['PROPERTIES']['H1']['VALUE']?></h1>
-                        <?}?>
+                        <?}*/?>
                         <h2 class="h1 title title_bold index-video__title"><?= $value['NAME']; ?></h2>
                         <?php if (!empty($value['PREVIEW_TEXT'])): ?>
                             <div class="index-video__desc">
