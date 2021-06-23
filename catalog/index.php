@@ -213,7 +213,7 @@ $APPLICATION->SetPageProperty('description', 'Производство и про
 <?if ($APPLICATION->GetCurPage(false) == '/catalog/') {?>
     <div class="section section_animated wow">
         <div class="wrapper wrapper_default">
-            <div class="paragraph paragraph_middle">
+            <div class="paragraph paragraph_middle catalog-description">
                 <h2>Дорожная спецтехника – комплектация и применение</h2>
 
                 <p>Первые дороги появились еще во времена существования праславян, в тысячных годах до нашей эры. Конечно, тогда они представляли собой не то, что мы называем дорогами сегодня. Первые же асфальтовые покрытия в нашей стране появились в 1866 году, но активно развиваться асфальтовые сети стали уже с 1920-х годов. В эти времена работы уже проводились не вручную, а с использованием дорожно-строительной техники.</p>
