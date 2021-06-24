@@ -7363,6 +7363,7 @@ h1.single__title {
     background-color: #fafafa;
     background-repeat: no-repeat;
     background-position: right bottom;
+    background-size: 240px;
 }
 
 .history-link:before {
