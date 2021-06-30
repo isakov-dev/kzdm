@@ -48,13 +48,20 @@ $APPLICATION->SetPageProperty('title', 'История завода Курган
                                     </span>
                                 </a>
                             </div>
+<!--                            <div class="col col--md-6">-->
+<!--                                <a href="--><?//= SITE_DIR; ?><!--o-zavode/galereya/" class="history-link" style="background-image: url('/upload/attached/history-circle.png')">-->
+<!--                                    <span class="history-link__content">-->
+<!--                                        <span class="h3 history-link__title title title_block title_bold title_b-offset">Галерея</span>-->
+<!--                                        <span class="history-link__desc">-->
+<!--                                            Исторические фото спецтехники завода-->
+<!--                                        </span>-->
+<!--                                    </span>-->
+<!--                                </a>-->
+<!--                            </div>-->
                             <div class="col col--md-6">
-                                <a href="<?= SITE_DIR; ?>o-zavode/galereya/" class="history-link" style="background-image: url('/upload/attached/history-circle.png')">
+                                <a href="/upload/pdf_veterany/spisok_veteranov_kurgandormash.pdf" class="history-link" style="background-image: url('/upload/attached/veterany-img.jpg')">
                                     <span class="history-link__content">
-                                        <span class="h3 history-link__title title title_block title_bold title_b-offset">Галерея</span>
-                                        <span class="history-link__desc">
-                                            Исторические фото спецтехники завода
-                                        </span>
+                                        <span class="h3 history-link__title title title_block title_bold title_b-offset">Ветераны завода</span>
                                     </span>
                                 </a>
                             </div>
