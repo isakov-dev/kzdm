@@ -108,9 +108,9 @@ if (!$arResult["NavShowAlways"]) {
         }
         ?>
     <?php if ($bPrevDisabled): ?>
-        <div class="pagination__link title title_blue">предыдущая страница</div>
+        <div class="pagination__link title title_blue"><?= Bitrix\Main\Localization\Loc::getMessage('PREV_PAGE'); ?></div>
     <?php else: ?>
-        <a class="pagination__link title title_blue" href="<?= $sPrevHref; ?>">предыдущая страница</a>
+        <a class="pagination__link title title_blue" href="<?= $sPrevHref; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('PREV_PAGE'); ?></a>
     <?php endif; ?>
         <div class="pagination__items">
             <?
@@ -147,9 +147,9 @@ if (!$arResult["NavShowAlways"]) {
             ?>
         </div>
         <?php if ($bNextDisabled): ?>
-            <div class="pagination__link title title_blue">следующая страница</div>
+            <div class="pagination__link title title_blue"><?= Bitrix\Main\Localization\Loc::getMessage('NEXT_PAGE'); ?></div>
         <?php else: ?>
-            <a class="pagination__link title title_blue" href="<?= $sNextHref; ?>">следующая страница</a>
+            <a class="pagination__link title title_blue" href="<?= $sNextHref; ?>"><?= Bitrix\Main\Localization\Loc::getMessage('NEXT_PAGE'); ?></a>
         <?php endif; ?>
     </div>
 </div>

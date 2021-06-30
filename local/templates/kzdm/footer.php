@@ -178,8 +178,7 @@
                         © <?= Bitrix\Main\Localization\Loc::getMessage('COPYRIGHT'); ?>, <?= date('Y'); ?>
                     </span>
                     <span class="copy__ofer">
-                        Не является публичной офертой. Информация носит ознакомительный характер и не является окончательной.
-                        Производитель оставляет за собой право изменять конфигурацию и характеристики оборудования.
+                        <?= Bitrix\Main\Localization\Loc::getMessage('COPYRIGHT_TEXT'); ?>
                     </span>
                     <span class="south-copy">
                         <span class="south-copy__title">
@@ -259,130 +258,132 @@
             ]
         ], false); ?>
 
-        <div style="display: none;" id="window" class="window">
-            <div class="window__content">
-                <div class="window__left">
-                    <?$APPLICATION->IncludeComponent(
-                        "bitrix:menu",
-                        "modal",
-                        Array(
-                            "ALLOW_MULTI_SELECT" => "N",
-                            "CHILD_MENU_TYPE" => "left",
-                            "DELAY" => "N",
-                            "MAX_LEVEL" => "2",
-                            "MENU_CACHE_GET_VARS" => array(""),
-                            "MENU_CACHE_TIME" => "36000000",
-                            "MENU_CACHE_TYPE" => "A",
-                            "MENU_CACHE_USE_GROUPS" => "Y",
-                            "ROOT_MENU_TYPE" => "top",
-                            "USE_EXT" => "Y"
-                        )
-                    );?>
-                </div>
-                <div class="window__right">
-                    <?php/*
-                    <a href="<?= SITE_DIR; ?>configurator/" class="window-control window-control_comb window-control_shadow">
-                        <div class="window-control__content">
-                            <span class="h4 title title_upper title_bold"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></span>
-                        </div>
-                        <span class="window-control__desc"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR_SUB'); ?></span>
-                        <img class="window-control__pic" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/configuration.jpg" alt="">
-                    </a>*/?>
-                    <a class="window-control window-control_phone phone-popup-trigger" data-src="#callback" href="javascript:;">
-                        <div class="window-control__content">
-                            <span class="h4 title title_upper title_bold"><?= SITE_ID == 'en' ? 'Callback' : 'Заказать звонок'; ?></span>
-                        </div>
-                        <span class="window-control__desc"><?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST_SUB'); ?></span>
-                    </a>
-                </div>
-            </div>
-            <div class="window-bottom">
-                <div class="window-bottom__left">
-                    <div class="window-bottom__item">
-                        <a href="mailto:omis@kzdm.ru" class="h4 title title_blue title_medium window-mail">omis@kzdm.ru</a>
+        <?php if (SITE_ID != 'en'): ?>
+            <div style="display: none;" id="window" class="window">
+                <div class="window__content">
+                    <div class="window__left">
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "modal",
+                            Array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "left",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "2",
+                                "MENU_CACHE_GET_VARS" => array(""),
+                                "MENU_CACHE_TIME" => "36000000",
+                                "MENU_CACHE_TYPE" => "A",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "top",
+                                "USE_EXT" => "Y"
+                            )
+                        );?>
                     </div>
-                    <?if (DOMAIN_ZONE == 'ru') {?>
-                        <?php $APPLICATION->IncludeComponent('sunmedia:active.city', '', [
-                            'IBLOCK_ID' => 16
-                        ]); ?>
-                    <?}?>
-                    <div class="window-bottom__item">
-                        <a href="<?= SITE_ID == 'en' ? '//'.DOMAIN : '//'.EN_DOMAIN; ?>" class="language iconed iconed_center">
-                            <?php if (SITE_ID != 'en'): ?>
-                                <img class="language__ico iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/en.png" alt="">
-                            <?php else: ?>
-                                <img class="language__ico iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/russian.png" alt="">
-                            <?php endif; ?>
-                            <span class="language__content title"><?= SITE_ID == 'en' ? 'Russian' : 'English'; ?></span>
-                        </a>
-                    </div>
-                    <div class="window-bottom__item">
-                        <a href="/servis/lizing/" class="iconed iconed_center">
-                            <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
-                            <span class="title"><?=GetMessage("LEASING_CALC")?></span>
+                    <div class="window__right">
+                        <?php/*
+                        <a href="<?= SITE_DIR; ?>configurator/" class="window-control window-control_comb window-control_shadow">
+                            <div class="window-control__content">
+                                <span class="h4 title title_upper title_bold"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR'); ?></span>
+                            </div>
+                            <span class="window-control__desc"><?= Bitrix\Main\Localization\Loc::getMessage('CONFIGURATOR_SUB'); ?></span>
+                            <img class="window-control__pic" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/configuration.jpg" alt="">
+                        </a>*/?>
+                        <a class="window-control window-control_phone phone-popup-trigger" data-src="#callback" href="javascript:;">
+                            <div class="window-control__content">
+                                <span class="h4 title title_upper title_bold"><?= SITE_ID == 'en' ? 'Callback' : 'Заказать звонок'; ?></span>
+                            </div>
+                            <span class="window-control__desc"><?= Bitrix\Main\Localization\Loc::getMessage('CONSULT_REQUEST_SUB'); ?></span>
                         </a>
                     </div>
                 </div>
-                <div class="window__soc-wrapper">
-                    <div class="soc window__soc">
-                        <?if (YOUTUBE) {?>
-                            <a href="<?=YOUTUBE?>" class="soc__ico soc__ico_you" target="_blank">
-                                <svg class="youtube-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#youtube-ico"></use>
-                                </svg>
-                            </a>
+                <div class="window-bottom">
+                    <div class="window-bottom__left">
+                        <div class="window-bottom__item">
+                            <a href="mailto:omis@kzdm.ru" class="h4 title title_blue title_medium window-mail">omis@kzdm.ru</a>
+                        </div>
+                        <?if (DOMAIN_ZONE == 'ru') {?>
+                            <?php $APPLICATION->IncludeComponent('sunmedia:active.city', '', [
+                                'IBLOCK_ID' => 16
+                            ]); ?>
                         <?}?>
-                        <?if (INSTAGRAM) {?>
-                            <a href="<?=INSTAGRAM?>" class="soc__ico soc__ico_inst" target="_blank">
-                                <svg class="instagramm-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#instagramm-ico"></use>
-                                </svg>
+                        <div class="window-bottom__item">
+                            <a href="<?= SITE_ID == 'en' ? '//'.DOMAIN : '//'.EN_DOMAIN; ?>" class="language iconed iconed_center">
+                                <?php if (SITE_ID != 'en'): ?>
+                                    <img class="language__ico iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/en.png" alt="">
+                                <?php else: ?>
+                                    <img class="language__ico iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/russian.png" alt="">
+                                <?php endif; ?>
+                                <span class="language__content title"><?= SITE_ID == 'en' ? 'Russian' : 'English'; ?></span>
                             </a>
-                        <?}?>
-                        <?if (VK) {?>
-                            <a href="<?=VK?>" class="soc__ico soc__ico_vk" target="_blank">
-                                <svg class="vk-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vk-ico"></use>
-                                </svg>
+                        </div>
+                        <div class="window-bottom__item">
+                            <a href="/servis/lizing/" class="iconed iconed_center">
+                                <img class="iconed__ico_r-small iconed_ico" src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/calc-icon.svg" alt="">
+                                <span class="title"><?=GetMessage("LEASING_CALC")?></span>
                             </a>
-                        <?}?>
-                        <?if (FACEBOOK) {?>
-                            <a href="<?=FACEBOOK?>" class="soc__ico soc__ico_fb" target="_blank">
-                                <svg class="fb-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
-                                </svg>
-                            </a>
-                        <?}?>
-                        <?if (TELEGRAM) {?>
-                            <a href="<?=TELEGRAM?>" target="_blank" class="soc__ico soc__ico_telegramm">
-                                <svg class="telegramm-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#telegramm-ico"></use>
-                                </svg>
-                            </a>
-                        <?}?>
-                        <?if (WHATSAPP) {?>
-                            <a href="<?=WHATSAPP?>" target="_blank" class="soc__ico soc__ico_watsup">
-                                <svg class="watsup-ico iconed__ico">
-                                    <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#watsup-ico"></use>
-                                </svg>
-                            </a>
-                        <?}?>
+                        </div>
                     </div>
-                    <div class="window__apps">
-                        <?if (IOS_APP) {?>
-                            <a href="<?=IOS_APP?>" class="window__app" target="_blank">
-                                <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/app-store-<?=LANGUAGE_ID?>.png" alt="">
-                            </a>
-                        <?}?>
-                        <?if (ANDROID_APP) {?>
-                            <a href="<?=ANDROID_APP?>" class="window__app" target="_blank">
-                                <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/google-play-<?=LANGUAGE_ID?>.png" alt="">
-                            </a>
-                        <?}?>
+                    <div class="window__soc-wrapper">
+                        <div class="soc window__soc">
+                            <?if (YOUTUBE) {?>
+                                <a href="<?=YOUTUBE?>" class="soc__ico soc__ico_you" target="_blank">
+                                    <svg class="youtube-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#youtube-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (INSTAGRAM) {?>
+                                <a href="<?=INSTAGRAM?>" class="soc__ico soc__ico_inst" target="_blank">
+                                    <svg class="instagramm-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#instagramm-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (VK) {?>
+                                <a href="<?=VK?>" class="soc__ico soc__ico_vk" target="_blank">
+                                    <svg class="vk-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#vk-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (FACEBOOK) {?>
+                                <a href="<?=FACEBOOK?>" class="soc__ico soc__ico_fb" target="_blank">
+                                    <svg class="fb-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#fb-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (TELEGRAM) {?>
+                                <a href="<?=TELEGRAM?>" target="_blank" class="soc__ico soc__ico_telegramm">
+                                    <svg class="telegramm-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#telegramm-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                            <?if (WHATSAPP) {?>
+                                <a href="<?=WHATSAPP?>" target="_blank" class="soc__ico soc__ico_watsup">
+                                    <svg class="watsup-ico iconed__ico">
+                                        <use xlink:href="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/icons.svg#watsup-ico"></use>
+                                    </svg>
+                                </a>
+                            <?}?>
+                        </div>
+                        <div class="window__apps">
+                            <?if (IOS_APP) {?>
+                                <a href="<?=IOS_APP?>" class="window__app" target="_blank">
+                                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/app-store-<?=LANGUAGE_ID?>.png" alt="">
+                                </a>
+                            <?}?>
+                            <?if (ANDROID_APP) {?>
+                                <a href="<?=ANDROID_APP?>" class="window__app" target="_blank">
+                                    <img src="<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/google-play-<?=LANGUAGE_ID?>.png" alt="">
+                                </a>
+                            <?}?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
 
         <? $APPLICATION->IncludeComponent(
             "bitrix:news.list",

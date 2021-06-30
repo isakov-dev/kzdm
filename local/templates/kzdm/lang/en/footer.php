@@ -1,5 +1,6 @@
 <?php
 $MESS['COPYRIGHT'] = 'JSC "Kurgandormash"';
+$MESS['COPYRIGHT_TEXT'] = 'It is not a public offer. The information is for informational purposes only and is not final. The manufacturer reserves the right to change the configuration and characteristics of the equipment.';
 $MESS['POWERED'] = 'Powered by';
 $MESS["WEBSITE_PROMOTION"] = "Promotion by";
 $MESS["SITE_SEARCH"] = "Search";

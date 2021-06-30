@@ -93,14 +93,17 @@ switch ($arResult['SECTION']['CODE']) {
                         'goal' => 'interest-goal',
                         'text_var' => 'SALE_IN_REGIONS',
                         'icon' => 'loc-circle-ico',
-                    ],
-                    [
+                    ]
+                ];
+
+                if (SITE_ID != 'en') {
+                    $stickers[] = [
                         'link' => 'servis/lizing/',
                         'goal' => 'rouble-goal',
                         'text_var' => 'BY_LEASING',
                         'icon' => 'rub-circle-ico',
-                    ],
-                ];
+                    ];
+                }
                 ?>
                 <?php foreach ($stickers as $sticker) { ?>
                     <a href="<?= SITE_DIR . $sticker['link']; ?>" class="sticker sticker_offset <?= $sticker['goal']; ?>">

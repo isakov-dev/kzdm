@@ -35,9 +35,11 @@ $this->setFrameMode(true);
                                 <a href="<?= SITE_DIR; ?>catalog/" class="btn btn_box btn_orange index-video__button">
                                     <?= Bitrix\Main\Localization\Loc::getMessage('CATALOG_BUTTON'); ?>
                                 </a>
-                                <a href="/catalog/gotovaya-produktsiya/" class="btn btn_box btn_blue index-video__button">
-                                    <?= Bitrix\Main\Localization\Loc::getMessage('TECHNICS_IN_STOCK'); ?>
-                                </a>
+                                <?if (SITE_ID != 'en') {?>
+                                    <a href="/catalog/gotovaya-produktsiya/" class="btn btn_box btn_blue index-video__button">
+                                        <?= Bitrix\Main\Localization\Loc::getMessage('TECHNICS_IN_STOCK'); ?>
+                                    </a>
+                                <?}?>
                             </div>
                             <?if (SITE_ID != 'en') {?>
                                 <div class="index-video__buttons-line">

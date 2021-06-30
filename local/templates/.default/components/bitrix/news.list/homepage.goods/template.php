@@ -4,7 +4,7 @@ $this->setFrameMode(true);
 <?php if (!empty($arResult['ITEMS'])): ?>
     <div class="section section_main-goods section_animated wow secton_default">
         <div class="wrapper wrapper_default">
-            <h2 class="h2 title title_demy section__title">Вас могут заитересовать эти модели</h2>
+            <h2 class="h2 title title_demy section__title"><?= Bitrix\Main\Localization\Loc::getMessage('TITLE'); ?></h2>
 
             <div class="work-widget work-widget_goods-slider">
                 <div class="work-widget__nav">

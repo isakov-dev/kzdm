@@ -185,10 +185,12 @@ Bitrix\Main\Localization\Loc::loadMessages(__FILE__);
                                 <a href="tel:<?=str_replace(' ', '', PHONE)?>" class="phone__numb"><?=PHONE?></a>
                                 <a data-src="#callback" href="javascript:;" class="phone-popup-trigger"><?= Bitrix\Main\Localization\Loc::getMessage('CALLBACK'); ?></a>
                             </div>
+                            <?php if (SITE_ID != 'en'): ?>
                             <button class="header-btn header-btn_offset window-trigger-imagered" data-src="#window">
                                 <span class="header-btn__line"></span>
                                 <span class="header-btn__line"></span>
                             </button>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
