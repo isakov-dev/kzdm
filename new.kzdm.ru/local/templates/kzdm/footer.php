@@ -112,22 +112,26 @@
                         <?}?>
                     </div>
                 </div>
-                <?$APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "footer.top",
-                    Array(
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "left",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => "1",
-                        "MENU_CACHE_GET_VARS" => array(""),
-                        "MENU_CACHE_TIME" => "36000000",
-                        "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
-                        "ROOT_MENU_TYPE" => "footer_top",
-                        "USE_EXT" => "N"
-                    )
-                );?>
+
+                <?php if (SITE_ID != 'en'): ?>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "footer.top",
+                        Array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(""),
+                            "MENU_CACHE_TIME" => "36000000",
+                            "MENU_CACHE_TYPE" => "A",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "footer_top",
+                            "USE_EXT" => "N"
+                        )
+                    );?>
+                <?php endif; ?>
+                
                 <div class="footer__row footer__links">
                     <div class="row">
                         <?$APPLICATION->IncludeComponent(

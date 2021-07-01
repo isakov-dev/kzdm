@@ -9,9 +9,9 @@ $APPLICATION->SetPageProperty('title', 'Factory History');
             <div class="wrapper wrapper_default">
                 <h1 class="h1 single__title"><?php $APPLICATION->ShowTitle(); ?></h1>
                 <div class="single__desc">
-                    <p>
+                    <!--<p>
                         Для обеспечения бесперебойной работы специальной техники наших клиентов, осуществляет
-                    </p>
+                    </p>-->
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@ $APPLICATION->SetPageProperty('title', 'Factory History');
                     <div class="col col--xl-8 col--xl-offset-2">
                         <div class="row">
                             <div class="col col--md-6">
-                                <a data-fancybox='gallery' href="/upload/attached/SamplePDFFile_5mb.pdf" class="history-link" style="background-image: url('<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/Perfect_Binding_Brochure_Mockup_3 1.png')">
+                                <a data-fancybox='gallery' href="/upload/attached/book.pdf" class="history-link" style="background-image: url('<?= SITE_DEFAULT_TEMPLATE_PATH; ?>/assets/images/Perfect_Binding_Brochure_Mockup_3 1.png')">
                                     <span class="history-link__content">
                                         <span class="h3 history-link__title title title_block title_bold title_b-offset">Factory History Book</span>
                                         <span class="history-link__desc">
